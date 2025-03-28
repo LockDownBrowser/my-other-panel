@@ -142,6 +142,19 @@
             border-radius: 10px; 
             border: none;
         }    
+        .other-box { 
+            margin: 20px auto; 
+            max-width: 600px; 
+            border: 2px solid rgba(255, 255, 255, 0.5); 
+            border-radius: 10px; 
+            padding: 20px; 
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .other-box h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
         .rating-box { 
             position: fixed; 
             bottom: 20px; 
@@ -163,7 +176,7 @@
             .container { 
                 flex-direction: column; 
             }    
-            .box, .video-box { 
+            .box, .video-box, .other-box { 
                 width: 90%; 
             }    
             .rating-box { 
@@ -213,6 +226,14 @@
         <h2>Demo Video</h2>    
         <iframe src="https://www.youtube.com/embed/OcuuSI6kEaI" frameborder="0" allowfullscreen></iframe>    
     </div>    
+    
+    <!-- Additional Box for Other Bypasses -->
+    <div class="other-box">
+        <h2>Other Bypasses</h2>
+        <a href="LockDownBrowser.html" class="button" style="background-color: #FF6347;">🔒 LockDown Browser</a>
+        <a href="OnVUE.html" class="button" style="background-color: #1E90FF;">🎥 OnVUE</a>
+        <a href="BlueBook.html" class="button" style="background-color: #32CD32;">📘 BlueBook</a>
+    </div>
     
     <div class="rating-box">    
         ⭐ <span class="stars">★★★★★</span> <br>    
