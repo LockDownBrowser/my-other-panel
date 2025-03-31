@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Cheating Devices : ChatGPT Connected Calculator</title>
+    <meta name="description" content="ChatGPT Calculator">
+    <meta name="keywords" content="ChatGPT Calculator, AI Exam Bypass, Smart Calculator, Cheat Exam Device, Raspberry Pi Calculator">
+    <meta name="author" content="Bypass Team">
+    <meta name="robots" content="index, follow"><link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta property="og:image" content="favicon.ico">
+<meta property="og:title" content="Exam Cheating Devices : ChatGPT Connected Calculator">
+<meta property="og:description" content="ChatGPT Calculator">
+<meta property="og:url" content="https://bluebook.ink/">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "ChatGPT Connected Calculator",
+    "image": "favicon.ico",
+    "description": "ChatGPT Calculator",
+    "brand": { "@type": "Brand", "name": "Bypass Team" },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "1007"
+    }
+}
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #141e30, #243b55);
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    .product-box {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        margin: 20px 0;
+    }
+    .premium {
+        border: 3px solid gold;
+    }
+    .button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+        background: linear-gradient(90deg, #ff6b6b, #ffb76b, #ffea6b, #8bff6b, #6bffea, #6b8bff);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.8);
+        transition: transform 0.3s ease;
+    }
+    .button:hover {
+        transform: scale(1.05);
+    }
+    .rating-box {
+        background: linear-gradient(135deg, #FFD700, #FFA500);
+        padding: 12px 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
+        font-weight: bold;
+        font-size: 1em;
+        color: black;
+        margin-top: 20px;
+    }
+    .stars {
+        color: #FFD700;
+        font-size: 1.2em;
+    }
+</style>
+
+</head>
+<body>
+    <img src="book.png" alt="Book Image" style="display:block; margin: 0 auto 20px auto; max-width:150px;"><h1>📖 Exam Cheating Devices : ChatGPT Connected Calculator</h1>
+
+<div class="product-box">
+    <h2>💻 Use ChatGPT On Your Calculator (without camera)</h2>
+    <p><strong>Price: $490</strong></p>
+    <p>Uses Raspberry Pi Zero W connected to Casio fx-9750GIII with a keyboard to type to ChatGPT and receive an answer.</p>
+</div>
+
+<div class="product-box premium">
+    <h2>📷 Premium Version - Camera Feature</h2>
+    <p><strong>Price: $900</strong></p>
+    <p>Includes all Standard features but also has a 40MP camera at the back with an action button to take a photo and send it to AI (ChatGPT, Gemini, or Claude) or they can type it.</p>
+</div>
+
+<div class="product-box">
+    <h2>🛠️ Custom Version</h2>
+    <p><strong>Price: $1100</strong></p>
+    <p>Custom-built calculator with personalized features based on your request.</p>
+</div>
+
+<div class="rating-box">⭐ <span class="stars">★★★★☆</span> <br> Rated <strong>4.7</strong> (1007 Reviews)</div>
+
+<br>
+<a href="ExamDevices.html" class="button">🚀 Get Your Cheating Calculator</a>
+
+</body>
+</html>
