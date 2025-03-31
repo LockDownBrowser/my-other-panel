@@ -1,187 +1,159 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exam Cheating Devices : ChatGPT Connected Calculator</title>
-  <meta name="description" content="ChatGPT Calculator">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <script type="application/ld+json">
-  {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Cheating Devices : ChatGPT Connected Calculator</title>
+    <meta name="description" content="ChatGPT Calculator">
+    <meta name="keywords" content="ChatGPT Calculator, Exam Cheating Devices, AI Calculator, Smart Exam Tools">
+    <meta name="author" content="Minjunnios">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:image" content="favicon.ico">
+    <meta property="og:title" content="ChatGPT Connected Calculator for Exams">
+    <meta property="og:description" content="Smart AI-powered calculator to assist in exams with ChatGPT integration.">
+    <meta property="og:url" content="https://bluebook.ink/">
+    <meta property="og:type" content="product"><script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "ChatGPT Calculator",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.7",
-      "reviewCount": "1007"
-    }
-  }
-  </script>
-  <style>
-    /* Global Styles */
+    "name": "ChatGPT Connected Calculator",
+    "image": "favicon.ico",
+    "description": "Smart AI-powered calculator to assist in exams with ChatGPT integration.",
+    "brand": { "@type": "Brand", "name": "BlueBook Team" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "1007" }
+}
+</script>
+
+<style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #1a1a2e, #16213e);
+        color: white;
+        text-align: center;
+        padding: 20px;
     }
     h1 {
-      font-size: 2.5em;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        margin-bottom: 15px;
     }
     p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
+        font-size: 1.2em;
+        margin-bottom: 20px;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    /* Rating Box */
-    .rating-box {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      background: rgba(255, 215, 0, 0.85);
-      padding: 10px 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
-      font-weight: bold;
-      font-size: 1em;
-      color: #000;
-      transition: opacity 0.5s ease-in-out;
-    }
-    /* Hide rating box on scroll */
-    .hidden {
-      opacity: 0;
-    }
-    /* Container for product boxes */
     .container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
     }
-    /* Product Boxes */
     .box {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-      max-width: 420px;
-      text-align: left;
-      flex: 1;
-      transition: transform 0.3s ease-in-out;
-      border: 2px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.15);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        text-align: left;
+        flex: 1;
     }
-    .box:hover {
-      transform: scale(1.05);
+    .standard {
+        background: rgba(0, 255, 127, 0.2);
+    }
+    .premium {
+        background: linear-gradient(45deg, #b8860b, #8b7500);
+        border: 3px solid gold;
+        color: black;
     }
     .box h2 {
-      text-align: center;
-      font-size: 1.8em;
-      margin-bottom: 10px;
+        text-align: center;
+        margin-top: 0;
     }
-    .box p {
-      font-size: 1em;
-      line-height: 1.5;
-      text-align: center;
+    ul {
+        list-style: none;
+        padding: 0;
     }
-    /* Premium Box Styling */
-    .premium {
-      background: linear-gradient(135deg, #b8860b, #8b6508);
-      color: #fff;
-      border: 3px solid gold;
-      box-shadow: 0 0 20px rgba(218, 165, 32, 0.7);
+    ul li {
+        font-size: 1.1em;
+        margin: 10px 0;
     }
-    /* Buttons */
     .button {
-      display: block;
-      padding: 12px;
-      margin: 15px auto;
-      font-size: 1.2em;
-      font-weight: bold;
-      text-align: center;
-      background-color: #4CAF50;
-      border-radius: 8px;
-      transition: background 0.3s, transform 0.3s;
-      width: 90%;
+        display: block;
+        padding: 12px;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background-color: #ff6600;
+        text-align: center;
+        border-radius: 5px;
+        transition: background 0.3s, transform 0.3s;
+        margin-top: 10px;
     }
     .button:hover {
-      background-color: #45a049;
-      transform: scale(1.05);
+        background-color: #e65c00;
+        transform: scale(1.05);
     }
-    .premium-btn {
-      background: linear-gradient(90deg, #ff8c00, #ffcc00);
-      border: none;
-      font-size: 1.3em;
-      padding: 15px;
-      color: #000;
-      font-weight: bold;
-      border-radius: 8px;
-      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
-      transition: opacity 0.3s, transform 0.3s;
+    .rating-box {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: linear-gradient(135deg, #FFD700, #FFA500);
+        padding: 12px 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
+        text-align: center;
+        font-weight: bold;
+        font-size: 1em;
+        color: black;
+        transition: opacity 0.5s ease;
     }
-    .premium-btn:hover {
-      opacity: 0.9;
-      transform: scale(1.05);
-    }
-    /* Footer Contact */
-    .contact {
-      margin-top: 30px;
-      font-size: 1.2em;
-    }
-    /* Responsive Adjustments */
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .box {
-        max-width: 95%;
-      }
-      h1 {
-        font-size: 2em;
-      }
+        .container { flex-direction: column; }
+        .box { width: 90%; }
+        .rating-box { top: 10px; left: 10px; font-size: 0.9em; }
     }
-  </style>
-  <script>
-    window.addEventListener('scroll', function() {
-      const ratingBox = document.querySelector('.rating-box');
-      if (window.scrollY > 50) {
-        ratingBox.classList.add('hidden');
-      } else {
-        ratingBox.classList.remove('hidden');
-      }
-    });
-  </script>
+</style>
+
 </head>
 <body>
-  <div class="rating-box">Rated <strong>4.7</strong> (1007 Reviews)</div>
-  <h1>Exam Cheating Devices : ChatGPT Connected Calculator</h1>
-  <img src="book.png" alt="Book Logo" style="width: 80px; margin: 10px auto;">
-  <p>ChatGPT Calculator</p>
-  <div class="container">
-    <div class="box">
-      <h2>ChatGPT Calculator (No Camera) - $490</h2>
-      <p>Connects to Casio FX-9750GIII with a keyboard to type and receive AI answers.</p>
-      <a href="payment.html?plan=standard" class="button">Buy Now - $490</a>
+    <img src="book.png" alt="Book Logo" style="width: 80px; display: block; margin: 0 auto;">
+    <h1>Exam Cheating Devices: ChatGPT Connected Calculator</h1>
+    <p>Use AI-powered tools to assist in exams with our smart calculators.</p><div class="container">
+    <div class="box standard">
+        <h2>Standard Calculator - $490</h2>
+        <ul>
+            <li>✅ ChatGPT-powered AI assistance</li>
+            <li>✅ Raspberry Pi Zero W integrated</li>
+            <li>✅ Casio FX-9750GIII compatibility</li>
+            <li>✅ Easy keyboard input</li>
+        </ul>
+        <a href="payment.html?plan=standard" class="button">Buy Standard - $490</a>
     </div>
+
     <div class="box premium">
-      <h2>Premium Edition (Best Seller) - $900</h2>
-      <p>Includes a 40MP camera with an action button to scan and send to AI (ChatGPT, Gemini, Claude).</p>
-      <a href="payment.html?plan=premium" class="button premium-btn">Buy Premium - $900</a>
+        <h2>Premium Calculator (Best Seller) - $900</h2>
+        <ul>
+            <li>✅ Includes all Standard features</li>
+            <li>✨ 40MP back camera for capturing and sending questions</li>
+            <li>✨ AI-supported instant image recognition (ChatGPT, Gemini, Claude)</li>
+            <li>✨ Action button for quick snapshots</li>
+        </ul>
+        <a href="payment.html?plan=premium" class="button">Buy Premium - $900</a>
     </div>
+
     <div class="box">
-      <h2>Custom Edition - $1100</h2>
-      <p>Fully customized device with advanced AI integrations and features.</p>
-      <a href="payment.html?plan=custom" class="button">Buy Custom - $1100</a>
+        <h2>Custom AI Calculator - $1100</h2>
+        <ul>
+            <li>✅ Fully customizable features</li>
+            <li>✅ Enhanced AI integrations</li>
+            <li>✅ Custom hardware modifications</li>
+        </ul>
+        <a href="payment.html?plan=custom" class="button">Buy Custom - $1100</a>
     </div>
-  </div>
-  <div class="contact">For support: <a href="mailto:Minjunnios@gmail.com">Minjunnios@gmail.com</a></div>
+</div>
+
+<div class="rating-box">Rated <strong>4.7</strong> (1007 Reviews)</div>
+<p>Contact: <a href="mailto:Minjunnios@gmail.com">Minjunnios@gmail.com</a></p>
+
 </body>
 </html>
