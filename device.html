@@ -4,157 +4,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Cheating Devices : ChatGPT Connected Calculator</title>
     <meta name="description" content="ChatGPT Calculator">
-    <meta name="keywords" content="ChatGPT Calculator, Exam Cheating Devices, AI Calculator, Smart Calculator, Raspberry Pi Calculator">
+    <meta name="keywords" content="ChatGPT calculator, exam cheat devices, AI calculator, cheating tools">
     <meta name="author" content="BlueBook Team">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta property="og:image" content="favicon.ico">
-    <meta property="og:title" content="ChatGPT Connected Calculator for Exams">
-    <meta property="og:description" content="Use ChatGPT on your calculator seamlessly.">
+    <meta property="og:title" content="Exam Cheating Devices : ChatGPT Connected Calculator">
+    <meta property="og:description" content="ChatGPT Calculator">
     <meta property="og:url" content="https://bluebook.ink/">
-    <meta property="og:type" content="website"><script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "ChatGPT Calculator",
-    "image": "favicon.ico",
-    "description": "AI-powered exam calculator with ChatGPT integration.",
-    "brand": { "@type": "Brand", "name": "BlueBook Team" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "1007" }
-}
-</script>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(to right, #1a1a2e, #16213e);
-        color: white;
-        text-align: center;
-        padding: 20px;
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "ChatGPT Calculator",
+        "image": "favicon.ico",
+        "description": "Use ChatGPT on your calculator to answer questions instantly.",
+        "brand": { "@type": "Brand", "name": "BlueBook Team" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "1007" }
     }
-    h1 {
-        font-size: 2.2em;
-        margin-bottom: 15px;
-    }
-    .rating-box {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        background: linear-gradient(135deg, #FFD700, #FFA500);
-        padding: 12px 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
-        text-align: center;
-        font-weight: bold;
-        font-size: 1em;
-        color: black;
-        transition: opacity 0.5s ease-in-out;
-    }
-    .rating-box.hidden {
-        opacity: 0;
-    }
-    .container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 40px;
-    }
-    .box {
-        background: rgba(255, 255, 255, 0.15);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        max-width: 400px;
-        text-align: left;
-        flex: 1;
-    }
-    .premium {
-        background: rgba(255, 215, 0, 0.3);
-        border: 3px solid gold;
-        position: relative;
-    }
-    .best-seller {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        background: gold;
-        color: black;
-        padding: 5px 10px;
-        font-weight: bold;
-        border-radius: 8px;
-    }
-    .box h2 {
-        text-align: center;
-        margin-top: 0;
-    }
-    .purchase-btn {
-        display: block;
-        width: 100%;
-        padding: 12px;
-        font-size: 1.1em;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-        background-color: #4CAF50;
-        border-radius: 5px;
-        text-align: center;
-        transition: background 0.3s, transform 0.3s;
-    }
-    .purchase-btn:hover {
-        background-color: #45a049;
-        transform: scale(1.05);
-    }
-    @media (max-width: 768px) {
-        .container {
-            flex-direction: column;
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(to right, #141e30, #243b55); color: white; text-align: center; padding: 20px; }
+        h1 { font-size: 2.2em; text-transform: uppercase; margin-bottom: 15px; }
+        p { font-size: 1.2em; margin-bottom: 20px; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .box { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); max-width: 400px; text-align: center; flex: 1; }
+        .premium { background: linear-gradient(135deg, #FFD700, #FFB000); border: 2px solid gold; position: relative; }
+        .best-seller { position: absolute; top: -10px; right: -10px; background: red; color: white; font-size: 0.8em; padding: 5px 10px; border-radius: 5px; font-weight: bold; }
+        .box h2 { margin-top: 0; }
+        ul { list-style: none; padding: 0; }
+        ul li { font-size: 1.1em; margin: 10px 0; }
+        .btn-container { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .button { display: inline-block; padding: 12px 25px; font-size: 1.1em; font-weight: bold; text-decoration: none; color: white; background-color: #4CAF50; border-radius: 5px; transition: background 0.3s, transform 0.3s; }
+        .button:hover { background-color: #45a049; transform: scale(1.05); }
+        .premium-btn { background: linear-gradient(90deg, #ff6b6b, #ffb76b, #ffea6b); color: black; font-weight: bold; }
+        .rating-box { position: fixed; top: 20px; left: 20px; background: linear-gradient(135deg, #FFD700, #FFA500); padding: 12px 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6); text-align: center; font-weight: bold; font-size: 1em; color: black; transition: opacity 0.3s; }
+        .hidden { opacity: 0; transition: opacity 0.3s; }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .box { width: 90%; }
         }
-        .box {
-            width: 90%;
-        }
-        .rating-box {
-            top: 10px;
-            left: 10px;
-            font-size: 0.9em;
-        }
-    }
-</style>
-
+    </style>
+    <script>
+        window.addEventListener('scroll', function() {
+            var ratingBox = document.querySelector('.rating-box');
+            if (window.scrollY > 100) {
+                ratingBox.classList.add('hidden');
+            } else {
+                ratingBox.classList.remove('hidden');
+            }
+        });
+    </script>
 </head>
 <body>
-    <h1>📖 Exam Cheating Devices: ChatGPT Connected Calculator</h1>
-    <div class="rating-box" id="ratingBox">Rated <strong>4.7</strong> (1007 Reviews)</div>
-    <p>Use ChatGPT on your calculator seamlessly.</p><div class="container">
-    <div class="box standard">
-        <h2>Use ChatGPT On Your Calculator (No Camera) - $490</h2>
-        <p>Raspberry Pi Zero W connected to Casio FX-9750GIII with a keyboard to type to ChatGPT and receive answers.</p>
-        <a href="payment.html?plan=standard" class="purchase-btn">Buy Now - $490</a>
+    <h1>Exam Cheating Devices : ChatGPT Connected Calculator</h1>
+    <p>ChatGPT Calculator</p>
+    <div class="rating-box">Rated <strong>4.7</strong> (1007 Reviews)</div>
+    <div class="container">
+        <div class="box">
+            <h2>Use ChatGPT On Your Calculator (Without Camera)</h2>
+            <p>$490 - Raspberry Pi Zero W connected to Casio FX-9750GIII with a keyboard to type to ChatGPT and receive answers.</p>
+            <div class="btn-container">
+                <a href="payment.html?plan=standard" class="button">Buy for $490</a>
+            </div>
+        </div>
+        <div class="box premium">
+            <span class="best-seller">Best Seller</span>
+            <h2>Premium - With Camera & AI Action Button</h2>
+            <p>$900 - Same as standard, but with a 40MP camera and an action button to take a photo, send it to AI (ChatGPT, Gemini, Claude), or type it.</p>
+            <div class="btn-container">
+                <a href="payment.html?plan=premium" class="button premium-btn">Buy for $900</a>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Custom Version</h2>
+            <p>$1100 - Fully customized version with tailored features.</p>
+            <div class="btn-container">
+                <a href="payment.html?plan=custom" class="button">Buy for $1100</a>
+            </div>
+        </div>
     </div>
-    
-    <div class="box premium">
-        <div class="best-seller">Best Seller</div>
-        <h2>Premium - $900</h2>
-        <p>Includes all standard features + 40MP camera & action button to send images to AI (ChatGPT, Gemini, or Claude).</p>
-        <a href="payment.html?plan=premium" class="purchase-btn">Buy Now - $900</a>
-    </div>
-    
-    <div class="box custom">
-        <h2>Custom Device - $1100</h2>
-        <p>Tailor your own AI-powered exam calculator with features of your choice.</p>
-        <a href="payment.html?plan=custom" class="purchase-btn">Buy Now - $1100</a>
-    </div>
-</div>
-
-<script>
-    let ratingBox = document.getElementById("ratingBox");
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 100) {
-            ratingBox.classList.add("hidden");
-        } else {
-            ratingBox.classList.remove("hidden");
-        }
-    });
-</script>
-
+    <p>For inquiries, contact: <a href="mailto:Minjunnios@gmail.com">Minjunnios@gmail.com</a></p>
 </body>
 </html>
