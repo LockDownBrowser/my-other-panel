@@ -6,46 +6,59 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f8ff;
+      background: linear-gradient(to right, #e6f2ff, #ffffff);
       color: #003366;
       margin: 0;
       padding: 0;
     }
     header {
-      background-color: #0077cc;
+      background-color: #0066cc;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
-      font-size: 1.5em;
+      font-size: 2em;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     .container {
-      max-width: 800px;
-      margin: 30px auto;
+      max-width: 900px;
+      margin: 40px auto;
       background: #ffffff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
     h2 {
-      color: #005fa3;
+      color: #004b8d;
+      border-bottom: 2px solid #cce0ff;
+      padding-bottom: 10px;
     }
     ol {
       padding-left: 20px;
+      font-size: 1.1em;
+    }
+    li {
+      margin-bottom: 20px;
     }
     .note {
-      background-color: #e6f2ff;
+      background-color: #d9ecff;
       border-left: 6px solid #3399ff;
-      padding: 10px;
-      margin: 20px 0;
-      border-radius: 5px;
-      font-size: 0.95em;
+      padding: 15px;
+      margin: 25px 0;
+      border-radius: 8px;
+      font-size: 1em;
+      line-height: 1.6;
     }
     a {
-      color: #0077cc;
+      color: #0057b7;
       text-decoration: none;
+      font-weight: bold;
     }
     a:hover {
       text-decoration: underline;
+    }
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
@@ -55,32 +68,33 @@
   </header>  <div class="container">
     <h2>Step-by-Step Instructions</h2>
     <ol>
-      <li>Unzip the <strong>.zip</strong> file you received and place the folder on your <strong>desktop</strong>. (It must be on the desktop or it won't work.)</li><li>Ensure that <strong>SIP (System Integrity Protection)</strong> is disabled. The script will not function otherwise.</li>
+      <li>Unzip the <strong>.zip</strong> file you received and place the folder on your <strong>desktop</strong>. It must be on the desktop or it won't function properly.</li><li>Disable <strong>SIP (System Integrity Protection)</strong>. This is required for the script to work.</li>
 
   <div class="note">
-    SIP needs to be disabled because Apple prevents 3rd party software from injecting. You can re-enable it after you are done.
+    SIP needs to be disabled because macOS prevents third-party software from injecting into other processes. <br>
+    <strong>You only need to disable SIP while using the bypass tool. You can safely re-enable it after completing your exam.</strong>
   </div>
 
   <li>If you're using an <strong>M Chip (Apple Silicon)</strong> Mac, follow this tutorial:<br>
-    <a href="https://youtu.be/StAn0ZHiXTc?si=gYsiHatH6VFrkDhB" target="_blank">Watch SIP Disable Tutorial for M1/M2 Macs</a>
+    <a href="https://youtu.be/StAn0ZHiXTc?si=gYsiHatH6VFrkDhB" target="_blank">Watch SIP Disable Tutorial for Apple Silicon Macs</a>
   </li>
 
   <li>For <strong>Intel Mac</strong> users:
     <ul>
-      <li>Shut down your laptop completely.</li>
-      <li>Press the power button, and when you hear the chime, hold <strong>CMD + R</strong> to enter recovery mode.</li>
-      <li>Continue following the steps from the tutorial above.</li>
+      <li>Shut down your Mac completely.</li>
+      <li>Press the power button, and when you hear the startup chime, hold <strong>CMD + R</strong> to enter recovery mode.</li>
+      <li>Then continue following the same instructions in the video linked above.</li>
     </ul>
   </li>
 
-  <li>After SIP is disabled, open the unzipped folder.</li>
-  <li>Right-click on the <strong>Penguin app</strong> > choose <strong>Open</strong>.</li>
-  <li>Once opened, run the exam software directly.</li>
+  <li>After SIP is disabled, open the unzipped folder on your desktop.</li>
+  <li>Right-click on the <strong>Penguin App</strong> > choose <strong>Open</strong>.</li>
+  <li>Once it's open, launch the exam software directly through it.</li>
 
-  <li>If you see an <strong>"unidentified developer"</strong> error:
+  <li>If you see an <strong>"Unidentified Developer"</strong> warning:
     <ul>
-      <li>Go to <strong>Settings > Privacy & Security</strong></li>
-      <li>At the bottom, click <strong>"Allow Anyway"</strong></li>
+      <li>Go to <strong>System Settings > Privacy & Security</strong>.</li>
+      <li>At the bottom of the window, click <strong>"Allow Anyway"</strong>.</li>
     </ul>
   </li>
 </ol>
