@@ -2,43 +2,53 @@
 <html>
 <head>
   <title>College Board</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 100vw;
-      height: 100vh;
       background: #fff;
-      overflow: hidden;
+      height: 100%;
+      overflow-y: auto;
     }
 
     #loader {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: #ffffff;
+      width: 100%;
+      height: 100%;
+      background: white;
       z-index: 9999;
-      animation: fadeOut 0.5s ease-out forwards;
+      animation: fadeOut 0.4s ease-out forwards;
       animation-delay: 0.2s;
     }
 
     @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #fff;
     }
 
     img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: fill;
-      display: block;
+      max-width: 100%;
+      height: auto;
     }
   </style>
 </head>
 <body>
   <div id="loader"></div>
-  <img src="RDT_20250404_1018556654006981255241474.jpg" alt="College Board Result">
+  <div class="container">
+    <img src="RDT_20250404_1018556654006981255241474.jpg" alt="College Board Result">
+  </div>
 </body>
 </html>
