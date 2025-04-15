@@ -9,18 +9,36 @@
       padding: 0;
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
       background: #fff;
+      overflow: hidden;
     }
+
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #ffffff;
+      z-index: 9999;
+      animation: fadeOut 0.5s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
     img {
       width: 100vw;
       height: 100vh;
-      object-fit: fill; /* stretches to exactly fit */
+      object-fit: fill;
       display: block;
     }
   </style>
 </head>
 <body>
+  <div id="loader"></div>
   <img src="RDT_20250404_1018556654006981255241474.jpg" alt="College Board Result">
 </body>
 </html>
