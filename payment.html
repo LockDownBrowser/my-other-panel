@@ -68,9 +68,30 @@
     .giftcard-btn { background: #FFB830; color: #000; }
     .giftcard-btn:hover { background: #E6A50D; transform: scale(1.05); }
     /* Crypto items */
-    .crypto-item { display: flex; align-items: center; justify-content: space-between; margin: 14px 0; }
-    code { background: rgba(0,0,0,0.3); padding: 6px 10px; border-radius: 6px; font-family: monospace; font-size: 1rem; }
-    .copy-btn { background: transparent; border: 1px solid #FFD700; color: #FFD700; padding: 8px 12px; border-radius: 6px; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
+    .crypto-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 14px 0;
+    }
+    .crypto-item strong {
+      flex: 0 0 auto;
+      margin-right: 12px;
+      white-space: nowrap;
+      font-size: 1.1rem;
+    }
+    .crypto-item code {
+      flex: 1 1 auto;
+      background: rgba(0,0,0,0.3);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 1rem;
+      overflow-wrap: anywhere;
+      margin-right: 12px;
+    }
+    .copy-btn { background: transparent; border: 1px solid #FFD700; color: #FFD700; padding: 8px 12px; border-radius: 6px; font-size: 1rem; cursor: pointer; transition: background 0.3s; flex: 0 0 auto; }
     .copy-btn:hover { background: rgba(255,215,0,0.2); }
     /* Note */
     .note { font-size: 1rem; color: #FFD700; text-align: center; margin-top: 16px; }
@@ -80,6 +101,10 @@
       h1 { font-size: 2.2rem; }
       .section { padding: 20px; }
       .button { width: 100%; padding: 12px; font-size: 1.1rem; }
+      .crypto-item { margin: 12px 0; }
+      .crypto-item strong { width: 100%; margin-bottom: 6px; }
+      .crypto-item code { width: 100%; margin: 0 0 6px 0; }
+      .copy-btn { width: 100%; }
     }
   </style>
 </head>
@@ -104,11 +129,13 @@
 <div class="section">
   <h2><span>🪙</span>Alternative: Crypto (Non-Preferred)</h2>
   <div class="crypto-item">
-    <div><strong>Ethereum 💎:</strong> <code id="ethAddr" data-full="0x42E76A9D905dBdcaFc5A75bF412b63742B0Df0D4">0x42E76...0Df0D4</code></div>
+    <strong>Ethereum 💎:</strong>
+    <code id="ethAddr" data-full="0x42E76A9D905dBdcaFc5A75bF412b63742B0Df0D4">0x42E76...0Df0D4</code>
     <button class="copy-btn" data-target="ethAddr">Copy</button>
   </div>
   <div class="crypto-item">
-    <div><strong>Solana ☀️:</strong> <code id="solAddr" data-full="DTRe8XncoXTotF8WJ9qfwvs8CebCU6VtwQsgwM2cnkJQ">DTRe8...nJQ</code></div>
+    <strong>Solana ☀️:</strong>
+    <code id="solAddr" data-full="DTRe8XncoXTotF8WJ9qfwvs8CebCU6VtwQsgwM2cnkJQ">DTRe8...nJQ</code>
     <button class="copy-btn" data-target="solAddr">Copy</button>
   </div>
   <ul>
