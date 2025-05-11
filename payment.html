@@ -4,30 +4,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Payment - Bypass for macOS</title>
   <style>
-    body { font-family: Arial, sans-serif; background: linear-gradient(to right, #141e30, #243b55); color: white; margin: 0; padding: 20px; display: flex; justify-content: center; }
-    .container { max-width: 600px; width: 100%; background: rgba(255,255,255,0.1); border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding: 30px; }
-    h1 { font-size: 2.5em; text-align: center; margin-bottom: 20px; text-transform: uppercase; }
-    .section { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
-    .section h2 { font-size: 1.8em; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 6px; }
-    ul { list-style: none; padding: 0; margin: 0 0 10px 0; }
-    li { font-size: 1.2em; margin: 8px 0; }
-    .btn-container { text-align: center; margin: 15px 0; }
-    .button { display: inline-block; padding: 12px 20px; font-size: 1.1em; font-weight: bold; text-decoration: none; color: white; border-radius: 5px; transition: background 0.3s, transform 0.3s; border: none; cursor: pointer; }
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    /* Container */
+    .container {
+      max-width: 640px;
+      width: 100%;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      padding: 40px;
+    }
+    /* Title */
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    /* Sections */
+    .section {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+    .section h2 span {
+      margin-right: 8px;
+    }
+    /* Lists */
+    ul { list-style: none; margin: 0 0 16px 0; padding: 0; }
+    li { font-size: 1.2rem; margin: 10px 0; line-height: 1.5; }
+    /* Buttons */
+    .btn-container { text-align: center; margin: 20px 0; }
+    .button {
+      display: inline-block;
+      padding: 14px 26px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 6px;
+      transition: background 0.3s, transform 0.3s;
+      border: none;
+      cursor: pointer;
+    }
     .giftcard-btn { background: #FFB830; color: #000; }
     .giftcard-btn:hover { background: #E6A50D; transform: scale(1.05); }
-    .crypto-item { display: flex; align-items: center; justify-content: space-between; margin: 10px 0; }
-    code { background: rgba(0,0,0,0.2); padding: 4px 8px; border-radius: 4px; font-family: monospace; font-size: 1em; color: #fff; }
-    .copy-btn { background: transparent; border: 1px solid #FFD700; color: #FFD700; padding: 6px 10px; border-radius: 4px; font-size: 0.9em; cursor: pointer; transition: background 0.3s; }
+    /* Crypto items */
+    .crypto-item { display: flex; align-items: center; justify-content: space-between; margin: 14px 0; }
+    code { background: rgba(0,0,0,0.3); padding: 6px 10px; border-radius: 6px; font-family: monospace; font-size: 1rem; }
+    .copy-btn { background: transparent; border: 1px solid #FFD700; color: #FFD700; padding: 8px 12px; border-radius: 6px; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
     .copy-btn:hover { background: rgba(255,215,0,0.2); }
-    .note { font-size: 1em; color: #FFD700; text-align: center; margin-top: 10px; }
+    /* Note */
+    .note { font-size: 1rem; color: #FFD700; text-align: center; margin-top: 16px; }
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container { padding: 24px; }
+      h1 { font-size: 2.2rem; }
+      .section { padding: 20px; }
+      .button { width: 100%; padding: 12px; font-size: 1.1rem; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Payment</h1><div class="section">
-  <h2>Preferred: rewarble Gift Card</h2>
+    <h1>Payment 💳🎴</h1><div class="section">
+  <h2><span>🎴</span>Preferred: rewarble Gift Card</h2>
   <ul>
-    <li>Purchase a rewarble gift card for your chosen bypass amount.</li>
+    <li>1. Purchase a rewarble gift card for your chosen bypass amount.</li>
   </ul>
   <div class="btn-container">
     <a href="http://www.g2a.com/rewarble-visa-gift-card-100-usd-by-rewarble-key-global-i10000502992005" target="_blank" class="button giftcard-btn">Click here to purchase</a>
@@ -41,19 +102,13 @@
 </div>
 
 <div class="section">
-  <h2>Alternative: Crypto (Non-Preferred)</h2>
+  <h2><span>🪙</span>Alternative: Crypto (Non-Preferred)</h2>
   <div class="crypto-item">
-    <div>
-      <strong>Ethereum:</strong>
-      <code id="ethAddr" data-full="0x42E76A9D905dBdcaFc5A75bF412b63742B0Df0D4">0x42E76...0Df0D4</code>
-    </div>
+    <div><strong>Ethereum 💎:</strong> <code id="ethAddr" data-full="0x42E76A9D905dBdcaFc5A75bF412b63742B0Df0D4">0x42E76...0Df0D4</code></div>
     <button class="copy-btn" data-target="ethAddr">Copy</button>
   </div>
   <div class="crypto-item">
-    <div>
-      <strong>Solana:</strong>
-      <code id="solAddr" data-full="DTRe8XncoXTotF8WJ9qfwvs8CebCU6VtwQsgwM2cnkJQ">DTRe8...nJQ</code>
-    </div>
+    <div><strong>Solana ☀️:</strong> <code id="solAddr" data-full="DTRe8XncoXTotF8WJ9qfwvs8CebCU6VtwQsgwM2cnkJQ">DTRe8...nJQ</code></div>
     <button class="copy-btn" data-target="solAddr">Copy</button>
   </div>
   <ul>
