@@ -7,8 +7,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background: #0d1117;
+      color: #e6edf3;
       display: flex;
       justify-content: center;
       padding: 30px 15px;
@@ -16,26 +16,26 @@
     .container {
       max-width: 600px;
       width: 100%;
-      background: #ffffff;
+      background: #161b22;
       padding: 32px;
       border-radius: 14px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     }
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       text-align: center;
       margin-bottom: 10px;
-      color: #2c3e50;
+      color: #58a6ff;
     }
     .subtext {
       text-align: center;
       font-size: 0.95rem;
-      color: #555;
+      color: #aaa;
       margin-bottom: 20px;
     }
     .badge {
-      background: #e67e22;
-      color: #fff;
+      background: #ff9800;
+      color: #000;
       font-weight: bold;
       padding: 6px 12px;
       display: inline-block;
@@ -50,16 +50,16 @@
       font-size: 1rem;
       font-weight: bold;
       margin-bottom: 10px;
-      color: #2c3e50;
+      color: #fff;
     }
     .wallet-box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 1px solid #ddd;
+      border: 1px solid #30363d;
       border-radius: 10px;
       padding: 15px;
-      background: #f0f0f0;
+      background: #1f242d;
     }
     .wallet-box img {
       width: 120px;
@@ -68,33 +68,35 @@
     .wallet-box code {
       font-family: monospace;
       font-size: 0.95rem;
-      background: #e0e0e0;
+      background: #2d333b;
       padding: 8px 12px;
       border-radius: 6px;
       word-break: break-all;
       margin-bottom: 10px;
+      color: #9fe7ff;
     }
     .copy-btn {
-      background: #3498db;
-      color: white;
+      background: transparent;
+      border: 1px solid #58a6ff;
+      color: #58a6ff;
       padding: 8px 16px;
-      border: none;
       border-radius: 6px;
       cursor: pointer;
       font-size: 0.9rem;
     }
     .copy-btn:hover {
-      background: #2980b9;
+      background: #58a6ff;
+      color: #000;
     }
     .note {
       font-size: 0.95rem;
-      color: #555;
+      color: #ccc;
       margin-top: 30px;
       text-align: center;
       line-height: 1.6;
     }
     .note a {
-      color: #e67e22;
+      color: #ffd700;
       text-decoration: underline;
     }
     .purchase-options {
@@ -104,20 +106,30 @@
     .purchase-options h3 {
       font-size: 1.1rem;
       margin-bottom: 10px;
+      color: #e6edf3;
     }
     .purchase-options a {
       display: inline-block;
       margin: 6px;
-      background: #ecf0f1;
+      background: #21262d;
       padding: 8px 14px;
       border-radius: 6px;
-      color: #2c3e50;
+      color: #9fe7ff;
       font-weight: bold;
       text-decoration: none;
-      border: 1px solid #ccc;
+      border: 1px solid #30363d;
     }
     .purchase-options a:hover {
-      background: #dcdde1;
+      background: #30363d;
+    }
+    .discord {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #bbb;
+    }
+    .discord strong {
+      color: #58a6ff;
     }
     @media (max-width: 500px) {
       .container { padding: 24px; }
@@ -129,7 +141,7 @@
 <body>
   <div class="container">
     <h1>Crypto Payment Only</h1>
-    <p class="subtext">We only accept cryptocurrency payments. No gift cards, PayPal, or bank transfers are supported.</p>
+    <p class="subtext">We only accept cryptocurrency. You must send payment to one of the addresses below to receive access.</p>
     <div class="badge">Only Crypto Accepted</div><div class="wallet-section">
   <div class="wallet-label">USDT (ERC20)</div>
   <div class="wallet-box">
@@ -158,12 +170,13 @@
 </div>
 
 <p class="note">
-  After sending payment, email <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a><br>
-  Include your transaction ID, macOS serial number, and preferred contact method.
+  Once you send the payment, email <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a> with your TXID, macOS serial, and how you want to receive the bypass.<br>
+  Or contact on Discord: <strong>minjunio</strong>
 </p>
 
 <div class="purchase-options">
   <h3>Need to buy crypto?</h3>
+  <p style="font-size: 0.9rem; color: #aaa;">You can buy crypto instantly using these trusted platforms:</p>
   <a href="https://www.bitpay.com/buy" target="_blank">Buy with Bitpay</a>
   <a href="https://www.moonpay.com/buy" target="_blank">Buy with Moonpay</a>
   <a href="https://www.paybis.com/" target="_blank">Buy with Paybis</a>
