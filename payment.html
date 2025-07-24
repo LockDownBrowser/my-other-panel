@@ -44,7 +44,7 @@
       text-align: center;
     }
     .wallet-section {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
     .wallet-label {
       font-size: 1rem;
@@ -61,9 +61,12 @@
       padding: 15px;
       background: #1f242d;
     }
-    .wallet-box img {
-      width: 120px;
-      margin-bottom: 10px;
+    .qr-frame {
+      background: #fff;
+      padding: 8px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     }
     .wallet-box code {
       font-family: monospace;
@@ -100,11 +103,11 @@
       text-decoration: underline;
     }
     .purchase-options {
-      margin-top: 30px;
+      margin-top: 50px;
       text-align: center;
     }
     .purchase-options h3 {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 10px;
       color: #e6edf3;
     }
@@ -112,7 +115,7 @@
       display: inline-block;
       margin: 6px;
       background: #21262d;
-      padding: 8px 14px;
+      padding: 10px 18px;
       border-radius: 6px;
       color: #9fe7ff;
       font-weight: bold;
@@ -131,6 +134,23 @@
     .discord strong {
       color: #58a6ff;
     }
+    .scroll-btn {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .scroll-btn button {
+      background: #58a6ff;
+      border: none;
+      padding: 10px 20px;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .scroll-btn button:hover {
+      background: #74c0ff;
+    }
     @media (max-width: 500px) {
       .container { padding: 24px; }
       .wallet-box img { width: 100px; }
@@ -141,11 +161,17 @@
 <body>
   <div class="container">
     <h1>Crypto Payment Only</h1>
-    <p class="subtext">We only accept cryptocurrency. You must send payment to one of the addresses below to receive access.</p>
-    <div class="badge">Only Crypto Accepted</div><div class="wallet-section">
+    <p class="subtext">We only accept cryptocurrency. Send payment to one of the addresses below.</p>
+    <div class="badge">Only Crypto Accepted</div><div class="scroll-btn">
+  <button onclick="document.getElementById('purchase-help').scrollIntoView({ behavior: 'smooth' });">Need help buying crypto? Click here</button>
+</div>
+
+<div class="wallet-section">
   <div class="wallet-label">USDT (ERC20)</div>
   <div class="wallet-box">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR">
+    <div class="qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR">
+    </div>
     <code id="usdt" data-full="0x90865978c3ccbd7060d74c186e63bbeeb0ebf962">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
     <button class="copy-btn" data-target="usdt">Copy</button>
   </div>
@@ -154,7 +180,9 @@
 <div class="wallet-section">
   <div class="wallet-label">Ethereum (ETH)</div>
   <div class="wallet-box">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR">
+    <div class="qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR">
+    </div>
     <code id="eth" data-full="0x90865978c3ccbd7060d74c186e63bbeeb0ebf962">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
     <button class="copy-btn" data-target="eth">Copy</button>
   </div>
@@ -163,23 +191,34 @@
 <div class="wallet-section">
   <div class="wallet-label">Solana (SOL)</div>
   <div class="wallet-box">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR">
+    <div class="qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR">
+    </div>
     <code id="sol" data-full="DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC">DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC</code>
     <button class="copy-btn" data-target="sol">Copy</button>
   </div>
 </div>
 
 <p class="note">
-  Once you send the payment, email <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a> with your TXID, macOS serial, and how you want to receive the bypass.<br>
+  After sending payment, email <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a><br>
+  Include: <strong>Transaction ID</strong>, your macOS serial number, and how you'd like to receive the bypass.<br>
   Or contact on Discord: <strong>minjunio</strong>
 </p>
 
-<div class="purchase-options">
+<div class="purchase-options" id="purchase-help">
   <h3>Need to buy crypto?</h3>
-  <p style="font-size: 0.9rem; color: #aaa;">You can buy crypto instantly using these trusted platforms:</p>
+  <p style="font-size: 0.9rem; color: #ccc;">Use any of the trusted services below to buy crypto with card or bank:</p>
   <a href="https://www.bitpay.com/buy" target="_blank">Buy with Bitpay</a>
   <a href="https://www.moonpay.com/buy" target="_blank">Buy with Moonpay</a>
   <a href="https://www.paybis.com/" target="_blank">Buy with Paybis</a>
+  <p style="font-size: 0.85rem; color: #999; margin-top: 10px;">
+    Step 1: Paste one of the addresses above into the destination field.<br>
+    Step 2: Choose the correct network:<br>
+    — USDT: ERC20 (Ethereum network)<br>
+    — ETH: Ethereum Mainnet<br>
+    — SOL: Solana Network<br>
+    Step 3: Complete the payment, then send your Transaction ID.
+  </p>
 </div>
 
   </div>  <script>
