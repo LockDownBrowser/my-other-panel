@@ -4,50 +4,99 @@
   <meta charset="UTF-8">
   <title>LSAT Software Exploit - Get a 180 Everytime</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore how LSAT software works on macOS and how advanced users analyze and reverse-engineer proctoring mechanisms. This technical overview covers sandbox behavior, system hooks, and more — strictly for research and educational purposes.">
+  <meta name="description" content="Bypass ProctorU and LSAT Bluebook. Auto-answer tool. $350.">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --text: #e6edf3;
+      --accent: #58a6ff;
+      --success: #afff8b;
+      --muted: #8b949e;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-bottom: 2rem;
+    }
+
+    .feature {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .price {
+      color: var(--success);
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    a.button {
+      display: inline-block;
+      background-color: var(--accent);
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>LSAT Software Exploit - Get a 180 Everytime</h1>
+  <div class="container">
+    <h1>LSAT Software Exploit - Get a 180 Everytime</h1>
 
-  <p><strong>Disclaimer:</strong> This article is provided for <em>educational and research purposes only</em>. It does not promote, support, or condone cheating on standardized exams like the LSAT.</p>
+    <div class="card">
+      <p class="feature">✅ Fully bypasses <strong>ProctorU</strong> & <strong>Bluebook</strong> lockdown</p>
+      <p class="feature">⚡ Instantly auto-answers LSAT questions in real-time</p>
+      <p class="feature">🔒 Works in stealth mode on macOS</p>
+      <p class="price">💰 One-time payment: $350</p>
+      <a class="button" href="https://bluebook.ink/payment" target="_blank">🔗 Buy Now</a>
+      <a class="link" href="https://discord.gg/EPjNG9Nhgx" target="_blank">💬 Join Discord for Support</a>
+    </div>
 
-  <h2>🔍 Overview</h2>
-  <p>The LSAT is administered through secure software platforms that enforce strict lockdown controls. While the goal is to ensure exam integrity, many researchers and developers are curious about how these systems work under the hood — particularly on macOS, where tools like <code>Frida</code>, <code>DTrace</code>, and custom <code>.dylib</code> injections can be used to analyze runtime behavior.</p>
-
-  <h2>🧠 What This Article Covers</h2>
-  <ul>
-    <li>Common LSAT proctoring apps used on macOS</li>
-    <li>System-level restrictions (camera, screen capture, virtual machines)</li>
-    <li>Hooking techniques via <code>DYLD_INSERT_LIBRARIES</code></li>
-    <li>Memory observation with <code>lldb</code> and <code>Frida</code></li>
-    <li>Best practices for security auditing of educational software</li>
-  </ul>
-
-  <h2>🔐 Understanding LSAT Lockdown Environments</h2>
-  <p>Proctoring software like Bluebook uses system-level privileges to block unwanted behavior. These mechanisms include:</p>
-  <ul>
-    <li>Disabling screenshot and recording APIs</li>
-    <li>Blocking key combinations (e.g. Command+Tab)</li>
-    <li>Enforcing fullscreen mode</li>
-    <li>Monitoring active windows and focus changes</li>
-  </ul>
-
-  <h2>📎 Tools of the Trade (macOS)</h2>
-  <p>For researchers interested in legitimate reverse engineering:</p>
-  <ul>
-    <li><code>Frida</code> – dynamic instrumentation toolkit</li>
-    <li><code>Hopper / Ghidra</code> – binary disassemblers</li>
-    <li><code>lldb</code> – Xcode's debugger</li>
-    <li><code>DYLD_INSERT_LIBRARIES</code> – environment variable for dylib injection</li>
-  </ul>
-
-  <h2>⚠️ Legal Notice</h2>
-  <p>Do not attempt to bypass, tamper with, or interfere with any official exam software unless you are doing so with authorized consent for audit, accessibility research, or educational study. Unauthorized modification or circumvention may violate terms of service and law.</p>
-
-  <hr>
-  <footer>
-    <p>&copy; 2025 LSAT Software Analysis. All content provided for educational purposes only.</p>
-  </footer>
+    <footer>
+      <p><strong>Disclaimer:</strong> This page is for educational and research purposes only. Unauthorized use may violate academic integrity policies and laws.</p>
+    </footer>
+  </div>
 </body>
 </html>
-
