@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crypto Payment – Bluebook Bypass</title>
-  <meta name="description" content="Secure crypto checkout for the SAT/PSAT Bluebook bypass tool. Clear steps. Clean layout.">
+  <meta name="description" content="Pay securely with crypto and follow clear steps to access the SAT/PSAT bypass tool. Live price info included.">
   <style>
     body {
       margin: 0;
@@ -13,29 +13,25 @@
       color: #2b2e3c;
       padding: 20px;
     }
-
     .container {
       max-width: 760px;
       margin: auto;
-      background: #ffffff;
+      background: #fff;
       padding: 30px 24px;
       border-radius: 12px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
     }
-
     h1 {
       text-align: center;
       color: #1f2c48;
       margin-bottom: 8px;
     }
-
     .subtext {
       text-align: center;
       color: #555;
       font-size: 0.95rem;
       margin-bottom: 24px;
     }
-
     .badge {
       background: #ffe066;
       color: #000;
@@ -46,17 +42,14 @@
       display: inline-block;
       margin: 0 auto 25px;
     }
-
     .wallet-section {
       margin-bottom: 30px;
     }
-
     .wallet-label {
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 12px;
     }
-
     .wallet-box {
       background: #f8f9fc;
       border: 2px solid #d3d7e3;
@@ -64,7 +57,6 @@
       padding: 20px;
       text-align: center;
     }
-
     .qr-frame {
       display: inline-block;
       padding: 10px;
@@ -73,15 +65,12 @@
       border-radius: 10px;
       margin-bottom: 14px;
     }
-
     .qr-frame img {
       width: 130px;
       height: 130px;
       object-fit: contain;
     }
-
     .wallet-box code {
-      display: block;
       background: #e9edf5;
       color: #333;
       padding: 10px 14px;
@@ -89,8 +78,8 @@
       border-radius: 6px;
       word-break: break-all;
       margin: 12px 0;
+      display: block;
     }
-
     .copy-btn {
       background: #1f2c48;
       color: #fff;
@@ -100,16 +89,13 @@
       border-radius: 6px;
       cursor: pointer;
     }
-
     .copy-btn:hover {
       background: #2c3b5d;
     }
-
     .scroll-btn {
       text-align: center;
       margin: 30px 0;
     }
-
     .scroll-btn button {
       background: #1f2c48;
       border: none;
@@ -120,11 +106,9 @@
       font-size: 0.95rem;
       cursor: pointer;
     }
-
     .scroll-btn button:hover {
       background: #32476c;
     }
-
     .instruction-box {
       background: #f9fafc;
       border-left: 4px solid #1f2c48;
@@ -132,36 +116,30 @@
       margin-top: 40px;
       border-radius: 8px;
     }
-
     .instruction-box h3 {
       margin-top: 0;
       color: #1f2c48;
       font-size: 1.2rem;
     }
-
     .instruction-box ul {
       padding-left: 20px;
       margin: 10px 0;
     }
-
     .instruction-box li {
       margin-bottom: 10px;
       font-weight: 500;
       color: #333;
     }
-
     .contact {
       margin-top: 30px;
       text-align: center;
       font-size: 0.95rem;
       color: #444;
     }
-
     .contact a {
       color: #1f2c48;
       text-decoration: underline;
     }
-
     @media (max-width: 540px) {
       .wallet-box {
         padding: 16px 12px;
@@ -180,22 +158,17 @@
 <body>
   <div class="container">
     <h1>Crypto Payment</h1>
-    <p class="subtext">Send payment based on the tool you're buying (SAT or PSAT).</p>
-    <div class="badge">Payment Must Match Your Bypass</div>
+    <p class="subtext">Send the correct paid amount based on which bypass you choose (SAT or PSAT).</p>
+    <div class="badge">Payment Must Equal Your Bypass Choice ($250)</div>
 
     <div class="scroll-btn">
-      <button onclick="document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });">
-        Need help? Scroll to instructions
-      </button>
+      <button onclick="document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });">Scroll to instructions</button>
     </div>
 
-    <!-- Wallets -->
     <div class="wallet-section">
       <div class="wallet-label">USDT (ERC20)</div>
       <div class="wallet-box">
-        <div class="qr-frame">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR">
-        </div>
+        <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR"></div>
         <code id="usdt">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
         <button class="copy-btn" data-target="usdt">Copy</button>
       </div>
@@ -204,9 +177,7 @@
     <div class="wallet-section">
       <div class="wallet-label">Ethereum (ETH)</div>
       <div class="wallet-box">
-        <div class="qr-frame">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR">
-        </div>
+        <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR"></div>
         <code id="eth">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
         <button class="copy-btn" data-target="eth">Copy</button>
       </div>
@@ -215,37 +186,65 @@
     <div class="wallet-section">
       <div class="wallet-label">Solana (SOL)</div>
       <div class="wallet-box">
-        <div class="qr-frame">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR">
-        </div>
+        <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR"></div>
         <code id="sol">DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC</code>
         <button class="copy-btn" data-target="sol">Copy</button>
       </div>
     </div>
 
-    <!-- Instructions -->
     <div class="instruction-box" id="instructions">
-      <h3>📌 How to Pay</h3>
+      <h3>🧾 How to Pay – Step-by-Step (Easy)</h3>
       <ul>
-        <li>✅ Send the exact amount based on the bypass you're buying (SAT or PSAT)</li>
-        <li>✅ Choose the correct network:
-          <br>— USDT: ERC20 (Ethereum)
-          <br>— ETH: Ethereum Mainnet
-          <br>— SOL: Solana Network
+        <li><strong>1. Go to a crypto website:</strong><br>
+          You can use <a href="https://www.bitpay.com/buy" target="_blank">Bitpay</a>, <a href="https://www.moonpay.com/buy" target="_blank">Moonpay</a>, or <a href="https://www.paybis.com/" target="_blank">Paybis</a>.
         </li>
-        <li>✅ After payment, email or message with:
-          <br>— Your transaction ID
-          <br>— Your macOS serial number
-          <br>— Which bypass you're purchasing (SAT or PSAT)
+
+        <li><strong>2. Choose what to buy:</strong><br>
+          You can pick:
+          <ul>
+            <li><strong>ETH (Ethereum)</strong></li>
+            <li><strong>USDT (Tether)</strong></li>
+            <li><strong>SOL (Solana)</strong></li>
+          </ul>
+        </li>
+
+        <li><strong>3. Very important: Choose the correct network:</strong><br>
+          <ul>
+            <li>✅ For USDT, select <strong>ERC20 (Ethereum network)</strong></li>
+            <li>✅ For ETH, select <strong>Ethereum Mainnet</strong></li>
+            <li>✅ For SOL, select <strong>Solana Network</strong></li>
+          </ul>
+          <span style="color: red; font-weight: bold;">⚠️ If you use the wrong network, the payment will be lost.</span>
+        </li>
+
+        <li><strong>4. How much to send?</strong><br>
+          You must send exactly <strong>$250 USD</strong> worth of crypto for the SAT or PSAT bypass.
+        </li>
+
+        <li><strong>5. After sending payment, contact us:</strong><br>
+          <ul>
+            <li>Your <strong>Transaction ID</strong></li>
+            <li>Your <strong>macOS serial number</strong></li>
+            <li>Which tool: <strong>SAT or PSAT</strong></li>
+          </ul>
         </li>
       </ul>
+
+      <h3 style="margin-top: 28px;">💱 Live Prices (Today)</h3>
+      <ul style="font-size: 0.9rem; color: #222;">
+        <li>🟣 Ethereum (ETH): ~$3,743</li>
+        <li>🟡 Tether (USDT): ~$1.00</li>
+        <li>🔵 Solana (SOL): ~$187</li>
+      </ul>
+      <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">
+        Prices update often. Always double-check before confirming your purchase.
+      </p>
     </div>
 
-    <!-- Contact -->
     <div class="contact">
       📩 Email: <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a><br />
       💬 Discord: <strong>minjunio</strong><br />
-      Feel free to contact if you need help before sending payment.
+      Feel free to contact before sending payment if you're unsure.
     </div>
   </div>
 
