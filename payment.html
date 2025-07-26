@@ -1,8 +1,10 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Payment - Bypass Access</title>
+  <title>Crypto Payment – Bluebook Bypass</title>
+  <meta name="description" content="Pay securely with cryptocurrency to access the Bluebook SAT/PSAT bypass tool. Follow clear steps to send exact amount.">
   <style>
     body {
       margin: 0;
@@ -14,125 +16,79 @@
       padding: 30px 15px;
     }
     .container {
-      max-width: 600px;
+      max-width: 720px;
       width: 100%;
       background: #161b22;
-      padding: 32px;
+      padding: 36px 26px;
       border-radius: 14px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     }
     h1 {
-      font-size: 1.9rem;
       text-align: center;
-      margin-bottom: 10px;
+      font-size: 2rem;
       color: #58a6ff;
+      margin-bottom: 10px;
     }
     .subtext {
       text-align: center;
-      font-size: 0.95rem;
       color: #aaa;
+      font-size: 0.95rem;
       margin-bottom: 20px;
     }
     .badge {
-      background: #ff9800;
+      background: #ffcc00;
       color: #000;
       font-weight: bold;
-      padding: 6px 12px;
-      display: inline-block;
-      border-radius: 6px;
-      margin: 0 auto 20px;
+      padding: 6px 14px;
+      border-radius: 20px;
       text-align: center;
+      display: inline-block;
+      margin: 0 auto 30px;
     }
     .wallet-section {
       margin-bottom: 30px;
     }
     .wallet-label {
       font-size: 1rem;
-      font-weight: bold;
+      font-weight: 600;
       margin-bottom: 10px;
       color: #fff;
     }
     .wallet-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background: #1f242d;
       border: 1px solid #30363d;
       border-radius: 10px;
-      padding: 15px;
-      background: #1f242d;
+      padding: 16px;
+      text-align: center;
     }
     .qr-frame {
       background: #fff;
       padding: 8px;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-bottom: 12px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     }
     .wallet-box code {
-      font-family: monospace;
-      font-size: 0.95rem;
+      display: block;
       background: #2d333b;
+      color: #9fe7ff;
       padding: 8px 12px;
       border-radius: 6px;
+      font-size: 0.95rem;
       word-break: break-all;
       margin-bottom: 10px;
-      color: #9fe7ff;
     }
     .copy-btn {
       background: transparent;
       border: 1px solid #58a6ff;
       color: #58a6ff;
-      padding: 8px 16px;
+      padding: 8px 14px;
+      font-size: 0.9rem;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 0.9rem;
     }
     .copy-btn:hover {
       background: #58a6ff;
       color: #000;
-    }
-    .note {
-      font-size: 0.95rem;
-      color: #ccc;
-      margin-top: 30px;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .note a {
-      color: #ffd700;
-      text-decoration: underline;
-    }
-    .purchase-options {
-      margin-top: 50px;
-      text-align: center;
-    }
-    .purchase-options h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #e6edf3;
-    }
-    .purchase-options a {
-      display: inline-block;
-      margin: 6px;
-      background: #21262d;
-      padding: 10px 18px;
-      border-radius: 6px;
-      color: #9fe7ff;
-      font-weight: bold;
-      text-decoration: none;
-      border: 1px solid #30363d;
-    }
-    .purchase-options a:hover {
-      background: #30363d;
-    }
-    .discord {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.95rem;
-      color: #bbb;
-    }
-    .discord strong {
-      color: #58a6ff;
     }
     .scroll-btn {
       text-align: center;
@@ -151,6 +107,46 @@
     .scroll-btn button:hover {
       background: #74c0ff;
     }
+    .note {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: 30px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .note a {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+    .purchase-options {
+      margin-top: 50px;
+    }
+    .purchase-options h2 {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #e6edf3;
+      margin-bottom: 10px;
+    }
+    .purchase-options p,
+    .purchase-options ul {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin: 10px 0;
+    }
+    .purchase-options a {
+      display: inline-block;
+      margin: 6px;
+      background: #21262d;
+      padding: 10px 18px;
+      border-radius: 6px;
+      color: #9fe7ff;
+      font-weight: bold;
+      text-decoration: none;
+      border: 1px solid #30363d;
+    }
+    .purchase-options a:hover {
+      background: #30363d;
+    }
     @media (max-width: 500px) {
       .container { padding: 24px; }
       .wallet-box img { width: 100px; }
@@ -161,67 +157,82 @@
 <body>
   <div class="container">
     <h1>Crypto Payment Only</h1>
-    <p class="subtext">We only accept cryptocurrency. Send payment to one of the addresses below.</p>
-    <div class="badge">Only Crypto Accepted</div><div class="scroll-btn">
-  <button onclick="document.getElementById('purchase-help').scrollIntoView({ behavior: 'smooth' });">Need help buying crypto? Click here</button>
-</div>
+    <p class="subtext">We accept only crypto. Send the exact amount for the bypass you want below.</p>
+    <div class="badge">One-Time Purchase — $250</div>
 
-<div class="wallet-section">
-  <div class="wallet-label">USDT (ERC20)</div>
-  <div class="wallet-box">
-    <div class="qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR">
+    <div class="scroll-btn">
+      <button onclick="document.getElementById('purchase-help').scrollIntoView({ behavior: 'smooth' });">
+        Need help buying crypto?
+      </button>
     </div>
-    <code id="usdt" data-full="0x90865978c3ccbd7060d74c186e63bbeeb0ebf962">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
-    <button class="copy-btn" data-target="usdt">Copy</button>
-  </div>
-</div>
 
-<div class="wallet-section">
-  <div class="wallet-label">Ethereum (ETH)</div>
-  <div class="wallet-box">
-    <div class="qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR">
+    <!-- Wallets -->
+    <div class="wallet-section">
+      <div class="wallet-label">USDT (ERC20)</div>
+      <div class="wallet-box">
+        <div class="qr-frame">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR">
+        </div>
+        <code id="usdt" data-full="0x90865978c3ccbd7060d74c186e63bbeeb0ebf962">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
+        <button class="copy-btn" data-target="usdt">Copy</button>
+      </div>
     </div>
-    <code id="eth" data-full="0x90865978c3ccbd7060d74c186e63bbeeb0ebf962">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
-    <button class="copy-btn" data-target="eth">Copy</button>
-  </div>
-</div>
 
-<div class="wallet-section">
-  <div class="wallet-label">Solana (SOL)</div>
-  <div class="wallet-box">
-    <div class="qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR">
+    <div class="wallet-section">
+      <div class="wallet-label">Ethereum (ETH)</div>
+      <div class="wallet-box">
+        <div class="qr-frame">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR">
+        </div>
+        <code id="eth" data-full="0x90865978c3ccbd7060d74c186e63bbeeb0ebf962">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
+        <button class="copy-btn" data-target="eth">Copy</button>
+      </div>
     </div>
-    <code id="sol" data-full="DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC">DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC</code>
-    <button class="copy-btn" data-target="sol">Copy</button>
+
+    <div class="wallet-section">
+      <div class="wallet-label">Solana (SOL)</div>
+      <div class="wallet-box">
+        <div class="qr-frame">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR">
+        </div>
+        <code id="sol" data-full="DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC">DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC</code>
+        <button class="copy-btn" data-target="sol">Copy</button>
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <p class="note">
+      ✅ Send the exact amount for the tool: <strong>$250 USD equivalent</strong><br>
+      ✅ Include your <strong>Transaction ID</strong><br>
+      ✅ Mention which bypass you're purchasing: <strong>SAT or PSAT</strong><br>
+      ✅ Use the correct network:<br>
+      – USDT → ERC20 (Ethereum)<br>
+      – ETH → Ethereum Mainnet<br>
+      – SOL → Solana Network
+    </p>
+
+    <p class="note">
+      📩 Email: <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a><br>
+      💬 Discord: <strong>minjunio</strong><br>
+      Need help or unsure? Just contact before you send.
+    </p>
+
+    <!-- Help Section -->
+    <div class="purchase-options" id="purchase-help">
+      <h2>Need to Buy Crypto?</h2>
+      <p>You can use one of these trusted platforms to buy with card or bank:</p>
+      <a href="https://www.bitpay.com/buy" target="_blank">Bitpay</a>
+      <a href="https://www.moonpay.com/buy" target="_blank">Moonpay</a>
+      <a href="https://www.paybis.com/" target="_blank">Paybis</a>
+      <ul>
+        <li>Step 1: Choose the right crypto and copy the wallet above</li>
+        <li>Step 2: Choose the right network (ERC20, Ethereum, or Solana)</li>
+        <li>Step 3: Send exactly $250 worth and email or DM the proof</li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<p class="note">
-  After sending payment, email <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a><br>
-  Include: <strong>Transaction ID</strong>, your macOS serial number, and how you'd like to receive the bypass.<br>
-  Or contact on Discord: <strong>minjunio</strong>
-</p>
-
-<div class="purchase-options" id="purchase-help">
-  <h3>Need to buy crypto?</h3>
-  <p style="font-size: 0.9rem; color: #ccc;">Use any of the trusted services below to buy crypto with card or bank:</p>
-  <a href="https://www.bitpay.com/buy" target="_blank">Buy with Bitpay</a>
-  <a href="https://www.moonpay.com/buy" target="_blank">Buy with Moonpay</a>
-  <a href="https://www.paybis.com/" target="_blank">Buy with Paybis</a>
-  <p style="font-size: 0.85rem; color: #999; margin-top: 10px;">
-    Step 1: Paste one of the addresses above into the destination field.<br>
-    Step 2: Choose the correct network:<br>
-    — USDT: ERC20 (Ethereum network)<br>
-    — ETH: Ethereum Mainnet<br>
-    — SOL: Solana Network<br>
-    Step 3: Complete the payment, then send your Transaction ID.
-  </p>
-</div>
-
-  </div>  <script>
+  <script>
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-target');
@@ -233,5 +244,6 @@
         });
       });
     });
-  </script></body>
+  </script>
+</body>
 </html>
