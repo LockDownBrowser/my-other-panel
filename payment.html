@@ -3,166 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Payment – Bluebook Bypass</title>
-  <meta name="description" content="Pay securely with cryptocurrency to access the Bluebook SAT/PSAT bypass tool. Follow clear steps to send exact amount.">
+  <title>Crypto Payment – Secure Access</title>
+  <meta name="description" content="Pay securely with crypto to access the Bluebook bypass tool. Follow clear instructions.">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0d1117;
-      color: #e6edf3;
-      display: flex;
-      justify-content: center;
-      padding: 30px 15px;
+      background: #f4f6fa;
+      color: #2b2e3c;
+      padding: 20px;
     }
+
     .container {
-      max-width: 720px;
-      width: 100%;
-      background: #161b22;
-      padding: 36px 26px;
-      border-radius: 14px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+      max-width: 760px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px 24px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
     }
+
     h1 {
       text-align: center;
-      font-size: 2rem;
-      color: #58a6ff;
-      margin-bottom: 10px;
+      color: #1f2c48;
+      margin-bottom: 8px;
     }
+
     .subtext {
       text-align: center;
-      color: #aaa;
+      color: #555;
       font-size: 0.95rem;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
+
     .badge {
-      background: #ffcc00;
+      background: #ffe066;
       color: #000;
       font-weight: bold;
       padding: 6px 14px;
       border-radius: 20px;
       text-align: center;
       display: inline-block;
-      margin: 0 auto 30px;
+      margin: 0 auto 25px;
     }
+
     .wallet-section {
       margin-bottom: 30px;
     }
+
     .wallet-label {
       font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .wallet-box {
-      background: #1f242d;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 16px;
-      text-align: center;
-    }
-    .qr-frame {
-      background: #fff;
-      padding: 8px;
-      border-radius: 8px;
       margin-bottom: 12px;
     }
+
+    .wallet-box {
+      background: #f0f2f7;
+      border: 1px solid #d2d7e0;
+      border-radius: 10px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .qr-frame img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
     .wallet-box code {
       display: block;
-      background: #2d333b;
-      color: #9fe7ff;
-      padding: 8px 12px;
-      border-radius: 6px;
+      background: #e8ebf2;
+      color: #333;
+      padding: 10px 14px;
       font-size: 0.95rem;
+      border-radius: 6px;
       word-break: break-all;
       margin-bottom: 10px;
     }
+
     .copy-btn {
-      background: transparent;
-      border: 1px solid #58a6ff;
-      color: #58a6ff;
+      background: #1f2c48;
+      color: #fff;
+      border: none;
       padding: 8px 14px;
       font-size: 0.9rem;
       border-radius: 6px;
       cursor: pointer;
     }
+
     .copy-btn:hover {
-      background: #58a6ff;
-      color: #000;
+      background: #2d3a5f;
     }
+
     .scroll-btn {
       text-align: center;
       margin: 30px 0;
     }
+
     .scroll-btn button {
-      background: #58a6ff;
+      background: #1f2c48;
       border: none;
       padding: 10px 20px;
-      color: #000;
+      color: #fff;
       font-weight: bold;
       border-radius: 8px;
       font-size: 0.95rem;
       cursor: pointer;
     }
+
     .scroll-btn button:hover {
-      background: #74c0ff;
+      background: #32476c;
     }
-    .note {
-      font-size: 0.95rem;
-      color: #ccc;
+
+    .instruction-box {
+      background: #f9fafc;
+      border-left: 4px solid #1f2c48;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+    }
+
+    .instruction-box h3 {
+      margin-top: 0;
+      color: #1f2c48;
+      font-size: 1.2rem;
+    }
+
+    .instruction-box ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .instruction-box li {
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .contact {
       margin-top: 30px;
       text-align: center;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #444;
     }
-    .note a {
-      color: #ffd700;
+
+    .contact a {
+      color: #1f2c48;
       text-decoration: underline;
     }
-    .purchase-options {
-      margin-top: 50px;
-    }
-    .purchase-options h2 {
-      text-align: center;
-      font-size: 1.3rem;
-      color: #e6edf3;
-      margin-bottom: 10px;
-    }
-    .purchase-options p,
-    .purchase-options ul {
-      font-size: 0.95rem;
-      color: #ccc;
-      margin: 10px 0;
-    }
-    .purchase-options a {
-      display: inline-block;
-      margin: 6px;
-      background: #21262d;
-      padding: 10px 18px;
-      border-radius: 6px;
-      color: #9fe7ff;
-      font-weight: bold;
-      text-decoration: none;
-      border: 1px solid #30363d;
-    }
-    .purchase-options a:hover {
-      background: #30363d;
-    }
-    @media (max-width: 500px) {
-      .container { padding: 24px; }
-      .wallet-box img { width: 100px; }
-      .copy-btn { width: 100%; }
+
+    @media (max-width: 540px) {
+      .wallet-box {
+        padding: 16px 12px;
+      }
+      .qr-frame img {
+        width: 100px;
+        height: 100px;
+      }
+      .copy-btn {
+        width: 100%;
+        margin-top: 6px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Crypto Payment Only</h1>
-    <p class="subtext">We accept only crypto. Send the exact amount for the bypass you want below.</p>
-    <div class="badge">One-Time Purchase — $250</div>
+    <h1>Crypto Payment</h1>
+    <p class="subtext">Send exact payment below to unlock SAT/PSAT access.</p>
+    <div class="badge">$250 One-Time Purchase</div>
 
     <div class="scroll-btn">
-      <button onclick="document.getElementById('purchase-help').scrollIntoView({ behavior: 'smooth' });">
-        Need help buying crypto?
+      <button onclick="document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });">
+        Need help? Scroll to instructions
       </button>
     </div>
 
@@ -173,7 +188,7 @@
         <div class="qr-frame">
           <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR">
         </div>
-        <code id="usdt" data-full="0x90865978c3ccbd7060d74c186e63bbeeb0ebf962">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
+        <code id="usdt">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
         <button class="copy-btn" data-target="usdt">Copy</button>
       </div>
     </div>
@@ -184,7 +199,7 @@
         <div class="qr-frame">
           <img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR">
         </div>
-        <code id="eth" data-full="0x90865978c3ccbd7060d74c186e63bbeeb0ebf962">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
+        <code id="eth">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
         <button class="copy-btn" data-target="eth">Copy</button>
       </div>
     </div>
@@ -195,50 +210,41 @@
         <div class="qr-frame">
           <img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR">
         </div>
-        <code id="sol" data-full="DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC">DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC</code>
+        <code id="sol">DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC</code>
         <button class="copy-btn" data-target="sol">Copy</button>
       </div>
     </div>
 
     <!-- Instructions -->
-    <p class="note">
-      ✅ Send the exact amount for the tool: <strong>$250 USD equivalent</strong><br>
-      ✅ Include your <strong>Transaction ID</strong><br>
-      ✅ Mention which bypass you're purchasing: <strong>SAT or PSAT</strong><br>
-      ✅ Use the correct network:<br>
-      – USDT → ERC20 (Ethereum)<br>
-      – ETH → Ethereum Mainnet<br>
-      – SOL → Solana Network
-    </p>
+    <div class="instruction-box" id="instructions">
+      <h3>📌 How to Pay</h3>
+      <ul>
+        <li>✅ Send exactly <strong>$250 worth</strong> of crypto to one wallet above.</li>
+        <li>✅ Choose the correct network:
+          <br>— USDT: ERC20 (Ethereum)  
+          <br>— ETH: Ethereum Mainnet  
+          <br>— SOL: Solana Network
+        </li>
+        <li>✅ Email or DM after payment with:
+          <br>— Transaction ID  
+          <br>— Your device serial number  
+          <br>— Which bypass you are purchasing (SAT or PSAT)
+        </li>
+      </ul>
+    </div>
 
-    <p class="note">
+    <div class="contact">
       📩 Email: <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a><br>
       💬 Discord: <strong>minjunio</strong><br>
-      Need help or unsure? Just contact before you send.
-    </p>
-
-    <!-- Help Section -->
-    <div class="purchase-options" id="purchase-help">
-      <h2>Need to Buy Crypto?</h2>
-      <p>You can use one of these trusted platforms to buy with card or bank:</p>
-      <a href="https://www.bitpay.com/buy" target="_blank">Bitpay</a>
-      <a href="https://www.moonpay.com/buy" target="_blank">Moonpay</a>
-      <a href="https://www.paybis.com/" target="_blank">Paybis</a>
-      <ul>
-        <li>Step 1: Choose the right crypto and copy the wallet above</li>
-        <li>Step 2: Choose the right network (ERC20, Ethereum, or Solana)</li>
-        <li>Step 3: Send exactly $250 worth and email or DM the proof</li>
-      </ul>
+      If unsure, just contact before sending payment.
     </div>
   </div>
 
   <script>
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-target');
-        const code = document.getElementById(id);
-        const full = code.getAttribute('data-full');
-        navigator.clipboard.writeText(full).then(() => {
+        const code = document.getElementById(btn.getAttribute('data-target'));
+        navigator.clipboard.writeText(code.textContent).then(() => {
           btn.textContent = 'Copied!';
           setTimeout(() => btn.textContent = 'Copy', 2000);
         });
