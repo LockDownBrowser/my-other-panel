@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to Get a 180 on Your LSATs – Guaranteed (2025 Method)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Achieve a perfect 180 on your LSATs using our secure and proven strategy. 2025-ready. Limited access. $350 for full setup." />
+  <meta name="keywords" content="LSAT 180, perfect LSAT score, LSAT cheat, LSAT software, 2025 LSAT strategy, auto LSAT, LSAT live answers" />
+  <style>
+    :root {
+      --bg: #fafbff;
+      --text: #333;
+      --accent: #407be0;
+      --success: #28a745;
+      --card: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px var(--shadow);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 1.4rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    ul {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+    }
+
+    .price-box {
+      background: #eaf2ff;
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--success);
+      color: #fff;
+      padding: 0.9rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>How to Get a 180 on Your LSATs – Guaranteed</h1>
+
+    <p>Struggling with prep books? Tired of unpredictable scores? We've created a fully working solution tailored to the current <strong>LSAT software (2025)</strong> — no installation, no stress, full stealth.</p>
+
+    <ul>
+      <li>Works on official LSAT software (not browser-based)</li>
+      <li>Secure answer delivery during exam time</li>
+      <li>Minimal user action needed – automated solution</li>
+      <li>Used by 200+ clients in 2024 with perfect results</li>
+    </ul>
+
+    <div class="price-box">
+      💰 <strong>Total Cost:</strong> $350 (one-time) — includes setup + full exam coverage
+    </div>
+
+    <p style="text-align:center;">
+      <a href="payment.html" class="button">→ Continue to Secure Payment</a>
+    </p>
+
+    <div class="footer">
+      <p><strong>Disclaimer:</strong> This service is provided strictly for research and demonstration. Use at your own risk. We do not encourage or endorse academic dishonesty.</p>
+    </div>
+  </div>
+</body>
+</html>
