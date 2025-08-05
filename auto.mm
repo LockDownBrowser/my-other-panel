@@ -1,1 +1,1 @@
-I love gay niggers
+may lockdown browser auto anwser prototype 
