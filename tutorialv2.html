@@ -35,29 +35,11 @@
       background: #e0ecff;
       border-radius: 6px;
       padding: 12px;
-      position: relative;
       overflow-x: auto;
-    }
-    .command-text {
       font-family: monospace;
       font-size: 0.95em;
       color: #1e40af;
       white-space: nowrap;
-    }
-    .copy-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.85em;
-    }
-    .copy-btn:hover {
-      background: #1d4ed8;
     }
     .note {
       background: #dbeafe;
@@ -73,12 +55,8 @@
       body {
         padding: 10px;
       }
-      .command-text {
+      .command-box {
         font-size: 0.85em;
-      }
-      .copy-btn {
-        padding: 4px 8px;
-        font-size: 0.8em;
       }
     }
   </style>
@@ -122,8 +100,7 @@
   <h2>Step 4 — Run the injection command</h2>
   <p>Open Terminal and paste this command:</p>
   <div class="command-box">
-    <span class="command-text" id="cmd">DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook</span>
-    <button class="copy-btn" onclick="copyCommand()">Copy</button>
+    DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook
   </div>
 
   <h2>Step 5 — Using the Bypass</h2>
@@ -133,15 +110,6 @@
     <li>A window will pop up with answers.</li>
     <li>Start a new practice test and wait for the answer window to appear again.</li>
   </ol>
-
-  <script>
-    function copyCommand() {
-      const command = document.getElementById("cmd").innerText;
-      navigator.clipboard.writeText(command).then(() => {
-        alert("✅ Command copied to clipboard!");
-      });
-    }
-  </script>
 
 </body>
 </html>
