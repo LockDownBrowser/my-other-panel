@@ -6,35 +6,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: #111;
-      color: #eee;
+      background: #f4f8fb;
+      color: #1e293b;
       font-family: Arial, sans-serif;
       line-height: 1.6;
       padding: 20px;
+      max-width: 800px;
+      margin: auto;
     }
     h1, h2 {
-      color: #4CAF50;
+      color: #2563eb;
     }
     a {
-      color: #4FC3F7;
+      color: #2563eb;
       text-decoration: none;
     }
+    a:hover {
+      text-decoration: underline;
+    }
     code {
-      background: #222;
+      background: #e0ecff;
       padding: 4px 6px;
       border-radius: 4px;
-      color: #FFD54F;
+      color: #1e40af;
+      font-weight: bold;
     }
     pre {
-      background: #222;
+      background: #e0ecff;
       padding: 10px;
       border-radius: 6px;
       overflow-x: auto;
-      color: #FFD54F;
+      color: #1e40af;
+      font-weight: bold;
+      position: relative;
+    }
+    button.copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    button.copy-btn:hover {
+      background: #1d4ed8;
     }
     .note {
-      background: #333;
-      border-left: 4px solid #4CAF50;
+      background: #dbeafe;
+      border-left: 4px solid #2563eb;
       padding: 10px;
       margin: 15px 0;
     }
@@ -81,8 +104,9 @@
 
   <h2>Step 4 — Run the injection command</h2>
   <p>Open Terminal and paste this command:</p>
-  <pre><code>DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook</code></pre>
-  <p>Press <strong>Enter</strong>. Bluebook will launch with the dylib loaded.</p>
+  <pre><code id="cmd">DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook</code>
+    <button class="copy-btn" onclick="copyCommand()">Copy</button>
+  </pre>
 
   <h2>Step 5 — Using the Bypass</h2>
   <ol>
@@ -91,6 +115,15 @@
     <li>A window will pop up with answers.</li>
     <li>Start a new practice test and wait for the answer window to appear again.</li>
   </ol>
+
+  <script>
+    function copyCommand() {
+      const command = document.getElementById("cmd").innerText;
+      navigator.clipboard.writeText(command).then(() => {
+        alert("Command copied to clipboard!");
+      });
+    }
+  </script>
 
 </body>
 </html>
