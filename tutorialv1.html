@@ -1,0 +1,115 @@
+<!DOCTYPE html>      
+<html lang="en">      
+<head>      
+  <meta charset="UTF-8">      
+  <title>Bluebook macOS Injection Tutorial</title>      
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+  <style>      
+    body {      
+      background: #f4f8fb;      
+      color: #1e293b;      
+      font-family: Arial, sans-serif;      
+      line-height: 1.6;      
+      padding: 15px;      
+      max-width: 900px;      
+      margin: auto;      
+    }      
+    h1, h2 {      
+      color: #2563eb;      
+    }      
+    a {      
+      color: #2563eb;      
+      text-decoration: none;      
+    }      
+    a:hover {      
+      text-decoration: underline;      
+    }      
+    code {      
+      background: #e0ecff;      
+      padding: 4px 6px;      
+      border-radius: 4px;      
+      color: #1e40af;      
+      font-weight: bold;      
+    }      
+    .command-box {      
+      background: #e0ecff;      
+      border-radius: 6px;      
+      padding: 12px;      
+      overflow-x: auto;      
+      font-family: monospace;      
+      font-size: 0.95em;      
+      color: #1e40af;      
+      white-space: nowrap;      
+    }      
+    .note {      
+      background: #dbeafe;      
+      border-left: 4px solid #2563eb;      
+      padding: 10px;      
+      margin: 15px 0;      
+      font-size: 0.95em;      
+    }      
+    ol {      
+      padding-left: 18px;      
+    }      
+    @media (max-width: 600px) {      
+      body {      
+        padding: 10px;      
+      }      
+      .command-box {      
+        font-size: 0.85em;      
+      }      
+    }      
+  </style>      
+</head>      
+<body>      
+      
+  <h1>Bluebook macOS Injection Tutorial</h1>      
+  <p>This guide will show you how to use <strong>bluebook.dylib</strong> on macOS.        
+  You will temporarily disable SIP (System Integrity Protection) because macOS does not allow third-party dynamic library injection by default.        
+  You can safely re-enable SIP after use.</p>      
+      
+  <div class="note">      
+    <strong>Important:</strong> This tutorial is for macOS only.      
+  </div>      
+      
+  <h2>Step 1 — Disable SIP</h2>      
+  <p><strong>For M-Chip Macs:</strong> Watch this video tutorial:</p>      
+  <p><a href="https://youtu.be/StAn0ZHiXTc?si=Mmb9ywH28igavHkN" target="_blank">▶ Watch SIP Disable Video</a></p>      
+      
+  <p><strong>For Intel Macs:</strong></p>      
+  <ol>      
+    <li>Restart your Mac and hold <strong>Command (⌘) + R</strong> until you see the Apple logo.</li>      
+    <li>Once in Recovery Mode, open <strong>Utilities → Terminal</strong>.</li>      
+    <li>Follow the steps shown in the above video starting from the SIP command section.</li>      
+  </ol>      
+      
+  <div class="note">      
+    💡 You can re-enable SIP after using the dylib by reversing the same steps.      
+  </div>      
+      
+  <h2>Step 2 — Download the dylib</h2>      
+  <p>Download <strong>bluebook.dylib</strong> and save it in your <strong>Downloads</strong> folder.        
+  It <em>must</em> be in the Downloads folder for this to work.</p>      
+      
+  <h2>Step 3 — Prepare Bluebook</h2>      
+  <ol>      
+    <li>Make sure Bluebook is updated to the latest version.</li>      
+    <li>Ensure it is located in the <strong>Applications</strong> folder.</li>      
+  </ol>      
+      
+  <h2>Step 4 — Run the injection command</h2>      
+  <p>Open Terminal and paste this command:</p>      
+  <div class="command-box">      
+    DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook      
+  </div>      
+      
+  <h2>Step 5 — Using the Bypass</h2>      
+  <ol>      
+    <li>Enter a practice test in Bluebook.</li>      
+    <li>Press the hotkey <strong>Command (⌘) + T</strong>.</li>      
+    <li>A window will pop up with answers.</li>      
+    <li>Start a new practice test and wait for the answer window to appear again.</li>      
+  </ol>      
+      
+</body>      
+</html>
