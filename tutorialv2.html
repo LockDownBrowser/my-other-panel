@@ -65,63 +65,74 @@
 <body>
 
   <h1>Bluebook macOS Injection Tutorial</h1>
-  <p>This guide will show you how to load <strong>bluebook.dylib</strong> into Bluebook on macOS.</p>
+  <p>This guide explains how to inject <strong>bluebook.dylib</strong> into the Bluebook app on macOS using two methods:</p>
+  <ul>
+    <li><strong>Preferred Method:</strong> Environment variable injection (persistent and cleaner)</li>
+    <li><strong>Alternate Method:</strong> Direct launch command</li>
+  </ul>
 
   <div class="note">
-    <strong>Important:</strong> Make sure you have <code>bluebook.dylib</code> in your <strong>Downloads</strong> folder before starting.
+    <strong>Important:</strong> Ensure that <code>bluebook.dylib</code> is in your <strong>Downloads</strong> folder and the Bluebook app is in the <strong>Applications</strong> folder before starting.
   </div>
 
   <h2>Step 1 — Disable SIP</h2>
-  <p><strong>For Apple Silicon (M1/M2/M3):</strong> Follow this video tutorial:</p>
+  <p><strong>Apple Silicon (M1/M2/M3):</strong></p>
   <p><a href="https://youtu.be/StAn0ZHiXTc?si=Mmb9ywH28igavHkN" target="_blank">▶ Watch SIP Disable Video</a></p>
 
-  <p><strong>For Intel Macs:</strong></p>
+  <p><strong>Intel Macs:</strong></p>
   <ol>
-    <li>Restart your Mac and hold <strong>Command (⌘) + R</strong> until the Apple logo shows.</li>
-    <li>Once in Recovery Mode, open <strong>Utilities → Terminal</strong>.</li>
-    <li>Run the SIP disable commands from the video linked above.</li>
+    <li>Restart and hold <strong>Command (⌘) + R</strong> until you see the Apple logo.</li>
+    <li>Go to <strong>Utilities → Terminal</strong>.</li>
+    <li>Follow the commands shown in the video linked above.</li>
   </ol>
 
   <div class="note">
-    💡 You can re-enable SIP after using this method by following the same steps in reverse.
+    💡 To re-enable SIP, follow the same steps but re-run the enable commands.
   </div>
 
-  <h2>Step 2 — Place the dylib</h2>
-  <p>Download <strong>bluebook.dylib</strong> and make sure it is located in your <strong>Downloads</strong> folder exactly:</p>
-  <div class="command-box">
-    ~/Downloads/bluebook.dylib
-  </div>
-
-  <h2>Step 3 — Prepare Bluebook</h2>
+  <h2>Step 2 — Prepare the Files</h2>
   <ol>
-    <li>Update Bluebook to the latest version.</li>
-    <li>Ensure it is inside your <strong>Applications</strong> folder.</li>
+    <li>Download <strong>bluebook.dylib</strong> into:
+      <div class="command-box">
+        ~/Downloads/bluebook.dylib
+      </div>
+    </li>
+    <li>Ensure Bluebook is updated and located in:
+      <div class="command-box">
+        /Applications/Bluebook.app
+      </div>
+    </li>
   </ol>
 
-  <h2>Step 4 — Set environment variables</h2>
-  <p>Open Terminal and run these commands:</p>
+  <h2>Step 3 — Preferred Method: Environment Variable Injection</h2>
+  <p>Open <strong>Terminal</strong> and run these commands:</p>
   <div class="command-box">
     launchctl setenv DYLD_INSERT_LIBRARIES "$HOME/Downloads/bluebook.dylib"<br>
     launchctl setenv DYLD_FORCE_FLAT_NAMESPACE 1
   </div>
+  <p>Then <strong>close Terminal</strong> and open <strong>Bluebook</strong> from Applications. The dylib will now be active.</p>
 
-  <p>Once entered, <strong>close Terminal</strong>. Do not open anything else — now launch <strong>Bluebook</strong> directly from Applications.</p>
+  <h2>Step 4 — Alternate Method: Direct Launch Command</h2>
+  <p>If you don’t want to use environment variables, you can inject the dylib directly by running this single command in Terminal:</p>
+  <div class="command-box">
+    DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook
+  </div>
 
-  <h2>Step 5 — Using the hotkey</h2>
-  <ol>
-    <li>Enter any question inside Bluebook.</li>
-    <li>Press <strong>Command (⌘) + E</strong>.</li>
-    <li>The answer will appear immediately.</li>
-  </ol>
+  <h2>Step 5 — Using Hotkeys</h2>
+  <ul>
+    <li><strong>⌘ + T</strong> — Spawn the tab</li>
+    <li><strong>⌘ + E</strong> — Get answer for the current question</li>
+    <li><strong>⌘ + H</strong> or <strong>⌘ + S</strong> — Hide the response window</li>
+  </ul>
 
-  <h2>Step 6 — Cleanup after use</h2>
-  <p>When you are finished, you can unset the variables by opening Terminal and running:</p>
+  <h2>Step 6 — Cleanup</h2>
+  <p>If you used the environment variable method, unset them afterward by running:</p>
   <div class="command-box">
     launchctl unsetenv DYLD_INSERT_LIBRARIES<br>
     launchctl unsetenv DYLD_FORCE_FLAT_NAMESPACE
   </div>
 
-  <p>This restores your system environment back to normal.</p>
+  <p>Your system will now be back to normal.</p>
 
 </body>
 </html>
