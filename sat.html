@@ -4,216 +4,249 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="Score 1600 on the SAT with our Bluebook software that automatically selects the correct answers. Used by over 150 students. 20+ confirmed perfect scores." />
-  <meta name="keywords" content="SAT 1600, Bluebook software, auto answer tool SAT, Bluebook hack 2025, SAT cheat tool, SAT AI assistant, perfect SAT score software" />
+  <meta name="description" content="Achieve a perfect 1600 SAT score effortlessly with our AI-powered Bluebook tool. Trusted by 150+ students with 20+ perfect scores." />
+  <meta name="keywords" content="SAT 1600, Bluebook software, auto answer SAT, SAT AI tool, perfect SAT score" />
   <meta name="author" content="Bluebook1600 Team" />
   <meta property="og:title" content="Bluebook SAT Tool – Perfect 1600 Guaranteed" />
-  <meta property="og:description" content="Score 1600 on the SAT with our Bluebook software that automatically selects the correct answers. Used by over 150 students. 20+ confirmed perfect scores." />
+  <meta property="og:description" content="Achieve a perfect 1600 SAT score effortlessly with our AI-powered Bluebook tool. Trusted by 150+ students with 20+ perfect scores." />
   <meta property="og:image" content="book.png" />
   <meta property="og:url" content="https://bluebook.ink/" />
   <meta property="og:type" content="website" />
   <title>Bluebook SAT Tool – Perfect 1600 Guaranteed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f2f4f8;
-      color: #2b2d42;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #f0f4f8, #e0e7ef);
+      color: #333;
       line-height: 1.6;
     }
 
     .container {
-      max-width: 760px;
-      margin: auto;
-      padding: 40px 20px;
-      background-color: #e8ecf3;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-      border-radius: 12px;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
     }
 
     h1 {
       font-size: 2.5em;
       text-align: center;
-      color: #1e2235;
-      margin-bottom: 0.4em;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      color: #1a1f36;
+      margin-bottom: 0.5em;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
     }
 
     .badge-wrapper {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin-bottom: 25px;
+      gap: 12px;
+      margin-bottom: 30px;
       flex-wrap: wrap;
     }
 
     .badge {
-      background: #d3d7e3;
-      color: #1e2235;
-      padding: 8px 14px;
-      border-radius: 20px;
+      background: #e9ecef;
+      color: #495057;
+      padding: 8px 16px;
+      border-radius: 24px;
       font-size: 0.9em;
       font-weight: 600;
     }
 
     p {
-      font-size: 1.05em;
-      margin: 1.2em 0;
+      font-size: 1.1em;
+      margin: 1em 0;
+      text-align: center;
     }
 
     .score-image {
       display: block;
-      max-width: 100%;
+      max-width: 80%;
       height: auto;
-      margin: 20px auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .cta-button {
-      display: block;
-      max-width: 280px;
       margin: 30px auto;
-      text-align: center;
-      background: #1e2235;
-      color: #fff;
-      padding: 14px;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: 0.3s ease;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
 
-    .cta-button:hover {
-      background: #2d3350;
-      transform: scale(1.05);
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .feature {
+      flex: 1 1 200px;
+      text-align: center;
+      font-size: 1em;
+      color: #444;
+    }
+
+    .feature::before {
+      content: '✔️';
+      display: block;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #28a745;
+    }
+
+    .highlight {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      font-style: italic;
+      text-align: center;
+      border-left: 5px solid #007bff;
     }
 
     .pricing-section {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
       margin: 40px 0;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      flex-wrap: wrap;
     }
 
     .pricing-tier {
-      margin-bottom: 30px;
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      flex: 1 1 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .pricing-tier:hover {
+      transform: translateY(-10px);
     }
 
     .pricing-tier h2 {
       font-size: 1.8em;
-      color: #1e2235;
-      margin-bottom: 10px;
+      color: #1a1f36;
+      margin-bottom: 15px;
     }
 
     .pricing-tier .price {
-      font-size: 1.5em;
+      font-size: 2em;
       font-weight: bold;
       color: #28a745;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .pricing-tier ul {
       list-style-type: none;
       padding: 0;
+      margin-bottom: 20px;
     }
 
     .pricing-tier ul li {
       margin: 10px 0;
-      font-size: 1.05em;
-      position: relative;
-      padding-left: 25px;
+      font-size: 1em;
     }
 
     .pricing-tier ul li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
+      content: '✓';
       color: #28a745;
-      font-weight: bold;
+      margin-right: 10px;
     }
 
-    .highlight {
-      background: #fff3cd;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 15px 0;
-      font-style: italic;
+    .cta-button {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
     }
 
     footer {
       text-align: center;
-      font-size: 0.85em;
-      color: #555;
-      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 40px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Score a Perfect 1600 on the SAT – No Prep Needed</h1>
+    <h1>Achieve a Perfect 1600 SAT Score</h1>
+    <p class="subtitle">No studying required. Our AI tool handles it all.</p>
 
     <div class="badge-wrapper">
-      <div class="badge">150+ Sold</div>
-      <div class="badge">20+ Perfect 1600 Scores</div>
-      <div class="badge">AI-Powered Accuracy</div>
-      <div class="badge">Instant Setup</div>
+      <div class="badge">150+ Users</div>
+      <div class="badge">20+ Perfect Scores</div>
+      <div class="badge">AI-Powered</div>
+      <div class="badge">Easy Setup</div>
     </div>
 
-    <p>
-      Our cutting-edge <strong>Bluebook SAT software</strong> is designed to help you achieve the impossible — a guaranteed perfect score of <strong>1600</strong>. Whether you're a last-minute test-taker or just want peace of mind, this tool gives you a serious advantage without studying or tutoring.
-    </p>
+    <img src="book.png" alt="Perfect 1600 SAT Score" class="score-image" />
 
-    <img src="book.png" alt="Perfect 1600 SAT Score Screenshot" class="score-image" />
+    <p>Our Bluebook SAT tool integrates seamlessly with the exam interface, using AI to auto-select correct answers in real-time. It's undetectable and effortless.</p>
 
-    <p>
-      🔍 <strong>How it works:</strong> The software integrates directly with your SAT Bluebook exam interface and uses advanced parsing to identify answers from all modules to auto-select the correct answers in real time. It’s stealthy, fast, and designed to avoid detection while ensuring your answer choices are flawless.
-    </p>
-
-    <p>
-      ✔️ No browser extensions required<br>
-      ✔️ Compatible with Mac & Windows<br>
-      ✔️ Simple install – takes under 5 minutes<br>
-      ✔️ Designed for official Bluebook SAT interface
-    </p>
+    <div class="features">
+      <div class="feature">No Extensions Needed</div>
+      <div class="feature">Works on Mac & Windows</div>
+      <div class="feature">Install in Minutes</div>
+      <div class="feature">Official Bluebook Compatible</div>
+    </div>
 
     <div class="highlight">
-      "This tool changed everything for me – went from 1300 to 1600 effortlessly!" – Verified User
+      "Transformed my score from average to perfect – highly recommend!" – Happy Student
     </div>
 
     <div class="pricing-section">
       <div class="pricing-tier">
-        <h2>Auto Answer Standard</h2>
-        <div class="price">$190 USD</div>
+        <h2>Standard</h2>
+        <div class="price">$190</div>
         <ul>
-          <li>AI-powered auto-answering for SAT questions</li>
-          <li>Real-time assistance during the exam</li>
-          <li>Boost your score with intelligent suggestions</li>
-          <li>Basic stealth mode to avoid detection</li>
-          <li>One-time payment, lifetime access</li>
+          <li>AI auto-answers questions</li>
+          <li>Real-time support</li>
+          <li>Basic stealth mode</li>
+          <li>Lifetime access</li>
         </ul>
-        <a href="payment-standard.html" class="cta-button">Get Standard Now</a>
+        <a href="payment-standard.html" class="cta-button">Get Started</a>
       </div>
 
       <div class="pricing-tier">
-        <h2>Auto Answer Premium</h2>
-        <div class="price">$490 USD</div>
+        <h2>Premium</h2>
+        <div class="price">$490</div>
         <ul>
-          <li>Guaranteed perfect 1600 score with advanced auto-answering</li>
-          <li>Full AI integration for flawless accuracy</li>
-          <li>Enhanced stealth and real-time optimization</li>
-          <li>Priority support and updates</li>
-          <li>One-time payment, lifetime access</li>
+          <li>Guaranteed 1600 score</li>
+          <li>Advanced AI accuracy</li>
+          <li>Enhanced stealth</li>
+          <li>Priority updates</li>
+          <li>Lifetime access</li>
         </ul>
-        <a href="payment-premium.html" class="cta-button">Get Premium Now</a>
+        <a href="payment-premium.html" class="cta-button">Go Premium</a>
       </div>
     </div>
 
     <footer>
-      &copy; 2025 Bluebook.ink team, This product is not affiliated with College Board.<br/>
-      Use responsibly and at your own discretion.
+      &copy; 2025 Bluebook.ink Team | Not affiliated with College Board.<br>
+      Use at your own discretion.
     </footer>
   </div>
 </body>
