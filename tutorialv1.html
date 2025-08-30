@@ -1,116 +1,211 @@
-<!DOCTYPE html>      
-<html lang="en">      
-<head>      
-  <meta charset="UTF-8">      
-  <title>Bluebook macOS Injection Tutorial</title>      
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">      
-  <style>      
-    body {      
-      background: #f4f8fb;      
-      color: #1e293b;      
-      font-family: Arial, sans-serif;      
-      line-height: 1.6;      
-      padding: 15px;      
-      max-width: 900px;      
-      margin: auto;      
-    }      
-    h1, h2 {      
-      color: #2563eb;      
-    }      
-    a {      
-      color: #2563eb;      
-      text-decoration: none;      
-    }      
-    a:hover {      
-      text-decoration: underline;      
-    }      
-    code {      
-      background: #e0ecff;      
-      padding: 4px 6px;      
-      border-radius: 4px;      
-      color: #1e40af;      
-      font-weight: bold;      
-    }      
-    .command-box {      
-      background: #e0ecff;      
-      border-radius: 6px;      
-      padding: 12px;      
-      overflow-x: auto;      
-      font-family: monospace;      
-      font-size: 0.95em;      
-      color: #1e40af;      
-      white-space: nowrap;      
-    }      
-    .note {      
-      background: #dbeafe;      
-      border-left: 4px solid #2563eb;      
-      padding: 10px;      
-      margin: 15px 0;      
-      font-size: 0.95em;      
-    }      
-    ol {      
-      padding-left: 18px;      
-    }      
-    @media (max-width: 600px) {      
-      body {      
-        padding: 10px;      
-      }      
-      .command-box {      
-        font-size: 0.85em;      
-      }      
-    }      
-  </style>      
-</head>      
-<body>      
-      
-  <h1>Bluebook macOS Injection Tutorial</h1>      
-  <p>This guide will show you how to use <strong>bluebook.dylib</strong> on macOS.        
-  You will temporarily disable SIP (System Integrity Protection) because macOS does not allow third-party dynamic library injection by default.        
-  You can safely re-enable SIP after use.</p>      
-      
-  <div class="note">      
-    <strong>Important:</strong> This tutorial is for macOS only.      
-  </div>      
-      
-  <h2>Step 1 — Disable SIP</h2>      
-  <p><strong>For M-Chip Macs:</strong> Watch this video tutorial:</p>      
-  <p><a href="https://youtu.be/StAn0ZHiXTc?si=Mmb9ywH28igavHkN" target="_blank">▶ Watch SIP Disable Video</a></p>      
-      
-  <p><strong>For Intel Macs:</strong></p>      
-  <ol>      
-    <li>Restart your Mac and hold <strong>Command (⌘) + R</strong> until you see the Apple logo.</li>      
-    <li>Once in Recovery Mode, open <strong>Utilities → Terminal</strong>.</li>      
-    <li>Follow the steps shown in the above video starting from the SIP command section.</li>      
-  </ol>      
-      
-  <div class="note">      
-    💡 You can re-enable SIP after using the dylib by reversing the same steps.      
-  </div>      
-      
-  <h2>Step 2 — Download the dylib</h2>      
-  <p>Download <strong>bluebook.dylib</strong> and save it in your <strong>Downloads</strong> folder.        
-  It <em>must</em> be in the Downloads folder for this to work.</p>      
-      
-  <h2>Step 3 — Prepare Bluebook</h2>      
-  <ol>      
-    <li>Make sure Bluebook is updated to the latest version.</li>      
-    <li>Ensure it is located in the <strong>Applications</strong> folder.</li>      
-  </ol>      
-      
-  <h2>Step 4 — Run the injection command</h2>      
-  <p>Open Terminal and paste this command:</p>      
-  <div class="command-box">      
-    DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook      
-  </div>      
-      
-  <h2>Step 5 — Using the Bypass</h2>      
-  <ol>      
-    <li>Enter a practice test in Bluebook.</li>      
-    <li>Press the hotkey <strong>Command (⌘) + T</strong> to display the floating answer window.</li>      
-    <li>Use <strong>Command (⌘) + H</strong> to hide the floating answer window anytime.</li>      
-    <li>Use <strong>Command (⌘) + S</strong> to show the floating answer window again.</li>      
-    <li>Start a new practice test and wait for the answer window to appear again when needed.</li>      
-  </ol>      
-      
-</body>      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bluebook macOS Injection Tutorial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f4f8fb, #e0ecff);
+      color: #1e293b;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+    h1, h2 {
+      color: #2563eb;
+      text-shadow: 1px 1px 2px rgba(37, 99, 235, 0.2);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    code {
+      background: #dbeafe;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: #1e40af;
+      font-weight: bold;
+    }
+    .command-box {
+      background: #e0ecff;
+      border-radius: 8px;
+      padding: 15px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 1em;
+      color: #1e40af;
+      white-space: pre-wrap;
+      box-shadow: inset 0 0 5px rgba(30, 64, 175, 0.1);
+      position: relative;
+    }
+    .command-box::before {
+      content: "\f121";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #2563eb;
+      opacity: 0.3;
+    }
+    .note {
+      background: #dbeafe;
+      border-left: 6px solid #2563eb;
+      border-radius: 6px;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: flex-start;
+    }
+    .note i {
+      margin-right: 10px;
+      color: #2563eb;
+      font-size: 1.2em;
+    }
+    ol, ul {
+      padding-left: 25px;
+      margin: 15px 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .step-icon {
+      font-size: 1.5em;
+      margin-right: 10px;
+      color: #2563eb;
+    }
+    .video-link {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .video-link:hover {
+      background: #1e40af;
+    }
+    .hotkey {
+      background: #f4f8fb;
+      border: 1px solid #2563eb;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: bold;
+      color: #1e40af;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #64748b;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      .command-box {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1><i class="fas fa-book-open step-icon"></i>Bluebook macOS Injection Tutorial</h1>
+  <p style="text-align: center; font-style: italic;">Unlock enhanced features with this step-by-step guide. Follow along for a seamless experience on macOS.</p>
+
+  <div class="note">
+    <i class="fas fa-exclamation-triangle"></i>
+    <div><strong>Important:</strong> This tutorial is for macOS only. Proceed with caution and re-enable SIP after use for security.</div>
+  </div>
+
+  <h2><i class="fas fa-lock-open step-icon"></i>Step 1 — Disable SIP</h2>
+  <p>macOS restricts third-party injections by default. Temporarily disable System Integrity Protection (SIP) to proceed. You can re-enable it later.</p>
+
+  <p><strong>For M-Chip Macs:</strong> Follow this detailed video guide:</p>
+  <p><a class="video-link" href="https://youtu.be/StAn0ZHiXTc?si=Mmb9ywH28igavHkN" target="_blank"><i class="fas fa-play"></i> Watch SIP Disable Video</a></p>
+
+  <p><strong>For Intel Macs:</strong></p>
+  <ol>
+    <li>Restart your Mac and hold <code class="hotkey">Command (⌘) + R</code> until the Apple logo appears.</li>
+    <li>In Recovery Mode, navigate to <strong>Utilities → Terminal</strong>.</li>
+    <li>Execute the SIP disable command as shown in the video above.</li>
+  </ol>
+
+  <div class="note">
+    <i class="fas fa-lightbulb"></i>
+    <div>💡 Re-enable SIP by reversing these steps after you're done to restore full system security.</div>
+  </div>
+
+  <h2><i class="fas fa-download step-icon"></i>Step 2 — Download the dylib</h2>
+  <p>Download <strong>bluebook.dylib</strong> and place it directly in your <strong>Downloads</strong> folder. This location is required for proper functioning.</p>
+
+  <h2><i class="fas fa-key step-icon"></i>Step 3 — Set Up OpenRouter API Key</h2>
+  <p>The script requires an OpenRouter API key to function. This powers the automated features.</p>
+  <ol>
+    <li>Visit <a href="https://openrouter.ai" target="_blank">https://openrouter.ai</a> and create a free account.</li>
+    <li>Add at least $5 USD to your account balance to ensure sufficient credits.</li>
+    <li>Generate your API key from the dashboard.</li>
+    <li>When you run the injection in the next steps, the script will prompt you for the key. Paste it in when asked.</li>
+  </ol>
+
+  <div class="note">
+    <i class="fas fa-info-circle"></i>
+    <div>🔑 Keep your API key secure and do not share it. You'll only need to enter it once per session.</div>
+  </div>
+
+  <h2><i class="fas fa-cogs step-icon"></i>Step 4 — Prepare Bluebook</h2>
+  <ol>
+    <li>Update Bluebook to the latest version via the App Store or official site.</li>
+    <li>Confirm it's installed in the <strong>Applications</strong> folder.</li>
+  </ol>
+
+  <h2><i class="fas fa-terminal step-icon"></i>Step 5 — Run the Injection Command</h2>
+  <p>Launch Terminal (find it in Applications > Utilities) and paste the following command:</p>
+  <div class="command-box">
+    DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook
+  </div>
+  <p>Press Enter to execute. The Bluebook app will launch with the injection applied.</p>
+
+  <h2><i class="fas fa-magic step-icon"></i>Step 6 — Using the Bypass</h2>
+  <ol>
+    <li>Launch a practice test within Bluebook.</li>
+    <li>Press <code class="hotkey">Command (⌘) + T</code> to spawn the floating tab/window.</li>
+    <li>If the auto-answer doesn't trigger within 1-2 minutes after entering a test, use <code class="hotkey">Command (⌘) + E</code> as a backup to manually initiate auto-answering.</li>
+    <li>Press <code class="hotkey">Command (⌘) + I</code> to make the floating window transparent for discreet use.</li>
+    <li>Use <code class="hotkey">Command (⌘) + H</code> to hide the floating window at any time.</li>
+    <li>Use <code class="hotkey">Command (⌘) + S</code> to show the floating window again.</li>
+    <li>For new tests, repeat as needed—the window will reappear when activated.</li>
+  </ol>
+
+  <div class="note">
+    <i class="fas fa-keyboard"></i>
+    <div>⌨️ Master these hotkeys for smooth navigation: <code class="hotkey">⌘ + T</code> (spawn), <code class="hotkey">⌘ + E</code> (manual auto-answer), <code class="hotkey">⌘ + I</code> (transparent).</div>
+  </div>
+
+  <footer>
+    Tutorial enhanced for clarity and ease. Always use responsibly. © 2025
+  </footer>
+</body>
 </html>
