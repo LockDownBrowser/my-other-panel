@@ -5,195 +5,319 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crypto Payment – Bluebook Bypass</title>
   <meta name="description" content="Pay with crypto for the SAT or PSAT bypass tool. Includes easy step-by-step instructions.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f6fa;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f4f6fa, #e0e7ff);
       color: #2b2e3c;
-      padding: 20px;
+      padding: 30px 15px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
     }
     .container {
-      max-width: 760px;
+      max-width: 800px;
       margin: auto;
-      background: #fff;
-      padding: 30px 24px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .container:hover {
+      transform: translateY(-5px);
     }
     h1 {
       text-align: center;
       color: #1f2c48;
-      margin-bottom: 8px;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
     }
     .subtext {
       text-align: center;
       color: #555;
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-    }
-    .badge {
-      background: #ffe066;
-      color: #000;
-      font-weight: bold;
-      padding: 6px 14px;
-      border-radius: 20px;
-      text-align: center;
-      display: inline-block;
-      margin: 0 auto 25px;
-    }
-    .wallet-section {
+      font-size: 1rem;
       margin-bottom: 30px;
     }
-    .wallet-label {
-      font-size: 1rem;
+    .badge {
+      background: linear-gradient(135deg, #ffe066, #ffd700);
+      color: #1f2c48;
       font-weight: 600;
-      margin-bottom: 12px;
+      padding: 8px 18px;
+      border-radius: 24px;
+      text-align: center;
+      display: block;
+      margin: 0 auto 30px;
+      max-width: fit-content;
+      box-shadow: 0 2px 4px rgba(255, 224, 102, 0.3);
+    }
+    .payment-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+    .payment-option {
+      background: #f8f9fc;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      width: 45%;
+      min-width: 280px;
+      margin: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    .payment-option:hover {
+      transform: translateY(-5px);
+    }
+    .payment-option h3 {
+      color: #1f2c48;
+      font-size: 1.3em;
+      margin-bottom: 15px;
+    }
+    .payment-option p {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 20px;
+    }
+    .payment-btn {
+      background: linear-gradient(135deg, #1f2c48, #32476c);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .payment-btn:hover {
+      background: linear-gradient(135deg, #32476c, #1f2c48);
+    }
+    .wallet-section {
+      margin-bottom: 35px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .wallet-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #1f2c48;
     }
     .wallet-box {
       background: #f8f9fc;
       border: 2px solid #d3d7e3;
       border-radius: 12px;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
+      transition: border-color 0.3s ease;
+    }
+    .wallet-box:hover {
+      border-color: #1f2c48;
     }
     .qr-frame {
       display: inline-block;
-      padding: 10px;
+      padding: 12px;
       background: #fff;
       border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-bottom: 14px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
     .qr-frame img {
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       object-fit: contain;
     }
     .wallet-box code {
       background: #e9edf5;
       color: #333;
-      padding: 10px 14px;
+      padding: 12px 16px;
       font-size: 0.95rem;
-      border-radius: 6px;
+      border-radius: 8px;
       word-break: break-word;
-      margin: 12px 0;
+      margin: 15px 0;
       display: block;
+      font-family: 'Courier New', monospace;
     }
     .copy-btn {
-      background: #1f2c48;
+      background: linear-gradient(135deg, #1f2c48, #32476c);
       color: #fff;
       border: none;
-      padding: 8px 14px;
-      font-size: 0.9rem;
-      border-radius: 6px;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
     .copy-btn:hover {
-      background: #2c3b5d;
+      background: linear-gradient(135deg, #32476c, #1f2c48);
     }
     .scroll-btn {
       text-align: center;
-      margin: 30px 0;
+      margin: 35px 0;
     }
     .scroll-btn button {
-      background: #1f2c48;
+      background: linear-gradient(135deg, #1f2c48, #32476c);
       border: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
       color: #fff;
-      font-weight: bold;
+      font-weight: 600;
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
     .scroll-btn button:hover {
-      background: #32476c;
+      background: linear-gradient(135deg, #32476c, #1f2c48);
     }
     .instruction-box {
       background: #f9fafc;
-      border-left: 4px solid #1f2c48;
-      padding: 20px 22px;
-      margin-top: 40px;
-      border-radius: 8px;
+      border-left: 6px solid #1f2c48;
+      padding: 25px 28px;
+      margin-top: 45px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
     .instruction-box h3 {
       margin-top: 0;
       color: #1f2c48;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+    }
+    .instruction-box h3 i {
+      margin-right: 10px;
+      color: #1f2c48;
     }
     .instruction-box ul {
-      padding-left: 20px;
-      margin: 10px 0;
+      padding-left: 25px;
+      margin: 15px 0;
     }
     .instruction-box li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-weight: 500;
       color: #333;
+      list-style-type: disc;
+    }
+    .instruction-box li ul {
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+    .instruction-box li ul li {
+      list-style-type: circle;
+    }
+    .warning {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
     }
     .contact {
-      margin-top: 30px;
+      margin-top: 35px;
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #444;
     }
     .contact a {
       color: #1f2c48;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact a:hover {
       text-decoration: underline;
     }
-    @media (max-width: 540px) {
+    .contact i {
+      margin-right: 8px;
+      color: #1f2c48;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+      .payment-options {
+        flex-direction: column;
+      }
+      .payment-option {
+        width: 100%;
+        margin: 10px 0;
+      }
       .wallet-box {
-        padding: 16px 12px;
+        padding: 20px 15px;
       }
       .qr-frame img {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
       }
       .copy-btn {
         width: 100%;
-        margin-top: 6px;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Crypto Payment</h1>
-    <p class="subtext">Send the amount matching your selected bypass (SAT or PSAT).</p>
-    <div class="badge">Only Crypto Accepted</div>
+    <h1><i class="fas fa-coins" style="margin-right: 10px; color: #ffe066;"></i>Crypto Payment</h1>
+    <p class="subtext">Securely send the amount matching your selected bypass (SAT or PSAT). Choose your preferred method below.</p>
+    <div class="badge">Only Crypto Accepted – Fast & Secure</div>
+
+    <div class="payment-options">
+      <div class="payment-option">
+        <h3><i class="fas fa-wallet" style="margin-right: 8px;"></i>Direct Crypto Transfer</h3>
+        <p>Use your wallet to send ETH, USDT, or SOL directly to our addresses.</p>
+        <a href="#crypto-wallets" class="payment-btn" onclick="document.getElementById('crypto-wallets').scrollIntoView({ behavior: 'smooth' });">Proceed to Wallets</a>
+      </div>
+      <div class="payment-option">
+        <h3><i class="fab fa-discord" style="margin-right: 8px;"></i>Alternative Payment via Discord</h3>
+        <p>Join our Discord server and create a ticket in the #payments channel for custom payment options or assistance.</p>
+        <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="payment-btn">Join Discord & Create Ticket</a>
+      </div>
+    </div>
 
     <div class="scroll-btn">
-      <button onclick="document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });">Step-by-step help</button>
+      <button onclick="document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });"><i class="fas fa-arrow-down" style="margin-right: 8px;"></i>View Step-by-Step Guide</button>
     </div>
 
-    <div class="wallet-section">
-      <div class="wallet-label">USDT (ERC20)</div>
-      <div class="wallet-box">
-        <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR"></div>
-        <code id="usdt">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
-        <button class="copy-btn" data-target="usdt">Copy</button>
+    <div id="crypto-wallets">
+      <div class="wallet-section">
+        <div class="wallet-label"><i class="fas fa-dollar-sign" style="margin-right: 8px;"></i>USDT (ERC20)</div>
+        <div class="wallet-box">
+          <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="USDT QR"></div>
+          <code id="usdt">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
+          <button class="copy-btn" data-target="usdt">Copy Address</button>
+        </div>
       </div>
-    </div>
 
-    <div class="wallet-section">
-      <div class="wallet-label">Ethereum (ETH)</div>
-      <div class="wallet-box">
-        <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR"></div>
-        <code id="eth">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
-        <button class="copy-btn" data-target="eth">Copy</button>
+      <div class="wallet-section">
+        <div class="wallet-label"><i class="fab fa-ethereum" style="margin-right: 8px;"></i>Ethereum (ETH)</div>
+        <div class="wallet-box">
+          <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0x90865978c3ccbd7060d74c186e63bbeeb0ebf962&size=150x150" alt="ETH QR"></div>
+          <code id="eth">0x90865978c3ccbd7060d74c186e63bbeeb0ebf962</code>
+          <button class="copy-btn" data-target="eth">Copy Address</button>
+        </div>
       </div>
-    </div>
 
-    <div class="wallet-section">
-      <div class="wallet-label">Solana (SOL)</div>
-      <div class="wallet-box">
-        <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR"></div>
-        <code id="sol">DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC</code>
-        <button class="copy-btn" data-target="sol">Copy</button>
+      <div class="wallet-section">
+        <div class="wallet-label"><i class="fas fa-sun" style="margin-right: 8px;"></i>Solana (SOL)</div>
+        <div class="wallet-box">
+          <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC&size=150x150" alt="SOL QR"></div>
+          <code id="sol">DLGN1wQ1AyTX6sivWNC4Qkgx7RsuCHMNkByxfiqhXwpC</code>
+          <button class="copy-btn" data-target="sol">Copy Address</button>
+        </div>
       </div>
     </div>
 
     <div class="instruction-box" id="instructions">
-      <h3>🧾 How to Pay – Easy Instructions</h3>
+      <h3><i class="fas fa-list-ol"></i>How to Pay – Easy Instructions</h3>
       <ul>
         <li><strong>1. Visit a crypto platform:</strong>  
           Go to <a href="https://www.bitpay.com/buy" target="_blank">Bitpay</a>, <a href="https://www.moonpay.com/buy" target="_blank">Moonpay</a>, or <a href="https://www.paybis.com/" target="_blank">Paybis</a>.
@@ -205,16 +329,16 @@
             <li>For <strong>ETH</strong> choose <strong>Ethereum</strong></li>
             <li>For <strong>SOL</strong> choose <strong>Solana Network</strong></li>
           </ul>
-          <span style="color: red;"><strong>⚠️ IMPORTANT:</strong> Using the wrong network may result in loss of funds.</span>
+          <span class="warning"><i class="fas fa-exclamation-triangle" style="margin-right: 6px;"></i>IMPORTANT: Using the wrong network may result in loss of funds.</span>
         </li>
         <li><strong>4. Enter the address exactly</strong> (copy it using the button above).</li>
         <li><strong>5. Enter the amount</strong> that matches the bypass you want (e.g. $250 for SAT, or other listed price).</li>
         <li><strong>6. Complete the transaction and save your TX ID.</strong></li>
         <li><strong>7. Send your:</strong>
           <ul>
-            <li>🧾 Transaction ID</li>
-            <li>💻 Your macOS serial number</li>
-            <li>📘 Whether you want SAT or PSAT bypass</li>
+            <li><i class="fas fa-receipt"></i> Transaction ID</li>
+            <li><i class="fas fa-laptop"></i> Your macOS serial number</li>
+            <li><i class="fas fa-book"></i> Whether you want SAT or PSAT bypass</li>
           </ul>
           to: <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a> or DM <strong>minjunio</strong> on Discord.
         </li>
@@ -222,8 +346,8 @@
     </div>
 
     <div class="contact">
-      💬 Email: <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a><br />
-      🧑‍💻 Discord: <strong>minjunio</strong>
+      <p><i class="fas fa-envelope"></i>Email: <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a></p>
+      <p><i class="fab fa-discord"></i>Discord: <strong>minjunio</strong> or <a href="https://discord.gg/bg6wKj45w3" target="_blank">Join Server</a></p>
     </div>
   </div>
 
@@ -233,7 +357,7 @@
         const code = document.getElementById(btn.getAttribute('data-target'));
         navigator.clipboard.writeText(code.textContent).then(() => {
           btn.textContent = 'Copied!';
-          setTimeout(() => btn.textContent = 'Copy', 2000);
+          setTimeout(() => btn.textContent = 'Copy Address', 2000);
         });
       });
     });
