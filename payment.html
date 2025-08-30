@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flexible Payment – Bluebook Bypass</title>
+  <title>Crypto Payment – Bluebook Bypass</title>
   <meta name="description" content="Pay with crypto for the SAT or PSAT bypass tool. Includes easy step-by-step instructions.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,16 +13,17 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #f4f6fa, #e0e7ff);
       color: #2b2e3c;
-      padding: 30px 15px;
+      padding: 20px 10px;
       min-height: 100vh;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
     .container {
       max-width: 800px;
+      width: 100%;
       margin: auto;
       background: #ffffff;
-      padding: 40px 30px;
+      padding: 30px 20px;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
@@ -33,42 +34,42 @@
     h1 {
       text-align: center;
       color: #1f2c48;
-      font-size: 2.2em;
+      font-size: 2em;
       margin-bottom: 10px;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
     }
     .subtext {
       text-align: center;
       color: #555;
-      font-size: 1rem;
-      margin-bottom: 30px;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
     }
     .badge {
       background: linear-gradient(135deg, #ffe066, #ffd700);
       color: #1f2c48;
       font-weight: 600;
-      padding: 8px 18px;
+      padding: 6px 16px;
       border-radius: 24px;
       text-align: center;
       display: block;
-      margin: 0 auto 30px;
+      margin: 0 auto 25px;
       max-width: fit-content;
       box-shadow: 0 2px 4px rgba(255, 224, 102, 0.3);
     }
     .payment-options {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      margin-bottom: 40px;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
     }
     .payment-option {
       background: #f8f9fc;
       border-radius: 12px;
-      padding: 20px;
+      padding: 15px;
       text-align: center;
-      width: 45%;
-      min-width: 280px;
-      margin: 10px;
+      width: 100%;
+      max-width: 320px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
     }
@@ -77,46 +78,48 @@
     }
     .payment-option h3 {
       color: #1f2c48;
-      font-size: 1.3em;
-      margin-bottom: 15px;
+      font-size: 1.2em;
+      margin-bottom: 10px;
     }
     .payment-option p {
       color: #666;
-      font-size: 0.95em;
-      margin-bottom: 20px;
+      font-size: 0.9em;
+      margin-bottom: 15px;
     }
     .payment-btn {
       background: linear-gradient(135deg, #1f2c48, #32476c);
       color: #fff;
       border: none;
-      padding: 12px 24px;
-      font-size: 1em;
+      padding: 10px 20px;
+      font-size: 0.95em;
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s ease;
       text-decoration: none;
       display: inline-block;
+      width: auto;
     }
     .payment-btn:hover {
       background: linear-gradient(135deg, #32476c, #1f2c48);
     }
     .wallet-section {
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
     .wallet-label {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       color: #1f2c48;
+      text-align: center;
     }
     .wallet-box {
       background: #f8f9fc;
       border: 2px solid #d3d7e3;
       border-radius: 12px;
-      padding: 25px;
+      padding: 20px;
       text-align: center;
       transition: border-color 0.3s ease;
     }
@@ -125,26 +128,27 @@
     }
     .qr-frame {
       display: inline-block;
-      padding: 12px;
+      padding: 10px;
       background: #fff;
       border: 1px solid #ccc;
       border-radius: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
     .qr-frame img {
-      width: 140px;
-      height: 140px;
+      width: 100%;
+      max-width: 140px;
+      height: auto;
       object-fit: contain;
     }
     .wallet-box code {
       background: #e9edf5;
       color: #333;
-      padding: 12px 16px;
-      font-size: 0.95rem;
+      padding: 10px 14px;
+      font-size: 0.9rem;
       border-radius: 8px;
-      word-break: break-word;
-      margin: 15px 0;
+      word-break: break-all;
+      margin: 10px 0;
       display: block;
       font-family: 'Courier New', monospace;
     }
@@ -152,27 +156,29 @@
       background: linear-gradient(135deg, #1f2c48, #32476c);
       color: #fff;
       border: none;
-      padding: 10px 18px;
-      font-size: 0.95rem;
+      padding: 8px 16px;
+      font-size: 0.9rem;
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s ease;
+      width: 100%;
+      max-width: 200px;
     }
     .copy-btn:hover {
       background: linear-gradient(135deg, #32476c, #1f2c48);
     }
     .scroll-btn {
       text-align: center;
-      margin: 35px 0;
+      margin: 30px 0;
     }
     .scroll-btn button {
       background: linear-gradient(135deg, #1f2c48, #32476c);
       border: none;
-      padding: 12px 24px;
+      padding: 10px 20px;
       color: #fff;
       font-weight: 600;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       cursor: pointer;
       transition: background 0.3s ease;
     }
@@ -182,15 +188,15 @@
     .instruction-box {
       background: #f9fafc;
       border-left: 6px solid #1f2c48;
-      padding: 25px 28px;
-      margin-top: 45px;
+      padding: 20px 24px;
+      margin-top: 40px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
     .instruction-box h3 {
       margin-top: 0;
       color: #1f2c48;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       display: flex;
       align-items: center;
     }
@@ -199,17 +205,17 @@
       color: #1f2c48;
     }
     .instruction-box ul {
-      padding-left: 25px;
-      margin: 15px 0;
+      padding-left: 20px;
+      margin: 10px 0;
     }
     .instruction-box li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-weight: 500;
       color: #333;
       list-style-type: disc;
     }
     .instruction-box li ul {
-      padding-left: 20px;
+      padding-left: 15px;
       margin-top: 5px;
     }
     .instruction-box li ul li {
@@ -218,13 +224,14 @@
     .warning {
       color: red;
       font-weight: bold;
-      margin-top: 10px;
+      margin-top: 8px;
       display: block;
+      font-size: 0.9rem;
     }
     .contact {
-      margin-top: 35px;
+      margin-top: 30px;
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #444;
     }
     .contact a {
@@ -240,26 +247,88 @@
       color: #1f2c48;
     }
     @media (max-width: 600px) {
+      body {
+        padding: 15px 5px;
+      }
       .container {
-        padding: 30px 20px;
+        padding: 25px 15px;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+      .subtext {
+        font-size: 0.9rem;
+      }
+      .badge {
+        padding: 5px 14px;
+        font-size: 0.9rem;
       }
       .payment-options {
-        flex-direction: column;
+        gap: 10px;
       }
       .payment-option {
-        width: 100%;
-        margin: 10px 0;
+        padding: 15px;
+        max-width: none;
+      }
+      .payment-option h3 {
+        font-size: 1.1em;
+      }
+      .payment-option p {
+        font-size: 0.85em;
+      }
+      .payment-btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+      .wallet-section {
+        margin-bottom: 25px;
+      }
+      .wallet-label {
+        font-size: 0.95rem;
       }
       .wallet-box {
-        padding: 20px 15px;
+        padding: 15px;
+      }
+      .qr-frame {
+        padding: 8px;
+        margin-bottom: 12px;
       }
       .qr-frame img {
-        width: 120px;
-        height: 120px;
+        max-width: 120px;
+      }
+      .wallet-box code {
+        padding: 8px 12px;
+        font-size: 0.85rem;
       }
       .copy-btn {
-        width: 100%;
-        margin-top: 10px;
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        max-width: none;
+      }
+      .scroll-btn button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      .instruction-box {
+        padding: 15px 20px;
+      }
+      .instruction-box h3 {
+        font-size: 1.2rem;
+      }
+      .instruction-box li {
+        font-size: 0.9rem;
+      }
+      .contact {
+        font-size: 0.9rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .qr-frame img {
+        max-width: 100px;
+      }
+      .wallet-box code {
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -268,7 +337,7 @@
   <div class="container">
     <h1><i class="fas fa-coins" style="margin-right: 10px; color: #ffe066;"></i>Crypto Payment</h1>
     <p class="subtext">Securely send the amount matching your selected bypass (SAT or PSAT). Choose your preferred method below.</p>
-    <div class="badge">Only Crypto Accepted – Fast & Secure</div>
+    <div class="badge">Fast & Secure Payments</div>
 
     <div class="payment-options">
       <div class="payment-option">
