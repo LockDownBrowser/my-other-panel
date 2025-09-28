@@ -90,32 +90,40 @@
       transform: scale(1.02);
     }
 
+    .features-section {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .features-section h3 {
+      font-size: 1.8em;
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      margin: 30px 0;
     }
 
     .feature {
-      text-align: center;
-      font-size: 1em;
-      color: #333;
-      padding: 15px;
       background: #f5faff;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      text-align: center;
+      font-size: 1em;
+      color: #333;
     }
 
     .feature:hover {
       transform: translateY(-5px);
     }
 
-    .feature::before {
-      content: '✔️';
-      display: block;
-      font-size: 1.5em;
+    .feature-icon {
+      font-size: 2.5em;
       margin-bottom: 10px;
       color: #1e88e5;
     }
@@ -211,6 +219,23 @@
       transform: scale(1.1);
     }
 
+    .additional-section {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .additional-section h3 {
+      font-size: 1.8em;
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+
+    .additional-section p {
+      font-size: 1.1em;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
     footer {
       text-align: center;
       font-size: 0.9em;
@@ -250,13 +275,17 @@
       }
 
       .features {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 15px;
       }
 
       .feature {
+        padding: 15px;
         font-size: 0.9em;
-        padding: 10px;
+      }
+
+      .feature-icon {
+        font-size: 2em;
       }
 
       .highlight {
@@ -287,6 +316,10 @@
       footer {
         font-size: 0.8em;
       }
+
+      .additional-section h3 {
+        font-size: 1.6em;
+      }
     }
 
     @media (max-width: 480px) {
@@ -307,12 +340,20 @@
         font-size: 0.85em;
       }
 
+      .feature-icon {
+        font-size: 1.8em;
+      }
+
       .pricing-tier ul li {
         font-size: 0.9em;
       }
 
       .premium-highlight {
         font-size: 0.85em;
+      }
+
+      .additional-section h3 {
+        font-size: 1.4em;
       }
     }
   </style>
@@ -333,11 +374,26 @@
 
     <p>Our Bluebook SAT bypass tool seamlessly integrates with the exam platform to auto-select correct answers in real-time. Completely undetectable and effortless to use.</p>
 
-    <div class="features">
-      <div class="feature">No Extensions Required</div>
-      <div class="feature">macOS & Windows Compatible</div>
-      <div class="feature">Install in <5 Minutes</div>
-      <div class="feature">Official Bluebook Compatible</div>
+    <div class="features-section">
+      <h3>Key Features</h3>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🚫</div>
+          No Extensions Required
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💻</div>
+          macOS & Windows Compatible
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⏱️</div>
+          Install in <5 Minutes
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📘</div>
+          Official Bluebook Compatible
+        </div>
+      </div>
     </div>
 
     <div class="highlight">
@@ -370,6 +426,12 @@
         <div class="premium-highlight">No AI – pulls answers directly from the source on the servers!</div>
         <a href="payment.html" class="cta-button">Go Premium</a>
       </div>
+    </div>
+
+    <div class="additional-section">
+      <h3>Why Choose Us?</h3>
+      <p>With our cutting-edge technology, you get reliable results without the risk. Join hundreds of students who have achieved their dream scores effortlessly.</p>
+      <p>Secure, discreet, and backed by real success stories – start your journey to a perfect SAT today!</p>
     </div>
 
     <footer>
