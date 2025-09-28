@@ -91,27 +91,34 @@
       transform: scale(1.02);
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
+    .video-preview {
+      text-align: center;
       margin: 30px 0;
     }
 
-    .feature {
-      text-align: center;
-      font-size: 1em;
+    .video-preview p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
       color: #333;
-      padding: 15px;
-      background: #f5faff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    .feature:hover {
-      transform: translateY(-5px);
-      background: #e3f2fd;
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #f0f0f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .highlight {
@@ -254,16 +261,6 @@
         font-size: 1em;
       }
 
-      .features {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 15px;
-      }
-
-      .feature {
-        font-size: 0.9em;
-        padding: 10px;
-      }
-
       .highlight {
         padding: 20px;
       }
@@ -308,10 +305,6 @@
         font-size: 0.75em;
       }
 
-      .feature {
-        font-size: 0.85em;
-      }
-
       .pricing-tier ul li {
         font-size: 0.9em;
       }
@@ -338,11 +331,11 @@
 
     <p>Our Bluebook SAT bypass tool seamlessly integrates with the exam platform to auto-select correct answers in real-time. Completely undetectable and effortless to use.</p>
 
-    <div class="features">
-      <div class="feature">No Extensions Required</div>
-      <div class="feature">macOS & Windows Compatible</div>
-      <div class="feature">Install in <5 Minutes</div>
-      <div class="feature">Official Bluebook Compatible</div>
+    <div class="video-preview">
+      <p>For a preview of the software working</p>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/fqVa0IeKRSc" title="Software Preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
     </div>
 
     <div class="highlight">
