@@ -2,47 +2,41 @@ name: Restrict Edits to anwser.txt
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   pull_request:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
-  check:
+  restrict:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Get full history so we can diff properly
+          fetch-depth: 0
 
-      - name: Verify only anwser.txt was edited
+      - name: Check modified files
         run: |
-          echo "🔍 Checking changed files..."
+          echo "Checking changed files..."
+          base_ref="${{ github.event.before }}"
+          head_ref="${{ github.sha }}"
 
-          # Determine diff base depending on event
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE_SHA="${{ github.event.pull_request.base.sha }}"
-            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
-          else
-            BASE_SHA="${{ github.event.before }}"
-            HEAD_SHA="${{ github.sha }}"
-          fi
-
-          CHANGED=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+          # Get changed files
+          files=$(git diff --name-only "$base_ref" "$head_ref" || true)
           echo "Changed files:"
-          echo "$CHANGED"
+          echo "$files"
 
           # Allow only anwser.txt
-          FORBIDDEN=$(echo "$CHANGED" | grep -v '^anwser\.txt$' || true)
+          disallowed=$(echo "$files" | grep -v '^anwser.txt$' || true)
 
-          if [ -n "$FORBIDDEN" ]; then
-            echo "❌ The following files are not allowed to be modified:"
-            echo "$FORBIDDEN"
+          if [ -n "$disallowed" ]; then
+            echo "❌ You changed files other than anwser.txt:"
+            echo "$disallowed"
+            echo "This push is not allowed."
             exit 1
+          else
+            echo "✅ Only anwser.txt was modified. Push allowed."
           fi
-
-          if [ -z "$CHANGED" ]; then
-            echo "⚠️ No file changes detected — nothing to check."
-            exit 0
-          fi
-
-          echo "✅ Only anwser.txt was modified — allowed."
