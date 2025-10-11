@@ -11,28 +11,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Get full history so we can diff properly
+
       - name: Verify only anwser.txt was edited
         run: |
-          echo "🔍 Checking modified files..."
+          echo "🔍 Checking changed files..."
 
-          # Determine the changed files depending on event type
+          # Determine diff base depending on event
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            git fetch origin ${{ github.base_ref }} --depth=1
-            CHANGED=$(git diff --name-only origin/${{ github.base_ref }} HEAD)
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
           else
-            CHANGED=$(git diff --name-only HEAD^ HEAD)
+            BASE_SHA="${{ github.event.before }}"
+            HEAD_SHA="${{ github.sha }}"
           fi
 
+          CHANGED=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
           echo "Changed files:"
           echo "$CHANGED"
 
-          # Block any file that isn't anwser.txt
+          # Allow only anwser.txt
           FORBIDDEN=$(echo "$CHANGED" | grep -v '^anwser\.txt$' || true)
 
           if [ -n "$FORBIDDEN" ]; then
             echo "❌ The following files are not allowed to be modified:"
             echo "$FORBIDDEN"
             exit 1
+          fi
+
+          if [ -z "$CHANGED" ]; then
+            echo "⚠️ No file changes detected — nothing to check."
+            exit 0
           fi
 
           echo "✅ Only anwser.txt was modified — allowed."
