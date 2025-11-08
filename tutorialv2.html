@@ -2,137 +2,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bluebook macOS Injection Tutorial</title>
+  <title>ACT Bypass Tutorial</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      background: #f4f8fb;
+      background: linear-gradient(135deg, #f4f8fb, #e0ecff);
       color: #1e293b;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      padding: 15px;
-      max-width: 900px;
+      padding: 20px;
+      max-width: 1000px;
       margin: auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     }
     h1, h2 {
       color: #2563eb;
+      text-shadow: 1px 1px 2px rgba(37, 99, 235, 0.2);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
     }
     a {
       color: #2563eb;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
     a:hover {
+      color: #1e40af;
       text-decoration: underline;
     }
     code {
-      background: #e0ecff;
-      padding: 4px 6px;
+      background: #dbeafe;
+      padding: 4px 8px;
       border-radius: 4px;
       color: #1e40af;
       font-weight: bold;
     }
     .command-box {
       background: #e0ecff;
-      border-radius: 6px;
-      padding: 12px;
+      border-radius: 8px;
+      padding: 15px;
       overflow-x: auto;
-      font-family: monospace;
-      font-size: 0.95em;
+      font-family: 'Courier New', monospace;
+      font-size: 1em;
       color: #1e40af;
-      white-space: nowrap;
-      margin: 10px 0;
+      white-space: pre-wrap;
+      box-shadow: inset 0 0 5px rgba(30, 64, 175, 0.1);
+      position: relative;
+    }
+    .command-box::before {
+      content: "\f121";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #2563eb;
+      opacity: 0.3;
     }
     .note {
       background: #dbeafe;
-      border-left: 4px solid #2563eb;
-      padding: 10px;
-      margin: 15px 0;
-      font-size: 0.95em;
+      border-left: 6px solid #2563eb;
+      border-radius: 6px;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: flex-start;
     }
-    ol {
-      padding-left: 18px;
+    .note i {
+      margin-right: 10px;
+      color: #2563eb;
+      font-size: 1.2em;
+    }
+    ol, ul {
+      padding-left: 25px;
+      margin: 15px 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .step-icon {
+      font-size: 1.5em;
+      margin-right: 10px;
+      color: #2563eb;
+    }
+    .video-link {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .video-link:hover {
+      background: #1e40af;
+    }
+    .hotkey {
+      background: #f4f8fb;
+      border: 1px solid #2563eb;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: bold;
+      color: #1e40af;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #64748b;
     }
     @media (max-width: 600px) {
       body {
-        padding: 10px;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 2em;
       }
       .command-box {
-        font-size: 0.85em;
+        font-size: 0.9em;
       }
     }
   </style>
 </head>
 <body>
-
-  <h1>Bluebook macOS Injection Tutorial</h1>
-  <p>This guide explains how to inject <strong>bluebook.dylib</strong> into the Bluebook app on macOS using two methods:</p>
-  <ul>
-    <li><strong>Preferred Method:</strong> Environment variable injection (persistent and cleaner)</li>
-    <li><strong>Alternate Method:</strong> Direct launch command</li>
-  </ul>
+  <h1><i class="fas fa-book-open step-icon"></i>ACT Bypass Tutorial</h1>
+  <p style="text-align: center; font-style: italic;">Unlock enhanced features with this step-by-step guide. Follow along for a seamless experience on macOS.</p>
 
   <div class="note">
-    <strong>Important:</strong> Ensure that <code>bluebook.dylib</code> is in your <strong>Downloads</strong> folder and the Bluebook app is in the <strong>Applications</strong> folder before starting.
+    <i class="fas fa-exclamation-triangle"></i>
+    <div><strong>Important:</strong> This tutorial is for macOS only. Proceed with caution and ensure proper setup. The spoofer.exe is really undetectable because it's specifically made for the ACT software, bypassing all of its detection mechanisms.</div>
   </div>
 
-  <h2>Step 1 — Disable SIP</h2>
-  <p><strong>Apple Silicon (M1/M2/M3):</strong></p>
-  <p><a href="https://youtu.be/StAn0ZHiXTc?si=Mmb9ywH28igavHkN" target="_blank">▶ Watch SIP Disable Video</a></p>
+  <h2><i class="fas fa-download step-icon"></i>Step 1 — Install VMware and Windows 11</h2>
+  <p>Download VMware and install Windows 11 on it. Follow this detailed video guide:</p>
+  <p><a class="video-link" href="https://youtu.be/dHnw-K1-Ui8?si=2xvrENc5Qbx3w7AV" target="_blank"><i class="fas fa-play"></i> Watch VMware & Windows Install Video</a></p>
 
-  <p><strong>Intel Macs:</strong></p>
+  <div class="note">
+    <i class="fas fa-lightbulb"></i>
+    <div>💡 Ensure Windows 11 is fully installed and running in the VM before proceeding.</div>
+  </div>
+
+  <h2><i class="fas fa-cogs step-icon"></i>Step 2 — Run Spoofer on VM</h2>
+  <p>Download <strong>spoofer.exe</strong> from your purchase and run it inside the Windows 11 VM.</p>
+
+  <h2><i class="fas fa-download step-icon"></i>Step 3 — Download Floating Browser</h2>
+  <p>Download the ZIP file for the floating browser and extract it on your MacBook.</p>
+  <p><a class="video-link" href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" target="_blank"><i class="fas fa-download"></i> Download Floating Browser ZIP</a></p>
+
+  <h2><i class="fas fa-sync-alt step-icon"></i>Step 4 — Reset Floating Browser Trial</h2>
+  <p>The floating browser has a 3-day trial. To reset it for free, access the macOS Containers folder.</p>
   <ol>
-    <li>Restart and hold <strong>Command (⌘) + R</strong> until you see the Apple logo.</li>
-    <li>Go to <strong>Utilities → Terminal</strong>.</li>
-    <li>Follow the commands shown in the video linked above.</li>
+    <li>Press <code class="hotkey">CMD + Space</code> to open Spotlight search.</li>
+    <li>Type <code>~/Library/Containers</code> and hit Enter.</li>
+    <li>In the Containers folder, search for "float".</li>
+    <li>Select the "float" folder and delete it to reset the trial.</li>
   </ol>
 
   <div class="note">
-    💡 To re-enable SIP, follow the same steps but re-run the enable commands.
+    <i class="fas fa-info-circle"></i>
+    <div>🔄 Repeat this reset process as needed to extend the trial period.</div>
   </div>
 
-  <h2>Step 2 — Prepare the Files</h2>
-  <ol>
-    <li>Download <strong>bluebook.dylib</strong> into:
-      <div class="command-box">
-        ~/Downloads/bluebook.dylib
-      </div>
-    </li>
-    <li>Ensure Bluebook is updated and located in:
-      <div class="command-box">
-        /Applications/Bluebook.app
-      </div>
-    </li>
-  </ol>
+  <h2><i class="fas fa-magic step-icon"></i>Step 5 — Use Floating Browser</h2>
+  <p>Run the floating browser on your actual macOS (outside of the VM). Use it to answer questions overlaid on top of the VM window.</p>
 
-  <h2>Step 3 — Preferred Method: Environment Variable Injection</h2>
-  <p>Open <strong>Terminal</strong> and run these commands:</p>
-  <div class="command-box">
-    launchctl setenv DYLD_INSERT_LIBRARIES "$HOME/Downloads/bluebook.dylib"<br>
-    launchctl setenv DYLD_FORCE_FLAT_NAMESPACE 1
-  </div>
-  <p>Then <strong>close Terminal</strong> and open <strong>Bluebook</strong> from Applications. The dylib will now be active.</p>
-
-  <h2>Step 4 — Alternate Method: Direct Launch Command</h2>
-  <p>If you don’t want to use environment variables, you can inject the dylib directly by running this single command in Terminal:</p>
-  <div class="command-box">
-    DYLD_INSERT_LIBRARIES="$HOME/Downloads/bluebook.dylib" /Applications/Bluebook.app/Contents/MacOS/Bluebook
-  </div>
-
-  <h2>Step 5 — Using Hotkeys</h2>
-  <ul>
-    <li><strong>⌘ + T</strong> — Spawn the tab</li>
-    <li><strong>⌘ + E</strong> — Get answer for the current question</li>
-    <li><strong>⌘ + H</strong> or <strong>⌘ + S</strong> — Hide the response window</li>
-  </ul>
-
-  <h2>Step 6 — Cleanup</h2>
-  <p>If you used the environment variable method, unset them afterward by running:</p>
-  <div class="command-box">
-    launchctl unsetenv DYLD_INSERT_LIBRARIES<br>
-    launchctl unsetenv DYLD_FORCE_FLAT_NAMESPACE
-  </div>
-
-  <p>Your system will now be back to normal.</p>
-
+  <footer>
+    Tutorial enhanced for clarity and ease. Always use responsibly. © 2025
+  </footer>
 </body>
 </html>
