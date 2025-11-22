@@ -6,140 +6,195 @@
   <title>Purchase with Solana – Instant Key Delivery</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    :root { --blue: #2563eb; --card: #ffffff; --bg: #f8fafc; --gray: #e2e8f0; --text: #1e293b; }
-    * { box-sizing: border-box; margin:0; padding:0; }
+    :root { --blue: #2563eb; --light-blue: #3b82f6; --purple: #5865F2; }
+    * { box-sizing:border-box; margin:0; padding:0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 15px;
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 20px 15px;
+      font-size: 15.5px;
     }
     .container { max-width: 860px; margin: 0 auto; }
-    .card { background: var(--card); border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.12); }
-    header { background: linear-gradient(135deg, #3b82f6, var(--blue)); color: white; text-align: center; padding: 50px 20px; }
-    h1 { font-size: 2.4rem; font-weight: 800; margin:0; }
-    .subtitle { margin-top: 12px; font-size: 1.15rem; opacity: 0.95; }
+    .card { background: #ffffff; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
 
-    .steps { padding: 35px 25px; counter-reset: step; }
+    header {
+      background: linear-gradient(135deg, var(--light-blue), var(--blue));
+      color: white; text-align: center; padding: 60px 20px 50px;
+    }
+    h1 { font-size: 2.6rem; font-weight: 800; margin:0; }
+    .subtitle { margin-top: 12px; font-size: 1.2rem; opacity: 0.95; }
+
+    .quick-jump {
+      text-align: center; margin: -30px auto 40px; position: relative; z-index: 10;
+    }
+    .quick-jump .btn {
+      display: inline-block; padding: 16px 32px; font-size: 1.15rem; border-radius: 50px;
+      background: white; color: var(--blue); font-weight: 700; box-shadow: 0 10px 30px rgba(37,99,235,0.3);
+    }
+    .quick-jump .btn:hover { transform: translateY(-5px); }
+
+    .steps { padding: 0 30px 40px; counter-reset: step; }
     .step {
       counter-increment: step;
       background: #f8fafc;
-      border-radius: 18px;
-      padding: 28px;
-      margin-bottom: 22px;
+      border-radius: 20px;
+      padding: 30px 30px 30px 80px;
+      margin: 25px 0;
       position: relative;
-      border: 1px solid var(--gray);
+      border: 1px solid #e2e8f0;
     }
     .step::before {
       content: counter(step);
-      position: absolute; left: -14px; top: 24px;
+      position: absolute; left: 20px; top: 28px;
       background: var(--blue); color: white;
-      width: 48px; height: 48px; border-radius: 50%;
+      width: 50px; height: 50px; border-radius: 50%;
+      font-size: 1.6rem; font-weight: bold;
       display: flex; align-items:center; justify-content:center;
-      font-weight: bold; font-size: 1.5rem;
-      box-shadow: 0 6px 15px rgba(37,99,235,0.4);
+      box-shadow: 0 8px 25px rgba(37,99,235,0.4);
     }
-    h2 { margin: 0 0 14px 44px; font-size: 1.45rem; color: var(--blue); }
+    h2 { margin: 0 0 16px 0; font-size: 1.55rem; color: var(--blue); }
+
     .btn {
-      display: block; width: 100%; padding: 18px; margin: 18px 0;
-      background: var(--blue); color: white; text-align: center;
-      font-size: 1.15rem; font-weight: 600; border-radius: 14px;
-      text-decoration: none; box-shadow: 0 6px 18px rgba(37,99,235,0.35);
-      transition: transform 0.25s;
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; width: 100%; padding: 18px;
+      background: var(--blue); color: white;
+      text-align: center; font-size: 1.15rem; font-weight: 600;
+      border-radius: 16px; text-decoration: none;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.35);
+      transition: all 0.3s; margin: 16px 0;
     }
-    .btn:hover { transform: translateY(-3px); }
-    .btn i { margin-right: 12px; }
-    .discord-btn { background: #5865F2; box-shadow: 0 6px 18px rgba(88,101,242,0.4); }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(37,99,235,0.45); }
+    .discord-btn { background: var(--purple); box-shadow: 0 8px 20px rgba(88,101,242,0.4); }
+    .download-btn { background: #10b981; box-shadow: 0 8px 20px rgba(16,185,129,0.4); }
 
     .address-box {
-      background: #f1f5f9; border: 2px dashed #94a3b8;
-      padding: 20px; border-radius: 14px; font-family: 'Courier New', monospace;
-      font-size: 1.05rem; position: relative; margin: 18px 0; word-break: break-all;
+      background: #f0f9ff; border: 2px dashed #0ea5e9;
+      padding: 20px; border-radius: 14px;
+      font-family: 'Courier New', monospace; font-size: 1.1rem;
+      position: relative; margin: 18px 0; word-break: break-all;
     }
     .copy-btn {
       position: absolute; top: 10px; right: 10px;
       background: var(--blue); color: white; border: none;
-      padding: 10px 16px; border-radius: 10px; cursor: pointer;
+      padding: 10px 18px; border-radius: 10px; cursor: pointer; font-weight: bold;
     }
-    .channel { font-weight: 800; background: #e0e7ff; padding: 4px 10px; border-radius: 8px; }
+
     .warning {
       background: #fee2e2; border: 1px solid #fca5a5;
-      color: #991b1b; padding: 20px; border-radius: 14px;
-      margin-top: 20px; font-weight: 600;
+      color: #991b1b; padding: 18px; border-radius: 14px;
+      margin: 20px 0; font-weight: 600;
     }
-    footer { text-align: center; padding: 35px; color: #64748b; }
 
-    @media (max-width <= 600px) {
-      h1 { font-size: 2rem; } header { padding: 40px 15px; }
-      .step { padding: 22px; } h2 { font-size: 1.35rem; margin-left: 40px; }
+    .final-section {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white; text-align: center; padding: 40px 20px;
+      border-radius: 0 0 28px 28px;
+    }
+    footer { text-align:center; padding: 40px; color: #64748b; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .step { padding: 28px 20px 28px 70px; }
+      .step::before { left: 15px; width: 44px; height: 44px; font-size: 1.4rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <header>
-        <h1>Purchase with Solana</h1>
-        <p class="subtitle">Fast, private payment → instant activation key</p>
-      </header>
+<div class="container">
+  <div class="card">
 
-      <div class="steps">
+    <header>
+      <h1>Purchase with Solana</h1>
+      <p class="subtitle">Instant activation key • Private & secure • Key delivered in under 60 seconds</p>
+    </header>
 
-        <div class="step">
-          <h2>Option A – Direct SOL Transfer (fastest)</h2>
-          <p>If you already have a Solana wallet, simply send the required amount to:</p>
-          <div class="address-box">
-            7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
-            <button class="copy-btn" onclick="copyWallet()"><i class="fas fa-copy"></i> Copy</button>
-          </div>
-          <p>Take a screenshot of the successful transaction → go to step 3.</p>
+    <!-- Quick Jump Button -->
+    <div class="quick-jump">
+      <a href="#direct-sol" class="btn">
+        Already have Solana? → Send Directly (Fastest)
+      </a>
+    </div>
+
+    <div class="steps">
+
+      <!-- Option B – Gift Card (shown first for beginners) -->
+      <div class="step">
+        <h2>Option 1 – Buy with Gift Card (Recommended for beginners)</h2>
+        <p>1. Purchase any GiftMeCrypto card(s) that cover the product price (you can combine them).</p>
+        <p><small>Example: SAT ($290) → buy $200 + $50 + $40 cards</small></p>
+        <a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank" class="btn">
+          Buy Gift Card on Eneba
+        </a>
+
+        <p>2. Redeem here → choose <strong>Solana (SOL)</strong> → paste this address:</p>
+        <div class="address-box">
+          7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
+          <button class="copy-btn" onclick="copyWallet()">Copy</button>
         </div>
+        <a href="https://giftmecrypto.io/en/redeem" target="_blank" class="btn">
+          Redeem Gift Card Now
+        </a>
+      </div>
 
-        <div class="step">
-          <h2>Option B – Buy via Gift Card</h2>
-          <p>1. Purchase any GiftMeCrypto card(s) that cover your product price.<br>
-          <small>Example for SAT ($290): $200 + $50 + $40 cards</small></p>
-          <a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank" class="btn">
-            <i class="fas fa-shopping-cart"></i> Buy Gift Card on Eneba
-          </a>
-
-          <p>2. Redeem the card(s) here → choose <strong>Solana (SOL)</strong> → paste the address above.</p>
-          <a href="https://giftmecrypto.io/en/redeem" target="_blank" class="btn">
-            <i class="fas fa-gift"></i> Redeem Gift Card
-          </a>
+      <!-- Option A – Direct SOL (fastest) -->
+      <div class="step" id="direct-sol">
+        <h2>Option 2 – Direct Solana Transfer (Fastest)</h2>
+        <p>If you already have a Phantom, Solflare, Backpack or any Solana wallet:</p>
+        <p>Send the required amount directly to:</p>
+        <div class="address-box">
+          7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
+          <button class="copy-btn" onclick="copyWallet()">Copy</button>
         </div>
-
-        <div class="step">
-          <h2>3. Open Ticket & Get Your Key</h2>
-          <p>Join our server → go to channel <span class="channel">#purchase-our-products</span> → click “Create Ticket” → attach your transaction screenshot.</p>
-          <p>We will verify and send your activation key immediately.</p>
-
-          <a href="https://discord.com/invite/bg6wKj45w3" target="_blank" class="btn discord-btn">
-            <i class="fab fa-discord"></i> Join Discord & Open Ticket
-          </a>
-
-          <div class="warning">
-            <strong>Important</strong><br>
-            • Never share your gift card code<br>
-            • Only send the transaction screenshot in the ticket
-          </div>
-        </div>
+        <p>Take a screenshot of the successful transaction → go to step 3.</p>
+      </div>
 
       </div>
 
-      <footer>Secure payment • Instant key delivery after verification<br>Thank you!</footer>
-    </div>
-  </div>
+      <!-- Final Step -->
+      <div class="step">
+        <h2>3. Receive Your Key Instantly</h2>
+        <p>Join Discord → open a ticket in <strong>#purchase-our-products</strong> → attach transaction screenshot.</p>
+        <p>We verify in seconds and send your <strong>activation key</strong> immediately.</p>
+        <a href="https://discord.com/invite/bg6wKj45w3" target="_blank" class="btn discord-btn">
+          Join Discord & Open Ticket
+        </a>
 
-  <script>
-    function copyWallet() {
-      navigator.clipboard.writeText('7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ');
-      const btn = document.querySelector('.copy-btn');
+        <div class="warning">
+          NEVER share your gift card code • Only send the transaction screenshot
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Final Download Section -->
+    <div class="final-section">
+      <h2 style="margin:0 0 20px; font-size:2rem;">You're Ready!</h2>
+      <p style="font-size:1.2rem; margin-bottom:25px;">Download the software & activate with your key</p>
+      <a href="https://bluebook.ink/tutorialv2" target="_blank" class="btn download-btn" style="display:inline-flex; font-size:1.4rem; padding:20px 40px;">
+        Download Software + Full Tutorial
+      </a>
+    </div>
+
+    <footer>
+      Secure payment • Instant delivery • 24/7 support in Discord<br>
+      Thank you for your purchase!
+    </footer>
+
+  </div>
+</div>
+
+<script>
+  function copyWallet() {
+    navigator.clipboard.writeText('7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ');
+    const btns = document.querySelectorAll('.copy-btn');
+    btns.forEach(btn => {
       const orig = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      btn.innerHTML = 'Copied!';
       setTimeout(() => btn.innerHTML = orig, 2000);
-    }
-  </script>
+    });
+  }
+</script>
 </body>
 </html>
