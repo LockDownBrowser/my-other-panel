@@ -3,176 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Purchase with Crypto (SOL) – BlueBook Style</title>
+  <title>Purchase with Crypto (SOL) – Quick Guide</title>
+  <meta name="theme-color" content="#3b82f6">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&family=Inter:wght@400;600&display=swap');
-    
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #e2e8f0;
       margin: 0;
-      padding: 40px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      padding: 50px 60px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-      border: 1px solid #334155;
+      padding: 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
     }
     h1 {
-      font-family: 'EB Garamond', serif;
-      font-size: 2.8rem;
-      text-align: center;
-      color: #60a5fa;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 700;
     }
     .subtitle {
-      text-align: center;
+      margin: 12px 0 0;
+      opacity: 0.95;
       font-size: 1.1rem;
-      color: #94a3b8;
-      margin-bottom: 40px;
     }
     .steps {
+      padding: 30px 25px;
       counter-reset: step;
     }
     .step {
       counter-increment: step;
-      background: rgba(30, 41, 59, 0.6);
-      border-left: 5px solid #60a5fa;
-      padding: 25px 30px;
-      margin-bottom: 25px;
-      border-radius: 0 12px 12px 0;
+      background: #f1f5f9;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
       position: relative;
+      border: 1px solid var(--border);
     }
     .step::before {
       content: counter(step);
       position: absolute;
-      left: -15px;
+      left: -12px;
       top: 20px;
-      background: #60a5fa;
-      color: #0f172a;
-      width: 40px;
-      height: 40px;
+      background: var(--primary);
+      color: white;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 10px rgba(59,130,246,0.4);
     }
     h2 {
-      font-family: 700 1.5rem 'EB Garamond', serif;
-      color: #93bbfc;
-      margin: 0 0 15px 0;
+      margin: 0 0 12px 40px;
+      font-size: 1.4rem;
+      color: var(--primary-dark);
     }
-    a {
-      color: #60a5fa;
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      margin: 16px 0;
+      background: var(--primary);
+      color: white;
+      text-align: center;
       text-decoration: none;
+      border-radius: 12px;
       font-weight: 600;
-    }
-    a:hover { text-decoration: underline; }
-    .address {
-      background: #1e293b;
-      padding: 12px 18px;
-      border-radius: 8px;
-      font-family: monospace;
       font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+      transition: all 0.2s;
+    }
+    .btn:hover, .btn:active {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+    }
+    .btn i { margin-right: 10px; }
+    .address-box {
+      background: #f8fafc;
+      border: 2px dashed #94a3b8;
+      padding: 16px;
+      border-radius: 12px;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
       word-break: break-all;
-      display: inline-block;
-      margin: 10px 0;
+      margin: 16px 0;
+      position: relative;
     }
     .copy-btn {
-      background: #60a5fa;
-      color: #0f172a;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      background: var(--primary);
+      color: white;
       border: none;
-      padding: 8px 16px;
-      margin-left: 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .copy-btn:hover { background: #93bbfc; }
-    .warning {
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid #ef4444 solid;
-      padding: 15px;
+      padding: 8px 14px;
       border-radius: 8px;
-      color: #fca5a5;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .warning {
+      background: #fee2e2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+      padding: 18px;
+      border-radius: 12px;
       margin-top: 20px;
+      font-weight: 600;
     }
     footer {
       text-align: center;
-      margin-top: 50px;
-      color: #64748b;
-      font-size: 0.9rem;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 1.9rem; }
+      .step { padding:18px; }
+      h2 { margin-left:35px; font-size:1.3rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>How to Purchase with Crypto</h1>
-    <p class="subtitle">Pay with Solana (SOL) via GiftMeCrypto – Fast & Secure</p>
+    <div class="card">
+      <header>
+        <h1>Purchase with Crypto</h1>
+        <p class="subtitle">Pay with Solana (SOL) – Fast, Private & Secure</p>
+      </header>
 
-    <div class="steps">
+      <div class="steps">
 
-      <div class="step">
-        <h2>1. Buy GiftMeCrypto Gift Card</h2>
-        <p>Go to the official store and purchase a gift card for the exact (or slightly higher) amount needed for your product.</p>
-        <p><strong>Examples:</strong><br>
-          • ACT product (390 USD) → buy 400 USD card<br>
-          • SAT product (290 USD) → buy 300 USD card</p>
-        <p><a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank">
-          ➜ https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global</a></p>
-      </div>
-
-      <div class="step">
-        <h2>2. Redeem the Gift Card for Solana (SOL)</h2>
-        <p>After purchase, go to the redemption page:</p>
-        <p><a href="https://giftmecrypto.io/en/redeem" target="_blank">
-          ➜ https://giftmecrypto.io/en/redeem</a></p>
-        <p>Choose <strong>Solana (SOL)</strong> as the cryptocurrency and paste this wallet address:</p>
-        <div class="address" id="wallet">7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
-          <button class="copy-btn" onclick="copyAddress()">Copy</button>
+        <div class="step">
+          <h2>Step 1: Buy GiftMeCrypto Gift Card</h2>
+          <p>Choose a card value that covers your product price (or slightly higher).</p>
+          <p><strong>Examples:</strong><br>ACT = $390 → buy $400 card<br>SAT = $290 → buy $300 card</p>
+          <a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank" class="btn">
+            <i class="fas fa-shopping-cart"></i> Buy Gift Card on Eneba
+          </a>
         </div>
-      </div>
 
-      <div class="step">
-        <h2>3. Wait for Confirmation & Screenshot</h2>
-        <p>Once the SOL is sent to the address, take a clear screenshot of the successful transaction (from Solscan or your wallet history).</p>
-      </div>
-
-      <div class="step">
-        <h2>4. Open a Ticket on Discord</h2>
-        <p>Join our Discord and open a ticket in the channel <strong>#purchase-our-products</strong>.</p>
-        <p>Attach the transaction screenshot.<br>
-        <strong>We will deliver your bypass immediately after verification.</strong></p>
-
-        <div class="warning">
-          ⚠️ <strong>IMPORTANT:</strong><br>
-          • Do <strong>NOT</strong> share your gift card code in Discord.<br>
-          • Only open a ticket <strong>after</strong> the SOL transaction is completed.
+        <div class="step">
+          <h2>Step 2: Redeem for Solana (SOL)</h2>
+          <p>After buying the card, redeem it here and select <strong>Solana</strong>:</p>
+          <a href="https://giftmecrypto.io/en/redeem" target="_blank" class="btn">
+            <i class="fas fa-gift"></i> Redeem Gift Card
+          </a>
+          <p><strong>Send SOL to this address:</strong></p>
+          <div class="address-box">
+            7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
+            <button class="copy-btn" onclick="copyWallet()">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
         </div>
+
+        <div class="step">
+          <h2>Step 3: Screenshot the Transaction</h2>
+          <p>Wait until the SOL arrives (usually < 30 seconds). Take a screenshot of the successful transaction from your wallet or Solscan.</p>
+        </div>
+
+        <div class="step">
+          <h2>Step 4: Open Discord Ticket</h2>
+          <p>Open a ticket in <strong>#purchase-our-products</strong> channel on our Discord and attach the screenshot.</p>
+          <p>We’ll send your bypass instantly after verification.</p>
+
+          <div class="warning">
+            <i class="fas fa-exclamation-triangle"></i> <strong>IMPORTANT</strong><br>
+            • NEVER share your gift card code in Discord<br>
+            • Only open a ticket AFTER the SOL transaction is complete
+          </div>
+        </div>
+
       </div>
 
+      <footer>
+        Secure payment via Solana • Instant delivery after verification<br>
+        Thank you for your purchase!
+      </footer>
     </div>
-
-    <footer>
-      Thank you for your purchase • Payment processed securely via Solana
-    </footer>
   </div>
 
   <script>
-    function copyAddress() {
+    function copyWallet() {
       navigator.clipboard.writeText('7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ');
       const btn = document.querySelector('.copy-btn');
-      btn.textContent = 'Copied!';
-      setTimeout(() => btn.textContent = 'Copy', 2000);
+      const original = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      setTimeout(() => btn.innerHTML = original, 2000);
     }
   </script>
 </body>
