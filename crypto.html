@@ -14,80 +14,91 @@
       padding:20px 15px; font-size:15px;
     }
     .container { max-width:780px; margin:0 auto; }
-    .card { background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,.12); }
+    .card { background:#fff; border-radius:28px; overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,.12); }
 
+    /* Enhanced beautiful header */
     header {
       background:linear-gradient(135deg,var(--light-blue),var(--blue));
-      color:white; text-align:center; padding:50px 20px 40px;
+      color:white; text-align:center; padding:60px 20px 70px;
+      position:relative; overflow:hidden;
     }
-    h1 { font-size:2.3rem; font-weight:800; margin:0; }
-    .subtitle { margin-top:10px; font-size:1.1rem; opacity:.95; }
+    header::after {
+      content:""; position:absolute; inset:0;
+      background:radial-gradient(circle at 50% 100%,rgba(255,255,255,.15),transparent 70%);
+    }
+    h1 { font-size:2.4rem; font-weight:800; margin:0; position:relative; z-index:1; }
+    .subtitle { margin-top:12px; font-size:1.15rem; opacity:.95; position:relative; z-index:1; }
 
-    /* Clean white separation + smaller centered button */
+    /* Clean white separator + small centered jump button */
     .quick-jump {
-      text-align:center; padding:20px 0 40px; background:#fff;
+      text-align:center; padding:25px 0 45px; background:#fff;
     }
     .quick-jump .btn {
       display:inline-flex; align-items:center; gap:10px;
-      background:var(--light-blue); color:white; padding:13px 26px;
-      font-size:1rem; font-weight:700; border-radius:14px;
-      box-shadow:0 8px 20px rgba(59,130,246,.35); transition:transform .3s;
+      background:var(--light-blue); color:white; padding:13px 28px;
+      font-size:1rem; font-weight:700; border-radius:16px;
+      box-shadow:0 8px 22px rgba(59,130,246,.35); transition:transform .3s;
     }
-    .quick-jump .btn:hover { transform:translateY(-3px); }
+    .quick-jump .btn:hover { transform:translateY(-4px); }
 
-    .steps { padding:20px 35px 50px; counter-reset:step; }
+    .steps { padding:0 32px 50px; counter-reset:step; }
     .step {
-      counter-increment:step; background:#f8faff; border-radius:18px;
-      padding:28px 32px 32px 85px; margin:24px 0; position:relative;
-      border:1px solid #e0e7ff; text-align:left;
+      counter-increment:step; background:#f9faff; border-radius:20px;
+      padding:32px 28px; margin:28px 0; position:relative;
+      border:1px solid #e0e7ff; box-shadow:0 6px 20px rgba(0,0,0,.05);
+      text-align:center; /* perfect centering */
     }
     .step::before {
-      content:counter(step); position:absolute; left:22px; top:28px;
-      background:var(--blue); color:white; width:46px; height:46px; border-radius:50%;
-      font-size:1.5rem; font-weight:bold; display:flex; align-items:center; justify-content:center;
-      box-shadow:0 6px 18px rgba(37,99,235,.4);
+      content:counter(step); position:absolute; left:50%; top:-24px; transform:translateX(-50%);
+      background:var(--blue); color:white; width:54px; height:54px; border-radius:50%;
+      font-size:1.7rem; font-weight:bold; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 10px 28px rgba(37,99,235,.45);
     }
     h2 {
-      margin:0 0 14px 0; font-size:1.45rem; color:var(--blue); text-align:left;
+      margin:10px 0 16px; font-size:1.48rem; color:var(--blue);
     }
-    p, li { font-size:0.98rem; margin:10px 0; color:#334155; }
+    p, li { font-size:0.98rem; margin:11px 0; color:#334155; }
 
     .btn {
       display:flex; align-items:center; justify-content:center; gap:12px;
-      width:100%; padding:17px; background:var(--blue); color:white;
-      font-size:1.05rem; font-weight:600; border-radius:14px; text-decoration:none;
-      box-shadow:0 8px 20px rgba(37,99,235,.3); transition:all .3s; margin:16px 0;
+      width:100%; max-width:420px; margin:18px auto; padding:18px;
+      background:var(--blue); color:white; font-size:1.05rem; font-weight:600;
+      border-radius:16px; text-decoration:none;
+      box-shadow:0 8px 22px rgba(37,99,235,.3); transition:all .3s;
     }
-    .btn:hover { transform:translateY(-3px); box-shadow:0 14px 28px rgba(37,99,235,.4); }
-    .discord-btn { background:var(--purple); box-shadow:0 8px 20px rgba(88,101,242,.3); }
-    .download-btn { background:var(--green); box-shadow:0 8px 20px rgba(16,185,129,.3); }
+    .btn:hover { transform:translateY(-4px); box-shadow:0 16px 34px rgba(37,99,235,.45); }
+    .discord-btn { background:var(--purple); box-shadow:0 8px 22px rgba(88,101,242,.3); }
+    .download-btn { background:var(--green); box-shadow:0 8px 22px rgba(16,185,129,.3); }
 
     .address-box {
-      background:#f0f9ff; border:2px dashed #60a5fa; padding:18px; border-radius:12px;
-      font-family:'Courier New',monospace; font-size:1rem; position:relative;
-      margin:16px 0; word-break:break-all; text-align:center;
+      background:#f0f9ff; border:2px dashed #60a5fa; padding:18px;
+      border-radius:14px; font-family:'Courier New',monospace; font-size:1rem;
+      margin:18px auto; max-width:460px; word-break:break-all;
     }
     .copy-btn {
       position:absolute; top:8px; right:8px; background:var(--blue); color:white;
-      border:none; padding:8px 14px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:0.9rem;
+      border:none; padding:8px 15px; border-radius:8px; cursor:pointer; font-size:0.9rem;
     }
 
     .warning {
       background:#fffbeb; border-left:5px solid var(--amber); padding:16px;
-      border-radius:10px; margin:18px 0; font-weight:600; color:#92400e; font-size:0.95rem;
+      border-radius:10px; margin:18px auto; max-width:480px; font-weight:600;
+      color:#92400e; font-size:0.95rem;
     }
 
     .final-section {
       background:linear-gradient(135deg,var(--green),#059669);
-      color:white; text-align:center; padding:45px 20px;
+      color:white; text-align:center; padding:50px 20px;
     }
 
     footer { text-align:center; padding:40px; color:#64748b; font-size:0.9rem; }
 
     @media (max-width:600px) {
-      .step { padding:24px 20px 28px 70px; }
-      .step::before { left:16px; width:42px; height:42px; font-size:1.3rem; }
+      header { padding:50px 15px 60px; }
       h1 { font-size:2rem; }
+      .step { padding:28px 20px; }
+      .step::before { width:48px; height:48px; font-size:1.5rem; top:-22px; }
+      .btn { max-width:100%; }
     }
   </style>
 </head>
@@ -97,10 +108,9 @@
 
     <header>
       <h1>Purchase with Solana</h1>
-      <p class="subtitle">Private • Secure • Key delivered instantly</p>
+      <p class="subtitle">Private • Secure • Instant activation key</p>
     </header>
 
-    <!-- Clean separation + smaller centered button -->
     <div class="quick-jump">
       <a href="#direct-sol" class="btn">
         Already have Solana? Jump to Direct Transfer
@@ -110,7 +120,7 @@
     <div class="steps">
 
       <div class="step">
-        <h2>Option 1 – Buy with Gift Card (Beginner Friendly)</h2>
+        <h2>Option 1 – Gift Card (Beginner Friendly)</h2>
         <p>Buy any GiftMeCrypto card(s) that cover the price.</p>
         <p><small>SAT example ($290): $200 + $50 + $40</small></p>
         <a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank" class="btn">
@@ -128,7 +138,7 @@
       </div>
 
       <div class="step" id="direct-sol">
-        <h2>Option 2 – Direct Solana Transfer (Fastest)</h2>
+        <h2>Option 2 – Direct Transfer (Fastest)</h2>
         <p>Send the required amount from any Solana wallet:</p>
         <div class="address-box">
           7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
@@ -138,21 +148,21 @@
       </div>
 
       <div class="step">
-        <h2>3. Download Software & Get Your Key</h2>
+        <h2>3. Download & Get Your Key</h2>
 
         <div class="warning">
           <strong>Key expires in 1–2 hours!</strong><br>
           Complete the full setup BEFORE requesting your key.
         </div>
 
-        <p>Download the complete package (VMware guide, PSI bypass, floating browser):</p>
+        <p>Download everything (VMware guide, PSI bypass, floating browser):</p>
         <a href="https://bluebook.ink/tutorialv2" target="_blank" class="btn download-btn">
-          Download Full Software + Setup Guide
+          Download Full Software + Guide
         </a>
 
-        <p>Once everything is installed and ready:</p>
+        <p>When you’re fully set up, open a ticket:</p>
         <a href="https://discord.com/invite/bg6wKj45w3" target="_blank" class="btn discord-btn">
-          Join Discord → Open Ticket → Get Key
+          Join Discord → Get Key
         </a>
 
         <div class="warning">
@@ -163,9 +173,9 @@
     </div>
 
     <div class="final-section">
-      <h2 style="font-size:2rem;">You're Ready!</h2>
-      <p style="font-size:1.15rem; margin-top:15px;">
-        Setup → Pay → Activate → Pass with 100%
+      <h2 style="font-size:2.1rem;">You’re Ready!</h2>
+      <p style="font-size:1.2rem; margin-top:15px;">
+        Setup → Pay → Activate → 100%
       </p>
     </div>
 
