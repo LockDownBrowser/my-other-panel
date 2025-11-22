@@ -2,175 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ACT Bypass Tutorial – Full Setup Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>ACT Bypass – Full Setup Guide (macOS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
+    :root { --blue: #2563eb; --light-blue: #3b82f6; --bg: #f8fafc; --card: #ffffff; }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      background: linear-gradient(135deg, #f4f8fb, #e0ecff);
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #dbeafe);
       color: #1e293b;
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      line-height: 1.7;
+      padding: 20px 15px;
     }
-    h1, h2 { color: #2563eb; text-shadow: 1px 1px 2px rgba(37,99,235,0.2); }
-    h1 { text-align: center; font-size: 2.5em; margin-bottom: 0.5em; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { color: #1e40af; text-decoration: underline; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 40px 35px;
+      margin-bottom: 25px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.6rem;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #475569;
+      margin-bottom: 30px;
+    }
+    .steps { counter-reset: step; }
+    .step {
+      counter-increment: step;
+      background: #f0f7ff;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 22px;
+      position: relative;
+      border: 1px solid #bfdbfe;
+    }
+    .step::before {
+      content: counter(step);
+      position: absolute;
+      left: -16px; top: 26px;
+      background: var(--blue);
+      color: white;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+    }
+    h2 {
+      margin: 0 0 16px 48px;
+      font-size: 1.6rem;
+      color: var(--blue);
+    }
     .btn {
       display: inline-block;
-      background: #2563eb;
+      background: var(--light-blue);
       color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.1em;
-      text-align: center;
-      box-shadow: 0 6px 15px rgba(37,99,235,0.3);
+      padding: 16px 28px;
+      border-radius: 14px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(59,130,246,0.35);
       transition: all 0.3s;
-      margin: 15px 0;
+      margin: 12px 0;
     }
-    .btn:hover {
-      background: #1e40af;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(37,99,235,0.4);
-    }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(59,130,246,0.45); }
     .btn i { margin-right: 10px; }
-    code {
-      background: #dbeafe;
-      padding: 4px 8px;
-      border-radius: 4px;
-      color: #1e40af;
-      font-weight: bold;
-    }
-    .command-box {
-      background: #e0ecff;
-      border-radius: 8px;
-      padding: 15px;
-      overflow-x: auto;
-      font-family: 'Courier New', monospace;
-      font-size: 1em;
-      color: #1e40af;
-      white-space: pre-wrap;
-      box-shadow: inset 0 0 5px rgba(30,64,175,0.1);
-      position: relative;
-    }
-    .command-box::before {
-      content: "\f121";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      top: 10px; right: 10px;
-      color: #2563eb;
-      opacity: 0.3;
-    }
-    .note {
-      background: #dbeafe;
-      border-left: 6px solid #2563eb;
-      border-radius: 6px;
-      padding: 15px;
-      margin: 20px 0;
-      font-size: 1em;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      display: flex;
-      align-items: flex-start;
-    }
-    .note i { margin-right: 10px; color: #2563eb; font-size: 1.3em; margin-top: 2px; }
+    .btn.big { padding: 20px 32px; font-size: 1.3rem; display: block; text-align: center; width: 100%; max-width: 500px; margin: 25px auto; }
     .warning {
       background: #fee2e2;
       border-left: 6px solid #ef4444;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      font-weight: 600;
       color: #991b1b;
     }
-    ol, ul { padding-left: 25px; margin: 15px 0; }
-    li { margin-bottom: 10px; }
-    .step-icon { font-size: 1.5em; margin-right: 12px; color: #2563eb; }
-    .hotkey {
-      background: #f4f8fb; border: 1px solid #2563eb; border-radius: 4px; padding: 3px 7px; font-weight: bold; color: #1e40af; }
-    footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #64748b; }
-    @media (max-width: 600px) {
-      body { padding: 15px; }
-      h1 { font-size: 2em; }
-      .btn { width: 100%; padding: 16px; font-size: 1.15em; }
+    .key {
+      background: #dbeafe;
+      padding: 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 1.1rem;
+      text-align: center;
+      margin: 15px 0;
+      border: 2px dashed var(--blue);
+    }
+    .highlight {
+      background: #dbeafe;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: var(--blue);
+    }
+    footer { text-align:center; padding:40px; color:#64748b; font-size:0.95rem; }
+    @media (max-width: 640px) {
+      h1 { font-size: 2.2rem; }
+      .step { padding: 24px; }
+      h2 { font-size: 1.45rem; margin-left: 44px; }
+      .btn.big { font-size: 1.2rem; padding: 18px; }
     }
   </style>
 </head>
 <body>
+  <div class="container">
 
-  <h1>ACT Bypass Tutorial – Complete Setup</h1>
-  <p style="text-align: center; font-style: italic; font-size: 1.2em;">Step-by-step guide to safely bypass ACT detection on macOS</p>
+    <div class="card">
+      <h1>ACT Bypass – Complete Setup Guide</h1>
+      <p class="subtitle">Undetectable • Works on Every Exam • Instant Activation</p>
+    </div>
 
-  <div class="note warning">
-    <i class="fas fa-exclamation-triangle"></i>
-    <div><strong>CRITICAL:</strong> The bypass ONLY works after you activate PSI.exe with a valid key. Without activation the software will not function.</div>
+    <div class="steps">
+
+      <div class="step">
+        <h2>Install VMware + Windows 11</h2>
+        <p>Download and set up VMware Fusion with a fresh Windows 11 VM.</p>
+        <a href="https://youtu.be/dHnw-K1-Ui8?si=2xvrENc5Qbx3w7AV" target="_blank" class="btn">
+          <i class="fas fa-play"></i> Watch Full Video Guide
+        </a>
+      </div>
+
+      <div class="step">
+        <h2>Download & Activate PSI Bypass (Inside VM)</h2>
+        <p>Inside your Windows 11 VM:</p>
+        <ol style="margin-left:20px;">
+          <li>Download the bypass tool:</li>
+          <li>Unzip the fileli>
+          <li>Run <strong>PSI.exe</strong>li>
+          <li>Enter your <strong>activation key</strong> when promptedli>
+        </ol>
+        <a href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" target="_blank" class="btn">
+          <i class="fas fa-download"></i> Download PSI Bypass Tool
+        </a>
+
+        <div class="warning">
+          <strong>Critical:</strong> The bypass will NOT work without a valid activation key.
+        </div>
+      </div>
+
+      <div class="step">
+        <h2>Get Your Activation Key</h2>
+        <p>If you don’t have a key yet, purchase instantly with crypto:</p>
+        <a href="https://bluebook.ink/crypto" target="_blank" class="btn big">
+          <i class="fas fa-key"></i> Buy Activation Key Now (Solana)
+        </a>
+      </div>
+
+      <div class="step">
+        <h2>Download Floating Browser (macOS)</h2>
+        <p>Download and extract on your Mac (outside the VM):</p>
+        <a href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" target="_blank" class="btn">
+          <i class="fas fa-download"></i> Download Floating Browser ZIP
+        </a>
+      </div>
+
+      <div class="step">
+        <h2>Unlimited Trial Reset (Floating Browser)</h2>
+        <p>Reset the 3-day trial anytime:</p>
+        <ol style="margin-left:20px;">
+          <li>Press <span class="highlight">⌘ + Space</span> → type <code>~/Library/Containers</code> → Enterli>
+          <li>Search for “float”li>
+          <li>Delete the folder named similar to <code>com.floating.browser...</code>li>
+          <li>Re-launch the browser → trial reset!li>
+        </ol>
+      </div>
+
+      <div class="step">
+        <h2>Take the Exam</h2>
+        <p>After PSI.exe is activated:</p>
+        <ul style="margin-left:20px;">
+          <li>Launch BlueBook or ACT Gateway inside the VMli>
+          <li>Use the floating browser on macOS to see answers overlaidli>
+          <li>100% safe & undetectableli>
+        </ul>
+      </div>
+
+    </div>
+
+    <footer>
+      Secure • Instant • Works Every Time<br>
+      Questions? Open a ticket in Discord after purchase.
+    </footer>
   </div>
-
-  <h2>Step 1 — Install VMware + Windows 11 on your Mac</h2>
-  <p>Follow this video to set up VMware Fusion and install Windows 11:</p>
-  <p style="text-align:center;">
-    <a class="btn" href="https://youtu.be/dHnw-K1-Ui8?si=2xvrENc5Qbx3w7AV" target="_blank">
-      Watch VMware & Windows 11 Setup Video
-    </a>
-  </p>
-
-  <h2>Step 2 — Install & Activate PSI Bypass (Inside Windows VM)</h2>
-  <ol>
-    <li>Inside your Windows 11 VM, download the PSI bypass package:</li>
-    <p style="text-align:center; margin:20px 0;">
-      <a class="btn" href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" target="_blank">
-        Download PSI Bypass Package
-      </a>
-    </p>
-    <li>Unzip the downloaded file.</li>
-    <li>Run <code>PSI.exe</code> as Administrator.</li>
-    <li>Enter your <strong>activation key</strong> when prompted.</li>
-  </ol>
-
-  <div class="note warning">
-    <i class="fas fa-key"></i>
-    <div><strong>No activation key yet?</strong> Purchase instantly with crypto (SOL):</div>
-    <p style="text-align:center; margin:15px 0;">
-      <a class="btn" href="https://bluebook.ink/crypto" target="_blank" style="background:#10b981;">
-        Purchase Activation Key (Crypto)
-      </a>
-    </p>
-  </div>
-
-  <h2>Step 3 — Download Floating Browser (macOS)</h2>
-  <p>Download and extract the floating browser on your Mac (outside the VM):</p>
-  <p style="text-align:center;">
-    <a class="btn" href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" target="_blank">
-      Download Floating Browser ZIP
-    </a>
-  </p>
-
-  <h2>Step 4 — Reset Floating Browser Trial (Unlimited Use)</h2>
-  <ol>
-    <li>Press <code class="hotkey">⌘ + Space</code> → type <code>~/Library/Containers</code> → Enter</li>
-    <li>Search for “float” → delete the folder named similar to “float” or “com.floating...”</li>
-    <li>Restart the floating browser → trial is reset</li>
-  </ol>
-
-  <h2>Step 5 — Take Your Exam Safely</h2>
-  <p>Once PSI.exe is running and activated inside the VM:</p>
-  <ul>
-    <li>Launch BlueBook or ACT Gateway inside the Windows VM</li>
-    <li>Use the floating browser on your Mac to view answers overlaid on top of the VM window</li>
-    <li>Everything is 100% undetectable</li>
-  </ul>
-
-  <div class="note">
-    <i class="fas fa-shield-alt"></i>
-    <div>PSI bypass is custom-built for ACT/College Board software — no generic spoofer can achieve this level of stealth.</div>
-  </div>
-
-  <footer>
-    Secure • Undetectable • Instant Activation<br>
-    © 2025 – Use responsibly
-  </footer>
-
 </body>
 </html>
