@@ -13,66 +13,74 @@
       background:#f8fbff; color:#1e293b; line-height:1.6;
       padding:16px 8px; font-size:16px;
     }
-    .container { max-width:920px; margin:0 auto; }
-    .card { background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.1); }
+    .container { max-width:100%; margin:0 auto; padding:0 12px; }
+    .card { background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.1); max-width:920px; margin:0 auto; }
 
     header {
       background:linear-gradient(135deg,var(--light-blue),var(--blue));
       color:#fff; text-align:center; padding:80px 20px;
     }
-    h1 { font-size:2.6rem; font-weight:900; }
-    .subtitle { margin-top:12px; font-size:1.25rem; font-weight:600; color:#fff !important; }
+    h1 { font-size:2.6rem; font-weight:900; margin-bottom:8px; }
+    .subtitle { margin-top:12px; font-size:1.25rem; font-weight:600; color:#ffffff; }
 
-    .steps { padding:30px 48px 70px; }
+    .steps { padding:40px 48px 80px; }
 
     .step {
       background:#fff; border:1px solid #e2e8f0; border-radius:20px;
-      padding:40px 48px; margin:36px 0; box-shadow:0 8px 30px rgba(0,0,0,.06);
+      padding:44px 52px; margin:36px 0; box-shadow:0 10px 35px rgba(0,0,0,.07);
     }
-    h2 { font-size:1.75rem; color:var(--blue); margin-bottom:20px; font-weight:700; }
+
+    h2 { font-size:1.78rem; color:var(--blue); margin-bottom:24px; font-weight:700; }
+
+    ol { padding-left:26px; margin:18px 0; }
+    li { margin:12px 0; color:#475569; }
 
     .btn {
       display:flex; align-items:center; justify-content:center; gap:12px;
-      width:100%; max-width:520px; margin:28px auto; padding:19px;
-      background:var(--blue); color:#fff; font-size:1.12rem; font-weight:600;
-      border-radius:16px; text-decoration:none; box-shadow:0 12px 32px rgba(37,99,235,.35);
-      transition:all .3s;
+      width:100%; max-width:540px; margin:28px auto; padding:19px;
+      background:var(--blue); color:#fff; font-size:1.13rem; font-weight:600;
+      border-radius:16px; text-decoration:none; box-shadow:0 12px 34px rgba(37,99,235,.38);
+      transition:transform .3s, box-shadow .3s;
     }
-    .btn:hover { transform:translateY(-6px); box-shadow:0 24px 48px rgba(37,99,235,.5); }
+    .btn:hover { transform:translateY(-6px); box-shadow:0 24px 50px rgba(37,99,235,.5); }
     .discord-btn { background:var(--purple); }
     .download-btn { background:var(--green); }
 
     .address-box {
       background:#f0f9ff; border:2px dashed #93c5fd; border-radius:14px;
-      padding:24px 24px 24px 80px; margin:24px 0; position:relative;
-      font-family:'Courier New',monospace; font-size:1.05rem; color:#1e40af;
+      padding:26px 28px 26px 90px; margin:24px 0; position:relative;
+      font-family:'Courier New',monospace; font-size:1.06rem; color:#1e40af;
       word-break:break-all; line-height:1.5;
     }
     .copy-btn {
-      position:absolute; left:16px; top:50%; transform:translateY(-50%);
-      background:var(--blue); color:#fff; border:none; width:48px; height:48px;
-      border-radius:12px; cursor:pointer; font-size:1.4rem;
+      position:absolute; left:20px; top:50%; transform:translateY(-50%);
+      background:var(--blue); color:#fff; border:none; width:52px; height:52px;
+      border-radius:14px; cursor:pointer; font-size:1.5rem;
       display:flex; align-items:center; justify-content:center;
     }
+    .copy-btn:hover { background:#1d4ed8; }
 
     .warning {
       background:#fffbeb; border-left:6px solid var(--amber);
-      padding:22px 24px; border-radius:12px; margin:28px 0;
-      font-weight:600; color:#92400e;
+      padding:24px 26px; border-radius:12px; margin:28px 0;
+      font-weight:600; color:#92400e; font-size:1.02rem;
     }
 
     .final-section {
       background:linear-gradient(135deg,var(--green),#059669);
-      color:#fff; text-align:center; padding:70px 20px; border-radius:0 0 24px 24px;
+      color:#fff; text-align:center; padding:80px 20px;
+      border-radius:0 0 24px 24px;
     }
-    .final-section h2 { font-size:2.4rem; font-weight:900; }
-    .final-section p { font-size:1.3rem; margin-top:16px; }
+    .final-section h2 { font-size:2.5rem; font-weight:900; }
+    .final-section p { font-size:1.35rem; margin-top:16px; }
 
-    footer { text-align:center; padding:50px; color:#64748b; }
+    footer { text-align:center; padding:50px; color:#64748b; font-size:0.95rem; }
 
     @media (max-width:640px) {
-      .step { padding:36px 28px; }
-      .address-box { padding-left:74px; }
+      .steps { padding:20px 24px 60px; }
+      .step { padding:36px 32px; }
+      .address-box { padding:22px 22px 22px 80px; font-size:1rem; }
+      .copy-btn { width:48px; height:48px; font-size:1.4rem; }
     }
   </style>
 </head>
@@ -87,81 +95,87 @@
 
     <div class="steps">
 
-      <!-- Option 1 + Quick Jump Button Together -->
+      <!-- Option 1 – Gift Card + Quick Jump Button Inside -->
       <div class="step">
-        <h2>Option 1 – Buy with Gift Card (Easiest) • Option 2 – Direct Transfer (Fastest)</h2>
-
-        <p style="text-align:center; margin-bottom:30px;">
-          <a href="#direct-sol" class="btn" style="display:inline-flex; max-width:480px;">
-            Already Have SOL? Jump Straight to Direct Transfer
-          </a>
-        </p>
-
-        <h3 style="font-size:1.3rem; color:var(--blue); margin:30px 0 16px;">Gift Card Path</h3>
+        <h2>Option 1 – Buy with Gift Card (Easiest for Beginners)</h2>
         <ol>
-          <li>Go to Eneba → buy GiftMeCrypto card(s) that cover your price<br>
-             <small>e.g. $290 → $300 or $200+$50+$40</small></li>
-          <li>Pay → receive code instantly</li>
-          <li>Go to redeem page → paste code → choose <strong>Solana (SOL)</strong></li>
+          <li>Click below → go to Eneba</li>
+          <li>Buy GiftMeCrypto card(s) totaling your product price<br>
+             <small>e.g. $290 → one $300 or $200 + $50 + $40</small></li>
+          <li>Pay with card/PayPal → get code instantly</li>
+        </ol>
+        <a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank" class="btn">
+          Buy Gift Card on Eneba
+        </a>
+
+        <p>Then redeem the code:</p>
+        <ol start="4">
+          <li>Go to redeem page</li>
+          <li>Paste your code</li>
+          <li>Choose <strong>Solana (SOL)</strong></li>
           <li>Send to this address:</li>
         </ol>
-
         <div class="address-box">
           7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
-          <button class="copy-btn" onclick="copyWallet()" title="Copy"><i class="fas fa-copy"></i></button>
+          <button class="copy-btn" onclick="copyWallet()" title="Copy address">
+            <i class="fas fa-copy"></i>
+          </button>
         </div>
+        <a href="https://giftmecrypto.io/en/redeem" target="_blank" class="btn">
+          Redeem Gift Card Now
+        </a>
 
-        <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
-          <a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank" class="btn">
-            Buy Gift Card on Eneba
-          </a>
-          <a href="https://giftmecrypto.io/en/redeem" target="_blank" class="btn">
-            Redeem Gift Card Now
+        <!-- Quick jump button now inside Option 1 (no separation) -->
+        <div style="text-align:center; margin-top:40px;">
+          <a href="#direct-sol" class="btn" style="background:var(--light-blue);">
+            Already have SOL? → Jump to Direct Transfer
           </a>
         </div>
       </div>
 
-      <!-- End Gift Card -->
-
-      <!-- Direct Transfer -->
+      <!-- Option 2 – Direct Transfer -->
       <div class="step" id="direct-sol">
-        <h2>Direct Solana Transfer</h2>
-        <p>Use Phantom, Solflare, Backpack, etc.</p>
+        <h2>Option 2 – Direct Solana Transfer (Fastest)</h2>
+        <p>If you already have Phantom, Solflare, Backpack, etc.:</p>
         <ol>
-          <li>Open wallet → Send SOL</li>
-          <li>Paste address</li>
-          <li>Enter exact amount for your product</li>
-          <li>Confirm (2–10 seconds)</li>
-          <li>Take screenshot of success screen</li>
+          <li>Open your wallet</li>
+          <li>Tap “Send” → choose SOL</li>
+          <li>Paste this address:</li>
         </ol>
-
         <div class="address-box">
           7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
-          <button class="copy-btn" onclick="copyWallet()" title="Copy"><i class="fas fa-copy"></i></button>
+          <button class="copy-btn" onclick="copyWallet()" title="Copy address">
+            <i class="fas fa-copy"></i>
+          </button>
         </div>
+        <ol start="4">
+          <li>Enter exact amount for your product</li>
+          <li>Confirm → transaction takes 2–10 seconds</li>
+          <li>Screenshot the success screen</li>
+        </ol>
       </div>
 
       <!-- Final Step -->
       <div class="step">
-        <h2>Get Your Instant Key</h2>
+        <h2>3. Download & Get Your Instant Key</h2>
 
         <div class="warning">
           <strong>Key expires in 1–2 hours!</strong><br>
-          Download & setup everything FIRST.
+          Download and setup everything FIRST.
         </div>
 
-        <p>Download full package (VMware guide, PSI bypass, floating browser):</p>
+        <p>Download the full package (VMware guide, PSI bypass, floating browser):</p>
         <a href="https://bluebook.ink/tutorialv2" target="_blank" class="btn download-btn">
           Download Software + Guide
         </a>
 
-        <p>When fully ready (VM + PSI.exe running):</p>
+        <p>When 100% ready (VM installed + PSI.exe running):</p>
         <a href="https://discord.com/invite/bg6wKj45w3" target="_blank" class="btn discord-btn">
           Join Discord → Open Ticket → Get Key
         </a>
 
         <div class="warning">
-          Send only transaction screenshot • Never share gift card code
+          Send only the transaction screenshot • Never share your gift card code
         </div>
       </div>
 
@@ -180,9 +194,9 @@
 <script>
   function copyWallet() {
     navigator.clipboard.writeText('7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ');
-    document.querySelectorAll('.copy-btn i').forEach(i => {
-      i.classList.replace('fa-copy', 'fa-check');
-      setTimeout(() => i.classList.replace('fa-check', 'fa-copy'), 2000);
+    document.querySelectorAll('.copy-btn i').forEach(icon => {
+      icon.classList.replace('fa-copy', 'fa-check');
+      setTimeout(() => icon.classList.replace('fa-check', 'fa-copy'), 2000);
     });
   }
 </script>
