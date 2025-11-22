@@ -14,71 +14,54 @@
       padding:16px 8px; font-size:16px;
     }
     .container { max-width:100%; margin:0 auto; padding:0 12px; }
-    .card {
-      background:#fff; border-radius:24px; overflow:hidden;
-      box-shadow:0 20px 60px rgba(0,0,0,.1); margin:0 auto;
-      max-width:920px;
-    }
+    .card { background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.1); max-width:920px; margin:0 auto; }
 
     header {
       background:linear-gradient(135deg,var(--light-blue),var(--blue));
       color:#fff; text-align:center; padding:80px 20px;
     }
-    h1 { font-size:2.6rem; font-weight:900; }
-    .subtitle { margin-top:12px; font-size:1.25rem; opacity:.95; }
+    h1 { font-size:2.6rem; font-weight:900; margin-bottom:8px; }
+    .subtitle { margin-top:12px; font-size:1.25rem; font-weight:600; color:#ffffff !important; } /* 100% white */
 
-    .quick-jump {
-      text-align:center; padding:36px 20px 56px; background:#fff;
-    }
+    .quick-jump { text-align:center; padding:36px 20px 56px; background:#fff; }
     .quick-jump .btn {
-      display:inline-flex; align-items:center; gap:12px;
-      background:var(--light-blue); color:#fff; padding:16px 36px;
-      font-size:1.1rem; font-weight:700; border-radius:16px;
+      display:inline-flex; align-items:center; gap:12px; background:var(--light-blue); color:#fff;
+      padding:16px 36px; font-size:1.1rem; font-weight:700; border-radius:16px;
       box-shadow:0 12px 32px rgba(59,130,246,.4);
     }
     .quick-jump .btn:hover { transform:translateY(-5px); }
 
     .steps { padding:20px 40px 70px; }
     .step {
-      background:#fff; border:1px solid #e2e8f0;
-      border-radius:20px; padding:40px 48px;
-      margin:36px 0; box-shadow:0 8px 30px rgba(0,0,0,.06);
+      background:#fff; border:1px solid #e2e8f0; border-radius:20px;
+      padding:40px 48px; margin:36px 0; box-shadow:0 8px 30px rgba(0,0,0,.06);
     }
-    .step:hover { box-shadow:0 16px 40px rgba(0,0,0,.1); }
-
-    h2 {
-      font-size:1.75rem; color:var(--blue); margin-bottom:20px;
-      font-weight:700; padding-left:4px;
-    }
-    p, li { color:#475569; margin:10px 0; }
-    ol { padding-left:24px; margin:18px 0; }
-    li { margin:10px 0; }
+    h2 { font-size:1.75rem; color:var(--blue); margin-bottom:20px; font-weight:700; }
 
     .btn {
       display:flex; align-items:center; justify-content:center; gap:12px;
       width:100%; max-width:520px; margin:28px auto; padding:19px;
       background:var(--blue); color:#fff; font-size:1.12rem; font-weight:600;
-      border-radius:16px; text-decoration:none;
-      box-shadow:0 12px 32px rgba(37,99,235,.35);
+      border-radius:16px; text-decoration:none; box-shadow:0 12px 32px rgba(37,99,235,.35);
       transition:all .3s;
     }
-    .btn:hover { transform:translateY(-6px); box-shadow:0 24px 48px rgba(37,99,235,.5); }
+    .btn:hover { transform:translateY(-6px); }
     .discord-btn { background:var(--purple); }
     .download-btn { background:var(--green); }
 
     .address-box {
-      background:#f0f9ff; border:2px dashed #93c5fd;
-      border-radius:14px; padding:22px 24px 22px 80px;
-      margin:24px 0; position:relative;
-      font-family:'Courier New',monospace; font-size:1.05rem;
-      word-break:break-all; color:#1e40af; line-height:1.5;
+      background:#f0f9ff; border:2px dashed #93c5fd; border-radius:14px;
+      padding:24px 24px 24px 80px; margin:24px 0; position:relative;
+      font-family:'Courier New',monospace; font-size:1.05rem; color:#1e40af;
+      word-break:break-all; line-height:1.5;
     }
     .copy-btn {
-      position:absolute; left:16px; top:16px;
-      background:var(--blue); color:#fff; border:none;
-      padding:11px 20px; border-radius:10px; cursor:pointer;
-      font-weight:700; font-size:0.95rem;
+      position:absolute; left:16px; top:50%; transform:translateY(-50%);
+      background:var(--blue); color:#fff; border:none; width:48px; height:48px;
+      border-radius:12px; cursor:pointer; font-size:1.4rem;
+      display:flex; align-items:center; justify-content:center;
     }
+    .copy-btn:hover { background:#1d4ed8; }
 
     .warning {
       background:#fffbeb; border-left:6px solid var(--amber);
@@ -99,10 +82,8 @@
     @media (max-width:640px) {
       .steps { padding:16px 20px 50px; }
       .step { padding:36px 28px; }
-      h1 { font-size:2.3rem; }
-      h2 { font-size:1.6rem; }
-      .address-box { padding:20px 20px 20px 74px; font-size:1rem; }
-      .btn { padding:17px; font-size:1.05rem; }
+      .address-box { padding:20px 20px 20px 74px; }
+      .copy-btn { width:44px; height:44px; font-size:1.3rem; }
     }
   </style>
 </head>
@@ -144,7 +125,9 @@
         </ol>
         <div class="address-box">
           7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
-          <button class="copy-btn" onclick="copyWallet()">Copy</button>
+          <button class="copy-btn" onclick="copyWallet()" title="Copy address">
+            <i class="fas fa-copy"></i>
+          </button>
         </div>
         <a href="https://giftmecrypto.io/en/redeem" target="_blank" class="btn">
           Redeem Gift Card Now
@@ -161,7 +144,10 @@
         </ol>
         <div class="address-box">
           7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
-          <button class="copy-btn" onclick="copyWallet()">Copy</button>
+          <button class="copy-btn" onclick="copyWallet()" title="Copy address">
+            <i class="fas fa-copy"></i>
+          </button>
+        </div>
         </div>
         <ol start="4">
           <li>Enter exact amount</li>
@@ -208,13 +194,10 @@
 <script>
   function copyWallet() {
     navigator.clipboard.writeText('7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ');
-    document.querySelectorAll('.copy-btn').forEach(b => {
-      b.innerHTML = 'Copied!';
-      b.style.background = '#10b981';
-      setTimeout(() => {
-        b.innerHTML = 'Copy';
-        b.style.background = '';
-      }, 2000);
+    const btns = document.querySelectorAll('.copy-btn i');
+    btns.forEach(icon => {
+      icon.classList.replace('fa-copy', 'fa-check');
+      setTimeout(() => icon.classList.replace('fa-check', 'fa-copy'), 2000);
     });
   }
 </script>
