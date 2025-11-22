@@ -13,25 +13,18 @@
       background:#f8fbff; color:#1e293b; line-height:1.6;
       padding:16px 8px; font-size:16px;
     }
-    .container { max-width:100%; margin:0 auto; padding:0 12px; }
-    .card { background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.1); max-width:920px; margin:0 auto; }
+    .container { max-width:920px; margin:0 auto; }
+    .card { background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.1); }
 
     header {
       background:linear-gradient(135deg,var(--light-blue),var(--blue));
       color:#fff; text-align:center; padding:80px 20px;
     }
-    h1 { font-size:2.6rem; font-weight:900; margin-bottom:8px; }
-    .subtitle { margin-top:12px; font-size:1.25rem; font-weight:600; color:#ffffff !important; } /* 100% white */
+    h1 { font-size:2.6rem; font-weight:900; }
+    .subtitle { margin-top:12px; font-size:1.25rem; font-weight:600; color:#fff !important; }
 
-    .quick-jump { text-align:center; padding:36px 20px 56px; background:#fff; }
-    .quick-jump .btn {
-      display:inline-flex; align-items:center; gap:12px; background:var(--light-blue); color:#fff;
-      padding:16px 36px; font-size:1.1rem; font-weight:700; border-radius:16px;
-      box-shadow:0 12px 32px rgba(59,130,246,.4);
-    }
-    .quick-jump .btn:hover { transform:translateY(-5px); }
+    .steps { padding:30px 48px 70px; }
 
-    .steps { padding:20px 40px 70px; }
     .step {
       background:#fff; border:1px solid #e2e8f0; border-radius:20px;
       padding:40px 48px; margin:36px 0; box-shadow:0 8px 30px rgba(0,0,0,.06);
@@ -45,7 +38,7 @@
       border-radius:16px; text-decoration:none; box-shadow:0 12px 32px rgba(37,99,235,.35);
       transition:all .3s;
     }
-    .btn:hover { transform:translateY(-6px); }
+    .btn:hover { transform:translateY(-6px); box-shadow:0 24px 48px rgba(37,99,235,.5); }
     .discord-btn { background:var(--purple); }
     .download-btn { background:var(--green); }
 
@@ -61,7 +54,6 @@
       border-radius:12px; cursor:pointer; font-size:1.4rem;
       display:flex; align-items:center; justify-content:center;
     }
-    .copy-btn:hover { background:#1d4ed8; }
 
     .warning {
       background:#fffbeb; border-left:6px solid var(--amber);
@@ -71,19 +63,16 @@
 
     .final-section {
       background:linear-gradient(135deg,var(--green),#059669);
-      color:#fff; text-align:center; padding:70px 20px;
-      border-radius:0 0 24px 24px;
+      color:#fff; text-align:center; padding:70px 20px; border-radius:0 0 24px 24px;
     }
     .final-section h2 { font-size:2.4rem; font-weight:900; }
     .final-section p { font-size:1.3rem; margin-top:16px; }
 
-    footer { text-align:center; padding:50px; color:#64748b; font-size:0.95rem; }
+    footer { text-align:center; padding:50px; color:#64748b; }
 
     @media (max-width:640px) {
-      .steps { padding:16px 20px 50px; }
       .step { padding:36px 28px; }
-      .address-box { padding:20px 20px 20px 74px; }
-      .copy-btn { width:44px; height:44px; font-size:1.3rem; }
+      .address-box { padding-left:74px; }
     }
   </style>
 </head>
@@ -96,72 +85,69 @@
       <p class="subtitle">100% Private • Instant Key • Works Every Time</p>
     </header>
 
-    <div class="quick-jump">
-      <a href="#direct-sol" class="btn">
-        Already Have SOL? Jump to Direct Transfer
-      </a>
-    </div>
-
     <div class="steps">
 
+      <!-- Option 1 + Quick Jump Button Together -->
       <div class="step">
-        <h2>Option 1 – Gift Card (Easiest for Beginners)</h2>
-        <ol>
-          <li>Click below → go to Eneba</li>
-          <li>Buy GiftMeCrypto card(s) totaling your product price<br>
-             <small>e.g. $290 → one $300 or $200 + $50 + $40</small></li>
-          <li>Pay with card/PayPal → get code instantly</li>
-        </ol>
-        <a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank" class="btn">
-          Buy Gift Card on Eneba
-        </a>
+        <h2>Option 1 – Buy with Gift Card (Easiest) • Option 2 – Direct Transfer (Fastest)</h2>
 
-        <p>Then redeem:</p>
-        <ol start="4">
-          <li>Go to redeem page</li>
-          <li>Paste your code</li>
-          <li>Choose <strong>Solana (SOL)</strong></li>
+        <p style="text-align:center; margin-bottom:30px;">
+          <a href="#direct-sol" class="btn" style="display:inline-flex; max-width:480px;">
+            Already Have SOL? Jump Straight to Direct Transfer
+          </a>
+        </p>
+
+        <h3 style="font-size:1.3rem; color:var(--blue); margin:30px 0 16px;">Gift Card Path</h3>
+        <ol>
+          <li>Go to Eneba → buy GiftMeCrypto card(s) that cover your price<br>
+             <small>e.g. $290 → $300 or $200+$50+$40</small></li>
+          <li>Pay → receive code instantly</li>
+          <li>Go to redeem page → paste code → choose <strong>Solana (SOL)</strong></li>
           <li>Send to this address:</li>
         </ol>
+
         <div class="address-box">
           7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
-          <button class="copy-btn" onclick="copyWallet()" title="Copy address">
-            <i class="fas fa-copy"></i>
-          </button>
+          <button class="copy-btn" onclick="copyWallet()" title="Copy"><i class="fas fa-copy"></i></button>
         </div>
-        <a href="https://giftmecrypto.io/en/redeem" target="_blank" class="btn">
-          Redeem Gift Card Now
-        </a>
+
+        <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+          <a href="https://www.eneba.com/gift-me-crypto-gift-me-crypto-gift-card-300-usd-key-global" target="_blank" class="btn">
+            Buy Gift Card on Eneba
+          </a>
+          <a href="https://giftmecrypto.io/en/redeem" target="_blank" class="btn">
+            Redeem Gift Card Now
+          </a>
+        </div>
       </div>
 
+      <!-- End Gift Card -->
+
+      <!-- Direct Transfer -->
       <div class="step" id="direct-sol">
-        <h2>Option 2 – Direct Solana Transfer (Fastest)</h2>
-        <p>Already have Phantom, Solflare, Backpack, etc.:</p>
+        <h2>Direct Solana Transfer</h2>
+        <p>Use Phantom, Solflare, Backpack, etc.</p>
         <ol>
-          <li>Open your wallet</li>
-          <li>Send SOL</li>
-          <li>Paste this address:</li>
+          <li>Open wallet → Send SOL</li>
+          <li>Paste address</li>
+          <li>Enter exact amount for your product</li>
+          <li>Confirm (2–10 seconds)</li>
+          <li>Take screenshot of success screen</li>
         </ol>
+
         <div class="address-box">
           7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ
-          <button class="copy-btn" onclick="copyWallet()" title="Copy address">
-            <i class="fas fa-copy"></i>
-          </button>
+          <button class="copy-btn" onclick="copyWallet()" title="Copy"><i class="fas fa-copy"></i></button>
         </div>
-        </div>
-        <ol start="4">
-          <li>Enter exact amount</li>
-          <li>Confirm (2–10 sec)</li>
-          <li>Screenshot success screen</li>
-        </ol>
       </div>
 
+      <!-- Final Step -->
       <div class="step">
-        <h2>3. Download & Get Your Instant Key</h2>
+        <h2>Get Your Instant Key</h2>
 
         <div class="warning">
           <strong>Key expires in 1–2 hours!</strong><br>
-          Download and setup everything FIRST.
+          Download & setup everything FIRST.
         </div>
 
         <p>Download full package (VMware guide, PSI bypass, floating browser):</p>
@@ -169,7 +155,7 @@
           Download Software + Guide
         </a>
 
-        <p>When 100% ready (VM + PSI.exe running):</p>
+        <p>When fully ready (VM + PSI.exe running):</p>
         <a href="https://discord.com/invite/bg6wKj45w3" target="_blank" class="btn discord-btn">
           Join Discord → Open Ticket → Get Key
         </a>
@@ -194,10 +180,9 @@
 <script>
   function copyWallet() {
     navigator.clipboard.writeText('7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ');
-    const btns = document.querySelectorAll('.copy-btn i');
-    btns.forEach(icon => {
-      icon.classList.replace('fa-copy', 'fa-check');
-      setTimeout(() => icon.classList.replace('fa-check', 'fa-copy'), 2000);
+    document.querySelectorAll('.copy-btn i').forEach(i => {
+      i.classList.replace('fa-copy', 'fa-check');
+      setTimeout(() => i.classList.replace('fa-check', 'fa-copy'), 2000);
     });
   }
 </script>
