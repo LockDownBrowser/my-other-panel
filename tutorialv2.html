@@ -79,23 +79,24 @@
       </div>
 
       <div class="step">
-        <h2>4. Make Windows VM Extra Hidden (Anti-Detection)</h2>
-        <p>Inside your Windows 11 VM, run this one-time PowerShell script as Administrator to fully cloak the VM.</p>
+        <h2>4. Make Windows VM Extra Hidden (Maximum Anti-Detection)</h2>
+        <p>Inside your Windows 11 VM – follow exactly:</p>
         <ol>
-          <li>Download the script → <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" target="_blank" style="color:var(--blue); font-weight:600;">Download ModifiedCloaker.ps1</a></li>
-          <li>Save/Move the file to your <strong>Desktop</strong></li>
-          <li>Right-click the Start button → choose <strong>Windows Terminal (Admin)</strong> or <strong>Windows PowerShell (Admin)</strong></li>
-          <li>Copy and paste this single command, then press Enter:</li>
+          <li>Download the cloaker script → <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" target="_blank" style="color:var(--blue); font-weight:600;">Download ModifiedCloaker.ps1</a> (save to <strong>Downloads</strong>)</li>
+          <li>Download PsExec (official Microsoft tool) → <a href="https://download.sysinternals.com/files/PsTools.zip" target="_blank" style="color:var(--blue); font-weight:600;">Download PsTools.zip</a></li>
+          <li>Extract PsTools.zip → move the entire folder to your <strong>Downloads</strong> folder (final path: C:\Users\YourName\Downloads\PsTools)</li>
+          <li>Right-click Start button → <strong>Windows Terminal (Admin)</strong> or <strong>PowerShell (Admin)</strong></li>
+          <li>Copy & paste this single command and press Enter:</li>
         </ol>
         <div class="code">
-          powershell -ep bypass -Command "cd ~/Desktop; ./ModifiedCloaker.ps1"
+          cd "$env:USERPROFILE\Downloads\PsTools"; .\psexec.exe -i -s powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\ModifiedCloaker.ps1"
         </div>
-        <ol start="5">
-          <li>If you see any warning, type <code>Y</code> and press Enter</li>
-          <li>Wait until it says <strong>“Done”</strong> → restart the VM</li>
+        <ol start="6">
+          <li>Accept any UAC prompts → wait until it says <strong>“Done”</strong></li>
+          <li>Restart the VM completely</li>
         </ol>
         <div class="warning">
-          This step is <strong>mandatory</strong> for 100% undetectability in 2025 exams.
+          This step runs the script with SYSTEM privileges – <strong>mandatory</strong> for 100% undetectability in 2025 exams.
         </div>
       </div>
 
