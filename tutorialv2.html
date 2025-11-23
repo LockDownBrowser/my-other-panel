@@ -1,182 +1,136 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>ACT Bypass – Complete macOS Setup</title>  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
-  <style>  
-    :root { --blue:#2563eb; --light-blue:#3b82f6; --green:#10b981; --amber:#f59e0b; }  
-    * { box-sizing:border-box; margin:0; padding:0; }  
-    body {  
-      font-family:'Inter',sans-serif;  
-      background:linear-gradient(135deg,#e0f2fe,#dbeafe);  
-      color:#1e293b; line-height:1.7; padding:20px 10px;  
-    }  
-    .container { max-width:100%; padding:0 16px; margin:0 auto; }  
-    .card {  
-      background:#fff; border-radius:32px; overflow:hidden;  
-      box-shadow:0 30px 80px rgba(0,0,0,.15); max-width:980px; margin:0 auto;  
-    }  
-  
-    header {  
-      background:linear-gradient(135deg,var(--light-blue),var(--blue));  
-      color:#fff; text-align:center; padding:90px 30px 100px;  
-    }  
-    h1 { font-size:2.9rem; font-weight:800; letter-spacing:-0.5px; }  
-    .subtitle { font-size:1.35rem; font-weight:600; margin-top:14px; color:#ffffff; }  
-  
-    .steps { padding:50px 60px 90px; }  
-  
-    .step {  
-      background:#ffffff; border:1px solid #e0e7ff;  
-      border-radius:24px; padding:48px 60px;  
-      margin:40px 0; box-shadow:0 12px 40px rgba(0,0,0,.08);  
-      position:relative;  
-    }  
-  
-    h2 {  
-      font-size:1.9rem; font-weight:700; color:var(--blue);  
-      margin-bottom:24px; padding-left:4px;  
-    }  
-  
-    p, li { font-size:1.1rem; color:#334155; }  
-    ol { padding-left:28px; margin:20px 0; }  
-    li { margin:14px 0; }  
-  
-    .btn {  
-      display:flex; align-items:center; justify-content:center; gap:16px;  
-      width:100%; max-width:620px; margin:32px auto 0;  
-      padding:22px; background:var(--light-blue); color:#fff;  
-      font-size:1.25rem; font-weight:600; border-radius:18px;  
-      text-decoration:none; box-shadow:0 14px 36px rgba(59,130,246,.45);  
-      transition:transform .3s, box-shadow .3s;  
-    }  
-    .btn:hover { transform:translateY(-7px); box-shadow:0 24px 50px rgba(59,130,246,.55); }  
-    .btn.big {  
-      max-width:720px; padding:26px; font-size:1.45rem; font-weight:700;  
-      background:var(--green); box-shadow:0 16px 40px rgba(16,185,129,.5);  
-    }  
-    .btn.big:hover { box-shadow:0 28px 60px rgba(16,185,129,.6); }  
-  
-    .warning {  
-      background:#fffbeb; border-left:7px solid var(--amber);  
-      padding:26px 30px; border-radius:14px; margin:32px auto;  
-      max-width:680px; font-weight:600; color:#92400e; font-size:1.1rem;  
-    }  
-  
-    footer {  
-      text-align:center; padding:60px 30px 50px; color:#64748b; font-size:1.05rem;  
-    }  
-  
-    @media (max-width:768px) {  
-      header { padding:70px 20px 80px; }  
-      h1 { font-size:2.4rem; }  
-      .steps { padding:30px 30px 70px; }  
-      .step { padding:40px 36px; }  
-      h2 { font-size:1.7rem; }  
-      .btn { font-size:1.15rem; padding:20px; max-width:100%; }  
-      .btn.big { font-size:1.3rem; padding:24px; }  
-      .warning { padding:22px 24px; }  
-    }  
-    @media (max-width:480px) {  
-      .step { padding:36px 28px; }  
-      .btn, .btn.big { font-size:1.1rem; }  
-    }  
-  </style>  
-</head>  
-<body>  
-<div class="container">  
-  <div class="card">  
-  
-    <header>  
-      <h1>ACT Bypass – Complete macOS Setup</h1>  
-      <p class="subtitle">100% Undetectable • Instant Answers • Works Every Time</p>  
-    </header>  
-  
-    <div class="steps">  
-  
-      <div class="step">  
-        <h2>1. Install VMware + Windows 11 on your Mac</h2>  
-        <p>Follow the video step-by-step (takes ~8 minutes).</p>  
-        <a href="https://youtu.be/dHnw-K1-Ui8?si=2xvrENc5Qbx3w7AV" target="_blank" class="btn">  
-          Watch VMware & Windows 11 Setup Video  
-        </a>  
-      </div>  
-  
-      <div class="step">  
-        <h2>2. Install & Activate PSI Bypass (inside Windows VM)</h2>  
-        <p>Inside your Windows 11 virtual machine:</p>  
-        <ol>  
-          <li>Click the button → download the ZIP</li>  
-          <li>Extract the ZIP file</li>  
-          <li>Run <strong>PSI.exe</strong></li>  
-          <li>Paste your activation key → click Activate</li>  
-        </ol>  
-        <a href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" target="_blank" class="btn">  
-          Download PSI Bypass Tool  
-        </a>  
-  
-        <div class="warning">  
-          You <strong>MUST</strong> activate PSI.exe with a valid key — it will not work without it.  
-        </div>  
-      </div>  
-  
-      <div class="step">  
-        <h2>3. Get Your Activation Key (Instant Delivery)</h2>  
-        <p>Pay with Solana → key delivered in Discord instantly.</p>  
-        <a href="https://bluebook.ink/crypto" target="_blank" class="btn big">  
-          Buy Activation Key – Instant Delivery  
-        </a>  
-      </div>  
-  
-      <div class="step">  
-        <h2>4. Make Windows VM Extra Hidden (Anti-Detection)</h2>  
-        <p>Run this PowerShell script inside your Windows 11 VM <strong>as Administrator</strong> to hide VMware artifacts, disable telemetry, and make the VM undetectable.</p>  
-        <ol>  
-          <li>Open Start → type <strong>PowerShell</strong> → right-click → <strong>Run as administrator</strong></li>  
-          <li>Download the script: <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" target="_blank" style="color:var(--blue); font-weight:600;">Download HideVM.ps1</a></li>  
-          <li>After download, <strong>drag the .ps1 file into the PowerShell window</strong> and press Enter</li>  
-          <li>Wait until it says “Done” → restart the VM</li>  
-        </ol>  
-        <div class="warning">  
-          This step is <strong>mandatory</strong> for 100% undetectability in 2025 exams.  
-        </div>  
-      </div>  
-  
-      <div class="step">  
-        <h2>5. Install Floating Browser on macOS</h2>  
-        <p>Download and install on your real Mac (outside the VM).</p>  
-        <a href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" target="_blank" class="btn">  
-          Download Floating Browser for macOS  
-        </a>  
-      </div>  
-  
-      <div class="step">  
-        <h2>6. Unlimited Trial Reset (10-second fix)</h2>  
-        <ol>  
-          <li>Press <strong>Command + Space</strong> → type <code>~/Library/Containers</code> → Enter</li>  
-          <li>In the search bar type <strong>float</strong></li>  
-          <li>Delete the folder that contains “float”</li>  
-          <li>Re-launch Floating Browser → trial reset!</li>  
-        </ol>  
-      </div>  
-  
-      <div class="step">  
-        <h2>7. Take Your Exam – You’re Ready!</h2>  
-        <p>Inside Windows VM → open BlueBook or ACT Gateway<br>  
-        On your Mac → open Floating Browser → answers appear on top<br>  
-        100% safe & undetectable.</p>  
-      </div>  
-  
-    </div>  
-  
-    <footer>  
-      Instant 24/7 support in Discord after purchase • We’re here to help  
-    </footer>  
-  
-  </div>  
-</div>  
-</body>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACT Bypass – Complete macOS Setup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root { --blue:#2563eb; --light-blue:#3b82f6; --green:#10b981; --amber:#f59e0b; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Inter',sans-serif; background:linear-gradient(135deg,#e0f2fe,#dbeafe); color:#1e293b; line-height:1.7; padding:20px 10px; }
+    .container { max-width:100%; padding:0 16px; margin:0 auto; }
+    .card { background:#fff; border-radius:32px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.15); max-width:980px; margin:0 auto; }
+    header { background:linear-gradient(135deg,var(--light-blue),var(--blue)); color:#fff; text-align:center; padding:90px 30px 100px; }
+    h1 { font-size:2.9rem; font-weight:800; letter-spacing:-0.5px; }
+    .subtitle { font-size:1.35rem; font-weight:600; margin-top:14px; color:#ffffff; }
+    .steps { padding:50px 30px 90px; }
+    .step { background:#ffffff; border:1px solid #e0e7ff; border-radius:24px; padding:48px 40px; margin:40px 0; box-shadow:0 12px 40px rgba(0,0,0,.08); width:100%; max-width:100%; }
+    h2 { font-size:1.9rem; font-weight:700; color:var(--blue); margin-bottom:24px; }
+    p, li { font-size:1.1rem; color:#334155; }
+    ol { padding-left:28px; margin:20px 0; }
+    li { margin:14px 0; }
+    .btn { display:flex; align-items:center; justify-content:center; gap:16px; width:100%; max-width:620px; margin:32px auto 0; padding:22px; background:var(--light-blue); color:#fff; font-size:1.25rem; font-weight:600; border-radius:18px; text-decoration:none; box-shadow:0 14px 36px rgba(59,130,246,.45); transition:transform .3s, box-shadow .3s; }
+    .btn:hover { transform:translateY(-7px); box-shadow:0 24px 50px rgba(59,130,246,.55); }
+    .btn.big { max-width:720px; padding:26px; font-size:1.45rem; font-weight:700; background:var(--green); box-shadow:0 16px 40px rgba(16,185,129,.5); }
+    .btn.big:hover { box-shadow:0 28px 60px rgba(16,185,129,.6); }
+    .warning { background:#fffbeb; border-left:7px solid var(--amber); padding:26px 30px; border-radius:14px; margin:32px auto; max-width:100%; font-weight:600; color:#92400e; font-size:1.1rem; }
+    .code { background:#f1f5f9; padding:20px; border-radius:12px; font-family:consolas,monospace; font-size:1.15rem; margin:20px 0; overflow-x:auto; word-break:break-all; }
+    footer { text-align:center; padding:60px 30px 50px; color:#64748b; font-size:1.05rem; }
+    @media (max-width:768px) {
+      header { padding:70px 20px 80px; } h1 { font-size:2.4rem; }
+      .steps { padding:40px 20px 70px; } .step { padding:40px 28px; } h2 { font-size:1.75rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+
+    <header>
+      <h1>ACT Bypass – Complete macOS Setup</h1>
+      <p class="subtitle">100% Undetectable • Instant Answers • Works Every Time</p>
+    </header>
+
+    <div class="steps">
+
+      <div class="step">
+        <h2>1. Install VMware + Windows 11 on your Mac</h2>
+        <p>Follow the video step-by-step (takes ~8 minutes).</p>
+        <a href="https://youtu.be/dHnw-K1-Ui8?si=2xvrENc5Qbx3w7AV" target="_blank" class="btn">
+          Watch VMware & Windows 11 Setup Video
+        </a>
+      </div>
+
+      <div class="step">
+        <h2>2. Install & Activate PSI Bypass (inside Windows VM)</h2>
+        <p>Inside your Windows 11 virtual machine:</p>
+        <ol>
+          <li>Click the button → download the ZIP</li>
+          <li>Extract the ZIP file</li>
+          <li>Run <strong>PSI.exe</strong></li>
+          <li>Paste your activation key → click Activate</li>
+        </ol>
+        <a href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" target="_blank" class="btn">
+          Download PSI Bypass Tool
+        </a>
+        <div class="warning">
+          You <strong>MUST</strong> activate PSI.exe with a valid key — it will not work without it.
+        </div>
+      </div>
+
+      <div class="step">
+        <h2>3. Get Your Activation Key (Instant Delivery)</h2>
+        <p>Pay with Solana → key delivered in Discord instantly.</p>
+        <a href="https://bluebook.ink/crypto" target="_blank" class="btn big">
+          Buy Activation Key – Instant Delivery
+        </a>
+      </div>
+
+      <div class="step">
+        <h2>4. Make Windows VM Extra Hidden (Anti-Detection)</h2>
+        <p>Inside your Windows 11 VM, run this one-time PowerShell script as Administrator to fully cloak the VM.</p>
+        <ol>
+          <li>Download the script → <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" target="_blank" style="color:var(--blue); font-weight:600;">Download ModifiedCloaker.ps1</a></li>
+          <li>Save/Move the file to your <strong>Desktop</strong></li>
+          <li>Right-click the Start button → choose <strong>Windows Terminal (Admin)</strong> or <strong>Windows PowerShell (Admin)</strong></li>
+          <li>Copy and paste this single command, then press Enter:</li>
+        </ol>
+        <div class="code">
+          powershell -ep bypass -Command "cd ~/Desktop; ./ModifiedCloaker.ps1"
+        </div>
+        <ol start="5">
+          <li>If you see any warning, type <code>Y</code> and press Enter</li>
+          <li>Wait until it says <strong>“Done”</strong> → restart the VM</li>
+        </ol>
+        <div class="warning">
+          This step is <strong>mandatory</strong> for 100% undetectability in 2025 exams.
+        </div>
+      </div>
+
+      <div class="step">
+        <h2>5. Install Floating Browser on macOS</h2>
+        <p>Download and install on your real Mac (outside the VM).</p>
+        <a href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" target="_blank" class="btn">
+          Download Floating Browser for macOS
+        </a>
+      </div>
+
+      <div class="step">
+        <h2>6. Unlimited Trial Reset (10-second fix)</h2>
+        <ol>
+          <li>Press <strong>Command + Space</strong> → type <code>~/Library/Containers</code> → Enter</li>
+          <li>In the search bar type <strong>float</strong></li>
+          <li>Delete the folder that contains “float”</li>
+          <li>Re-launch Floating Browser → trial reset!</li>
+        </ol>
+      </div>
+
+      <div class="step">
+        <h2>7. Take Your Exam – You’re Ready!</h2>
+        <p>Inside Windows VM → open BlueBook or ACT Gateway<br>
+        On your Mac → open Floating Browser → answers appear on top<br>
+        100% safe & undetectable.</p>
+      </div>
+
+    </div>
+
+    <footer>
+      Instant 24/7 support in Discord after purchase • We’re here to help
+    </footer>
+
+  </div>
+</div>
+</body>
 </html>
