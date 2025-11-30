@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ACT Bypass – Complete macOS Setup</title>
+  <title>SAT & ACT Bypass – Windows Setup Guide</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -16,7 +16,7 @@
     h1 { font-size:2.9rem; font-weight:800; letter-spacing:-0.5px; }
     .subtitle { font-size:1.35rem; font-weight:600; margin-top:14px; color:#ffffff; }
     .steps { padding:50px 30px 90px; }
-    .step { background:#ffffff; border:1px solid #e0e7ff; border-radius:24px; padding:48px 40px; margin:40px 0; box-shadow:0 12px 40px rgba(0,0,0,.08); width:100%; max-width:100%; }
+    .step { background:#ffffff; border:1px solid #e0e7ff; border-radius:24px; padding:48px 40px; margin:40px 0; box-shadow:0 12px 40px rgba(0,0,0,.08); }
     h2 { font-size:1.9rem; font-weight:700; color:var(--blue); margin-bottom:24px; }
     p, li { font-size:1.1rem; color:#334155; }
     ol { padding-left:28px; margin:20px 0; }
@@ -25,7 +25,7 @@
     .btn:hover { transform:translateY(-7px); box-shadow:0 24px 50px rgba(59,130,246,.55); }
     .btn.big { max-width:720px; padding:26px; font-size:1.45rem; font-weight:700; background:var(--green); box-shadow:0 16px 40px rgba(16,185,129,.5); }
     .btn.big:hover { box-shadow:0 28px 60px rgba(16,185,129,.6); }
-    .warning { background:#fffbeb; border-left:7px solid var(--amber); padding:26px 30px; border-radius:14px; margin:32px auto; max-width:100%; font-weight:600; color:#92400e; font-size:1.1rem; }
+    .warning { background:#fffbeb; border-left:7px solid var(--amber); padding:26px 30px; border-radius:14px; margin:32px auto; font-weight:600; color:#92400e; font-size:1.1rem; }
     .code { background:#f1f5f9; padding:20px; border-radius:12px; font-family:consolas,monospace; font-size:1.15rem; margin:20px 0; overflow-x:auto; word-break:break-all; }
     footer { text-align:center; padding:60px 30px 50px; color:#64748b; font-size:1.05rem; }
     @media (max-width:768px) {
@@ -39,96 +39,96 @@
   <div class="card">
 
     <header>
-      <h1>SAT & ACT Bypass – Complete macOS Setup</h1>
+      <h1>SAT & ACT Bypass – Windows Setup Guide</h1>
       <p class="subtitle">100% Undetectable • Instant Answers • Works Every Time</p>
     </header>
 
     <div class="steps">
 
       <div class="step">
-        <h2>1. Install VMware + Windows 11 on your Mac</h2>
-        <p>Follow the video step-by-step (takes ~8 minutes).</p>
-        <a href="https://youtu.be/dHnw-K1-Ui8?si=2xvrENc5Qbx3w7AV" target="_blank" class="btn">
-          Watch VMware & Windows 11 Setup Video
+        <h2>1. Install VMware Workstation Pro (Windows Host)</h2>
+        <p>Follow this exact video (~8 minutes).</p>
+        <a href="https://m.youtube.com/watch?v=dHnw-K1-Ui8" target="_blank" class="btn">
+          Watch VMware + Windows 11 Setup on Windows
         </a>
       </div>
 
       <div class="step">
-        <h2>2. Install & Activate PSI Bypass (inside Windows VM)</h2>
+        <h2>2. Install & Activate PSI Bypass (inside Windows 11 VM)</h2>
         <p>Inside your Windows 11 virtual machine:</p>
         <ol>
-          <li>Click the button → download the ZIP</li>
-          <li>Extract the ZIP file</li>
+          <li>Click button → download ZIP</li>
+          <li>Extract ZIP file</li>
           <li>Run <strong>PSI.exe</strong></li>
-          <li>Paste your activation key → click Activate</li>
+          <li>Paste activation key → click Activate</li>
         </ol>
         <a href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" target="_blank" class="btn">
           Download PSI Bypass Tool
         </a>
         <div class="warning">
-          You <strong>MUST</strong> activate PSI.exe with a valid key — it will not work without it.
+          You <strong>MUST</strong> activate PSI.exe with a valid key.
         </div>
       </div>
 
       <div class="step">
         <h2>3. Get Your Activation Key (Instant Delivery)</h2>
-        <p>Pay with Solana → key delivered in Discord instantly.</p>
+        <p>Pay with Solana → key delivered instantly in Discord.</p>
         <a href="https://bluebook.ink/crypto" target="_blank" class="btn big">
           Buy Activation Key – Instant Delivery
         </a>
       </div>
 
       <div class="step">
-        <h2>4. Make Windows VM Extra Hidden (Maximum Anti-Detection)</h2>
-        <p>Inside your Windows 11 VM – follow exactly:</p>
+        <h2>4. Make Windows VM Extra Hidden (100% Undetectable)</h2>
+        <p>Inside Windows 11 VM – follow exactly:</p>
         <ol>
-          <li>Download the cloaker script → <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" target="_blank" style="color:var(--blue); font-weight:600;">Download ModifiedCloaker.ps1</a> (save to <strong>Downloads</strong>)</li>
-          <li>Download PsExec (official Microsoft tool) → <a href="https://download.sysinternals.com/files/PsTools.zip" target="_blank" style="color:var(--blue); font-weight:600;">Download PsTools.zip</a></li>
-          <li>Extract PsTools.zip → move the entire folder to your <strong>Downloads</strong> folder (final path: C:\Users\YourName\Downloads\PsTools)</li>
-          <li>Right-click Start button → <strong>Windows Terminal (Admin)</strong> or <strong>PowerShell (Admin)</strong></li>
-          <li>Copy & paste this single command and press Enter:</li>
+          <li>Download cloaker → <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" target="_blank" style="color:var(--blue); font-weight:600;">ModifiedCloaker.ps1</a> (save to Downloads)</li>
+          <li>Download PsExec → <a href="https://download.sysinternals.com/files/PsTools.zip" target="_blank" style="color:var(--blue); font-weight:600;">PsTools.zip</a></li>
+          <li>Extract PsTools.zip → move folder to Downloads (path: C:\Users\YourName\Downloads\PsTools)</li>
+          <li>Right-click Start → <strong>Windows Terminal (Admin)</strong></li>
+          <li>Paste this command and press Enter:</li>
         </ol>
         <div class="code">
           cd "$env:USERPROFILE\Downloads\PsTools"; .\psexec.exe -i -s powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\ModifiedCloaker.ps1"
         </div>
         <ol start="6">
-          <li>Accept any UAC prompts → wait until it says <strong>“Done”</strong></li>
-          <li>Restart the VM completely</li>
+          <li>Accept UAC → wait for “Done”</li>
+          <li>Restart VM completely</li>
         </ol>
         <div class="warning">
-          This step runs the script with SYSTEM privileges – <strong>mandatory</strong> for 100% undetectability in 2025 exams.
+          Runs with SYSTEM privileges – required for 2025 exams.
         </div>
       </div>
 
       <div class="step">
-        <h2>5. Install Floating Browser on macOS</h2>
-        <p>Download and install on your real Mac (outside the VM).</p>
-        <a href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" target="_blank" class="btn">
-          Download Floating Browser for macOS
+        <h2>5. Install Floating Browser on Host Windows</h2>
+        <p>Download & install on your real Windows PC (outside VM).</p>
+        <a href="https://drive.google.com/file/d/1YOUR_WINDOWS_FLOATING_LINK_HERE/view" target="_blank" class="btn">
+          Download Floating Browser for Windows
         </a>
       </div>
 
       <div class="step">
         <h2>6. Unlimited Trial Reset (10-second fix)</h2>
         <ol>
-          <li>Press <strong>Command + Space</strong> → type <code>~/Library/Containers</code> → Enter</li>
-          <li>In the search bar type <strong>float</strong></li>
-          <li>Delete the folder that contains “float”</li>
+          <li>Press Win + R → type <code>%localappdata%</code> → Enter</li>
+          <li>Search for folders containing “float”</li>
+          <li>Delete all matching folders</li>
           <li>Re-launch Floating Browser → trial reset!</li>
         </ol>
       </div>
 
       <div class="step">
-        <h2>7. Take Your Exam – You’re Ready!</h2>
-        <p>Inside Windows VM → open BlueBook or ACT Gateway<br>
-        On your Mac → open Floating Browser → answers appear on top<br>
+        <h2>7. Take Your Exam – Ready!</h2>
+        <p>In VM → open Bluebook/ACT Gateway<br>
+        On host Windows → open Floating Browser → answers float on top<br>
         100% safe & undetectable.</p>
       </div>
 
     </div>
 
     <footer>
-      Instant 24/7 support in Discord after purchase • We’re here to help
+      24/7 Discord support after purchase • We got you
     </footer>
 
   </div>
