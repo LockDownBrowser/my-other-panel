@@ -2,33 +2,83 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Chrome Always On Top + Screenshot Tool – Full Setup Guide</title>
+<title>Virtual Machine & Float Browser Setup Guide</title>
 <style>
-    body {font-family: Arial, sans-serif; background:#f5faff; color:#003366; margin:0; padding:0;}
-    header {background:#0066cc; color:white; padding:30px; text-align:center;}
-    section {max-width:900px; margin:30px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.1);}
-    h1, h2 {color:#004c99;}
-    code {background:#e6f0ff; padding:4px 8px; border-radius:5px;}
-    .command-box {background:#e6f2ff; border-left:5px solid #0066cc; padding:15px; margin:15px 0; font-family:Consolas; border-radius:5px; overflow-x:auto;}
-    .warn {background:#fff3cd; border-left:5px solid #ffc107; padding:15px; margin:15px 0; border-radius:5px;}
-    a {color:#0066cc; font-weight:bold;}
-    ul {line-height:1.8;}
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(to bottom right, #e8f1ff, #f7fbff);
+        color: #002b4d;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background: #005bb5;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    section {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 14px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.1);
+        animation: fadeIn 0.6s ease;
+    }
+    h1, h2, h3 {
+        color: #004a99;
+    }
+    a {
+        color: #0078ff;
+        font-weight: bold;
+    }
+    code {
+        background: #eaf2ff;
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+    .command-box {
+        background: #e7f0ff;
+        border-left: 6px solid #0072e6;
+        padding: 15px;
+        margin: 18px 0;
+        font-family: Consolas, monospace;
+        border-radius: 8px;
+        overflow-x: auto;
+    }
+    .warn {
+        background: #fff4ce;
+        border-left: 6px solid #ffbf00;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 8px;
+        font-weight: 600;
+        color: #7a5a00;
+    }
+    ul { line-height: 1.8; }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Chrome Always On Top + Instant Screenshot Tool</h1>
-    <p>Force Chrome to stay on top of EVERYTHING (even fullscreen games/videos) + Ctrl+Shift+S → screenshot to clipboard</p>
+    <h1>Virtual Machine & Float Browser Setup Guide</h1>
+    <p>Float your browser above all apps + enable instant screenshots across your main PC and VM.</p>
 </header>
 
 <section>
-    <h2>PART 1 – MAIN COMPUTER (Run the Python script)</h2>
-    
+    <h2>PART 1 – MAIN COMPUTER (Python Float Browser + Screenshot Script)</h2>
+
     <h3>Step 1: Install Python</h3>
-    <p>Download & install Python 3.12 (or latest):</p>
-    <p><a href="https://www.python.org/ftp/python/3.12.7/python-3.12.7-amd64.exe" target="_blank">Direct Download Python 3.12.7 (64-bit)</a></p>
-    <p>IMPORTANT: During installation → check <strong>"Add Python to PATH"</strong> → Install for all users → Install</p>
+    <p>Download & install Python 3.12 or newer:</p>
+    <p><a href="https://www.python.org/ftp/python/3.12.7/python-3.12.7-amd64.exe" target="_blank">Download Python 3.12.7 (64-bit)</a></p>
+    <p><strong>IMPORTANT:</strong> During installation check <strong>“Add Python to PATH”</strong>.</p>
 
     <h3>Step 2: Download the Python Script</h3>
     <p><a href="https://drive.google.com/file/d/1kwiSHVkwgJXn43dj9nFBaK55yN-Xg2xo/view?usp=drivesdk" target="_blank">
@@ -36,51 +86,53 @@
     </a></p>
 
     <h3>Step 3: Install Required Libraries</h3>
-    <p>Open <strong>Command Prompt as Administrator</strong> (Right-click Start → Command Prompt (Admin)) and run:</p>
+    <p>Open <strong>Command Prompt as Administrator</strong> and run:</p>
     <div class="command-box">
         pip install pywin32 pyautogui keyboard psutil --upgrade
     </div>
 
-    <h3>Step 4: Run the Script (Always as Admin)</h3>
+    <h3>Step 4: Run the Script (ADMIN REQUIRED)</h3>
     <ul>
         <li>Right-click the downloaded <code>always_on_top_chrome.py</code> → "Copy as path"</li>
-        <li>Open <strong>Command Prompt as Administrator</strong></li>
-        <li>Paste this and press Enter:</li>
+        <li>Open Command Prompt (Admin)</li>
+        <li>Paste and run:</li>
     </ul>
     <div class="command-box">
         python "C:\path\to\your\always_on_top_chrome.py"
     </div>
-    <p>→ Chrome will now stay on top FOREVER, even over fullscreen apps.</p>
-    <p>→ Press <strong>Ctrl+Shift+S</strong> anytime → instant screenshot saved to clipboard.</p>
-    <div class="warn">Keep this Command Prompt window OPEN. To stop: press Ctrl+C</div>
+
+    <p>✔ Chrome will now float on top of all windows (even fullscreen).  
+       ✔ Press <strong>Ctrl+Shift+S</strong> for instant clipboard screenshots.</p>
+
+    <div class="warn">Keep Command Prompt OPEN while using the script. To stop it → press Ctrl + C.</div>
 </section>
 
 <section>
-    <h2>PART 2 – VIRTUAL MACHINE (Run the PowerShell script)</h2>
-    <p>Do this ONLY on your VM (not main PC)</p>
+    <h2>PART 2 – VIRTUAL MACHINE (PowerShell Automation Script)</h2>
+    <p>Perform these steps inside your VM only:</p>
 
-    <h3>Step 1: Download PowerShell Script</h3>
+    <h3>Step 1: Download the PowerShell Script</h3>
     <p><a href="https://drive.google.com/file/d/1DXByVJMYl9jWDYJKZQk339bB00GaP0G-/view?usp=drivesdk" target="_blank">
-        Download the .ps1 script
+        Download the PowerShell Script (.ps1)
     </a></p>
 
     <h3>Step 2: Open PowerShell as Administrator</h3>
-    <p>Right-click Start → Windows PowerShell (Admin)</p>
+    <p>Right-click Start → PowerShell (Admin)</p>
 
-    <h3>Step 3: Allow Scripts to Run</h3>
+    <h3>Step 3: Enable Script Execution</h3>
     <div class="command-box">
         Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
     </div>
 
     <h3>Step 4: Run the Script</h3>
-    <p>Simply drag the downloaded .ps1 file into the PowerShell window → press Enter</p>
+    <p>Drag the downloaded <code>.ps1</code> file into PowerShell → press Enter</p>
 </section>
 
 <section>
-    <h2>Done! You're all set</h2>
-    <p>Main PC: Chrome floats on top + instant screenshots<br>
-       VM: PowerShell script running</p>
-    <p>Works perfectly on Windows 10 & 11</p>
+    <h2>Setup Complete!</h2>
+    <p><strong>Main PC:</strong> Floating browser + instant screenshots<br>
+       <strong>VM:</strong> PowerShell script running smoothly</p>
+    <p>Works perfectly on Windows 10 & 11.</p>
 </section>
 
 </body>
