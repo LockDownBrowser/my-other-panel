@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PowerShell Script Tutorial</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5faff;
+        color: #003366;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #0066cc;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    section {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
+    h2 {
+        color: #004c99;
+    }
+    code {
+        background-color: #e6f0ff;
+        padding: 5px 8px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 5px;
+        color: #003366;
+    }
+    .command-box {
+        background-color: #e6f2ff;
+        border-left: 4px solid #0066cc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        font-family: Consolas, monospace;
+    }
+    a {
+        color: #0066cc;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>How to Run the PowerShell Script</h1>
+</header>
+
+<section>
+    <h2>Download the Script</h2>
+    <p>Click the link below to download the <strong>.ps1 PowerShell script</strong>:</p>
+    <p>
+        <a href="https://drive.google.com/file/d/1DXByVJMYl9jWDYJKZQk339bB00GaP0G-/view?usp=drivesdk" target="_blank">
+            Download PowerShell Script (.ps1)
+        </a>
+    </p>
+</section>
+
+<section>
+    <h2>Step 1: Open PowerShell as Administrator</h2>
+    <p>Right-click the Start Menu → select <strong>Windows PowerShell (Admin)</strong>.</p>
+</section>
+
+<section>
+    <h2>Step 2: Allow the Script to Run</h2>
+    <p>Before running the script, you must change the execution policy for your user.  
+    Run this command in PowerShell:</p>
+
+    <div class="command-box">
+        Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+    </div>
+</section>
+
+<section>
+    <h2>Step 3: Drag the Script Into PowerShell</h2>
+    <p>After downloading the .ps1 file:</p>
+    <ul>
+        <li>Open PowerShell (Admin)</li>
+        <li>Drag the downloaded <strong>.ps1 file</strong> into the PowerShell window</li>
+        <li>Press <strong>Enter</strong> to run it</li>
+    </ul>
+</section>
+
+<section>
+    <h2>You're Done!</h2>
+    <p>The script will now execute. Follow any on-screen prompts if provided.</p>
+</section>
+
+</body>
+</html>
