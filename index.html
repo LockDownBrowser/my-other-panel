@@ -49,10 +49,18 @@
       text-align:center;flex:1 1 300px;min-width:280px;transition:transform .3s,box-shadow .3s;
     }
     .pricing-tier:hover{transform:translateY(-18px);box-shadow:0 22px 45px rgba(0,0,0,0.28);}
-    .pricing-tier.popular{
-      border:4px solid #10b981;transform:scale(1.06);background:linear-gradient(135deg,#f8fff8,#e8fcef);
+
+    /* Best Deal Highlight */
+    .best-deal{
+      border:5px solid #10b981 !important;
+      background:linear-gradient(135deg,#f8fff8,#e8fcef) !important;
+      transform:scale(1.06);
     }
-    .pricing-tier.popular:hover{transform:scale(1.06) translateY(-18px);}
+    .best-deal:hover{transform:scale(1.06) translateY(-18px);}
+
+    .best-tag{
+      background:#10b981;color:#fff;padding:10px 24px;border-radius:50px;font-weight:900;font-size:1rem;display:inline-block;margin-bottom:15px;
+    }
 
     .pricing-tier h2{font-size:2.1rem;color:#0d47a1;margin-bottom:12px;}
     .price{font-size:2.9rem;font-weight:900;color:#1e88e5;margin:18px 0;}
@@ -61,7 +69,6 @@
     .pricing-tier ul li::before{content:'✓';color:#1e88e5;margin-right:12px;font-weight:bold;}
 
     .premium-highlight{background:#fff8e1;padding:16px;border-radius:14px;margin:20px 0;font-weight:800;color:#d84315;font-size:1.05rem;}
-    .popular-tag{background:#10b981;color:#fff;padding:8px 20px;border-radius:50px;font-weight:800;font-size:0.9rem;display:inline-block;margin-bottom:15px;}
 
     .cta-button{display:inline-block;background:linear-gradient(to right,#2196f3,#1976d2);color:#fff;padding:18px 36px;font-size:1.25rem;
       font-weight:700;border-radius:14px;text-decoration:none;transition:.3s;margin-top:10px;}
@@ -74,7 +81,7 @@
       .container{margin:20px;padding:20px;}
       h1{font-size:2.2rem;}
       .price{font-size:2.5rem;}
-      .pricing-tier{padding:32px 24px;}
+      .best-deal{transform:scale(1.03);}
     }
   </style>
 </head>
@@ -108,7 +115,7 @@
       </div>
     </div>
 
-    <!-- New 3-Tier Pricing -->
+    <!-- 3 Tiers – $480 is the clear BEST DEAL -->
     <div class="pricing-section">
       
       <div class="pricing-tier">
@@ -123,8 +130,8 @@
         <a href="payment.html" class="cta-button">Get Standard</a>
       </div>
 
-      <div class="pricing-tier popular">
-        <div class="popular-tag">MOST POPULAR</div>
+      <div class="pricing-tier best-deal">
+        <div class="best-tag">BEST DEAL – GUARANTEED 1600</div>
         <h2>Bluebook Pro</h2>
         <div class="price">$480</div>
         <ul>
@@ -134,7 +141,10 @@
           <li>Priority updates & support</li>
           <li>Lifetime access</li>
         </ul>
-        <a href="payment.html" class="cta-button">Get Pro →</a>
+        <div class="premium-highlight" style="background:#e8f5e9;color:#2e7d32;">
+          <strong>100% GUARANTEED PERFECT 1600 SCORE</strong>
+        </div>
+        <a href="payment.html" class="cta-button">Get Pro → Best Choice</a>
       </div>
 
       <div class="pricing-tier">
@@ -142,12 +152,10 @@
         <div class="price">$890</div>
         <ul>
           <li>Direct College Board server answers</li>
-          <li>100% guaranteed 1600 score</li>
           <li>No AI – real answers only</li>
           <li>Maximum stealth</li>
           <li>VIP lifetime support</li>
         </ul>
-        <div class="premium-highlight">Pulls answers straight from CB servers – zero chance of error</div>
         <a href="payment.html" class="cta-button">Go Premium</a>
       </div>
 
