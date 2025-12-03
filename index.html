@@ -28,25 +28,12 @@
     h1{font-size:3rem;text-align:center;color:#0d47a1;margin:0 0 0.5em;text-shadow:1px 1px 3px rgba(0,0,0,0.15);}
     .subtitle{text-align:center;font-size:1.35rem;color:#424242;margin-bottom:28px;}
 
-    /* Compact horizontal badges – always 4 side-by-side on desktop & tablets, 2×2 on mobile */
     .badge-wrapper{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:14px;
-      margin:30px auto;
-      max-width:1100px;
+      display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:30px auto;max-width:1100px;
     }
     .badge{
-      background:#e3f2fd;
-      color:#1565c0;
-      padding:12px 22px;
-      border-radius:50px;
-      font-weight:700;
-      font-size:0.95rem;
-      white-space:nowrap;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-      transition:.25s;
+      background:#e3f2fd;color:#1565c0;padding:12px 22px;border-radius:50px;font-weight:700;font-size:0.95rem;
+      white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:.25s;
     }
     .badge:hover{transform:scale(1.07);background:#bbdefb;}
 
@@ -73,25 +60,15 @@
     .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 
     .pricing-section{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-      gap:28px;
-      margin:60px auto;
-      max-width:1200px;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px;margin:60px auto;max-width:1200px;
     }
     .pricing-tier{
-      background:#f9fbfd;
-      padding:36px 26px;
-      border-radius:24px;
-      box-shadow:0 12px 36px rgba(0,0,0,0.2);
-      text-align:center;
+      background:#f9fbfd;padding:36px 26px;border-radius:24px;box-shadow:0 12px 36px rgba(0,0,0,0.2);text-align:center;
       transition:transform .3s,box-shadow .3s;
     }
     .pricing-tier:hover{transform:translateY(-16px);box-shadow:0 24px 50px rgba(0,0,0,0.3);}
     .best-deal{
-      border:5px solid #10b981;
-      background:linear-gradient(135deg,#f8fff8,#e8fcef);
-      transform:scale(1.05);
+      border:5px solid #10b981;background:linear-gradient(135deg,#f8fff8,#e8fcef);transform:scale(1.05);
     }
     .best-deal:hover{transform:scale(1.05) translateY(-16px);}
     .best-tag{
@@ -101,8 +78,8 @@
     .pricing-tier h2{font-size:2.2rem;color:#0d47a1;margin-bottom:12px;}
     .price{font-size:3rem;font-weight:900;color:#1e88e5;margin:18px 0;}
     .pricing-tier ul{list-style:none;padding:0;margin:24px 0;}
-    .pricing-tier ul li{margin:14px 0;font-size:1.12rem;}
-    .pricing-tier ul li::before{content:'Checkmark';color:#1e88e5;margin-right:12px;font-weight:bold;}
+    .pricing-tier ul li{margin:14px 0;font-size:1.12rem;position:relative;padding-left:28px;}
+    .pricing-tier ul li::before{content:'✓';position:absolute;left:0;color:#1e88e5;font-weight:bold;font-size:1.3rem;}
     .premium-highlight{
       background:#e8f5e9;padding:18px;border-radius:16px;margin:20px 0;font-weight:800;color:#2e7d32;font-size:1.15rem;
     }
@@ -114,22 +91,13 @@
 
     footer{text-align:center;padding:40px 20px;color:#757575;font-size:0.95rem;border-top:1px solid #eee;margin-top:50px;}
 
-    /* Mobile – 2×2 badge layout, compact everything */
     @media (max-width:768px){
       .container{margin:12px;padding:26px 16px;}
-      h1{font-size:2.5rem;}
-      .subtitle{font-size:1.2rem;}
-      .badge-wrapper{gap:12px;}
-      .badge{padding:10px 18px;font-size:0.9rem;}
-      .tp-star{width:40px;height:40px;}
-      .price{font-size:2.7rem;}
-      .best-deal{transform:scale(1.04);}
-      .pricing-tier{padding:32px 20px;}
+      h1{font-size:2.5rem;}.subtitle{font-size:1.2rem;}
+      .badge-wrapper{gap:12px;}.badge{padding:10px 18px;font-size:0.9rem;}
+      .tp-star{width:40px;height:40px;}.price{font-size:2.7rem;}
+      .best-deal{transform:scale(1.04);}.pricing-tier{padding:32px 20px;}
       .cta-button{font-size:1.25rem;padding:16px 32px;}
-    }
-    @media (max-width:480px){
-      h1{font-size:2.2rem;}
-      .badge{font-size:0.85rem;padding:9px 16px;}
     }
   </style>
 </head>
@@ -139,7 +107,6 @@
     <h1>Achieve a Perfect 1600 SAT Score</h1>
     <p class="subtitle">No studying required. Our bypass tool handles everything seamlessly and undetected.</p>
 
-    <!-- 4 compact badges – always side-by-side on desktop, 2×2 on mobile, never long or scrollable -->
     <div class="badge-wrapper">
       <div class="badge">150+ Users</div>
       <div class="badge">20+ Perfect Scores</div>
@@ -190,8 +157,7 @@
         <h2>Bluebook Pro</h2>
         <div class="price">$480</div>
         <ul>
-          <li>Real-time AI answers</li>
-          <li>Live leaked answers feed</li>
+          <li>Live leaked answers feed (real-time)</li>
           <li>Ultra stealth technology</li>
           <li>Priority updates & support</li>
           <li>Lifetime access</li>
