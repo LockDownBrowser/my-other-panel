@@ -7,21 +7,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     body{font-family:Inter,system-ui,sans-serif;background:#f0f9ff;color:#1e293b;line-height:1.7;margin:0;padding:20px 15px}
-    .card{max-width:900px;margin:0 auto;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+    .card{max-width:1200px;margin:0 auto;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
     header{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;text-align:center;padding:80px 20px}
     h1{font-size:2.8rem;font-weight:800;margin:0}
     .subtitle{font-size:1.4rem;margin-top:12px;opacity:.95}
     .steps{padding:50px 30px}
-    .step{background:#fff;border:1px solid #e0e7ff;border-radius:20px;padding:36px 32px;margin:35px 0;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    .step{border-bottom:1px solid #e0e7ff;padding:36px 32px 40px}
+    .step:last-child{border-bottom:none}
     h2{font-size:1.9rem;color:#1d4ed8;margin-bottom:20px}
     ol{padding-left:22px;margin:18px 0}
-    li{margin:12px 0;font-size:1.1rem}
+    li{margin:12px 0;font-size:1.15rem}
     .code{background:#0f172a;color:#e2e8f0;padding:18px 22px;border-radius:12px;font-family:SF Mono,Menlo,monospace;font-size:1.05rem;overflow-x:auto;margin:18px 0}
-    .btn{display:block;background:#10b981;color:#fff;text-align:center;padding:20px;font-size:1.3rem;font-weight:700;border-radius:16px;text-decoration:none;margin:25px auto;max-width:640px;box-shadow:0 12px 30px rgba(16,185,129,.4);transition:.3s}
+    .btn{display:block;background:#10b981;color:#fff;text-align:center;padding:20px;font-size:1.3rem;font-weight:700;border-radius:16px;text-decoration:none;margin:25px auto;max-width:80%;box-shadow:0 12px 30px rgba(16,185,129,.4);transition:.3s}
     .btn:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(16,185,129,.5)}
-    .warn{background:#fffbeb;border-left:6px solid #f59e0b;padding:20px;border-radius:12px;margin:20px 0;font-weight:600;color:#92400e}
+    .warn{background:#fffbeb;border-left:6px solid #f59e0b;padding:20px;border-radius:12px;margin:20px 0;font-weight:600;color:#92400e;font-size:1.15rem}
     footer{text-align:center;padding:50px 20px;color:#64748b}
-    @media(max-width:768px){header{padding:60px 15px}h1{font-size:2.3rem}.step{padding:28px 24px}}
+    @media(max-width:768px){header{padding:60px 15px}h1{font-size:2.3rem}.steps{padding:40px 20px}.step{padding:28px 20px 32px}li{font-size:1.1rem}}
   </style>
 </head>
 <body>
@@ -32,7 +33,6 @@
   </header>
 
   <div class="steps">
-
     <div class="step">
       <h2>1. Create Windows 11 VM on macOS</h2>
       <p>Use VMware Fusion (free for personal use) → install Windows 11 ARM.</p>
@@ -81,7 +81,6 @@
       <h2>7. Exam Time – You’re Done</h2>
       <p>Start BlueBook/ACT in the Windows VM<br>Open Floating Browser on macOS → answers float on top.<br>Zero detection.</p>
     </div>
-
   </div>
 
   <footer>24/7 Discord support after purchase • 100% success rate</footer>
