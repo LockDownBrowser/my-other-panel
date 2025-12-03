@@ -18,12 +18,6 @@
     body {margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(to bottom,#e3f2fd,#bbdefb);color:#212121;line-height:1.6;}
     .container{max-width:950px;margin:30px auto;padding:30px;background:#fff;box-shadow:0 15px 40px rgba(0,0,0,0.22);border-radius:24px;overflow:hidden;}
     
-    /* Trustpilot-style rating bar at the top */
-    .trust-bar{background:#fff;padding:16px 20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-bottom:30px;}
-    .stars{font-size:2rem;color:#10b981;letter-spacing:4px;}
-    .rating-text{font-weight:700;font-size:1.2rem;color:#111;margin:8px 0;}
-    .reviews{color:#666;font-size:0.95rem;}
-
     h1{font-size:2.7rem;text-align:center;color:#0d47a1;margin:0 0 0.6em;text-shadow:1px 1px 3px rgba(0,0,0,0.15);}
     .subtitle{text-align:center;font-size:1.25rem;color:#424242;margin-bottom:30px;}
 
@@ -31,23 +25,47 @@
     .badge{background:#e3f2fd;color:#1565c0;padding:10px 20px;border-radius:35px;font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:.25s;}
     .badge:hover{transform:scale(1.06);background:#bbdefb;}
 
-    p{font-size:1.15rem;text-align:center;margin:1.2em 0;}
-
     .score-image{display:block;max-width:100%;height:auto;margin:35px auto;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.18);transition:.3s;}
     .score-image:hover{transform:scale(1.02);}
+
+    /* Trustpilot-style rating section under the image */
+    .trustpilot-section{
+      text-align:center;
+      padding:28px 20px 10px;
+      background:#f8fffe;
+      border-radius:18px;
+      margin:0 auto 40px;
+      max-width:460px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    }
+    .trustpilot-section .stars{
+      font-size:2.8rem;
+      color:#10b981;
+      letter-spacing:6px;
+      margin-bottom:8px;
+    }
+    .trustpilot-section .rating{
+      font-size:1.4rem;
+      font-weight:800;
+      color:#111;
+      margin:0;
+    }
+    .trustpilot-section .reviews{
+      font-size:1rem;
+      color:#555;
+      margin-top:6px;
+    }
+
+    p{font-size:1.15rem;text-align:center;margin:1.2em 0;}
 
     .video-preview{text-align:center;margin:40px 0;}
     .video-preview p{font-size:1.3rem;margin-bottom:18px;color:#333;}
     .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,0.15);}
     .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 
-    .highlight{background:#e8f4fd;padding:30px;border-radius:16px;margin:35px 0;font-size:1.25rem;font-style:italic;text-align:center;
-      border-left:8px solid #2196f3;box-shadow:0 6px 15px rgba(0,0,0,0.1);transition:.3s;}
-    .highlight:hover{background:#d4eafd;}
-
     .pricing-section{display:flex;justify-content:center;gap:25px;margin:50px 0;flex-wrap:wrap;}
     .pricing-tier{background:#f9fbfd;padding:35px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.18);text-align:center;flex:1 1 320px;
-      transition:transform .3s,box-shadow .3s;background .3s;}
+      transition:transform .3s,box-shadow .3s;}
     .pricing-tier:hover{transform:translateY(-15px);box-shadow:0 18px 40px rgba(0,0,0,0.25);background:#e8f4fd;}
 
     .pricing-tier h2{font-size:2rem;color:#0d47a1;margin-bottom:12px;}
@@ -66,32 +84,24 @@
     footer{text-align:center;padding:30px 20px;color:#757575;font-size:0.95rem;border-top:1px solid #eee;margin-top:40px;}
 
     @media (max-width:768px){
-      .container{margin:20px;padding:20px;border-radius:18px;}
+      .container{margin:20px;padding:20px;}
       h1{font-size:2.2rem;}
       .subtitle{font-size:1.1rem;}
-      .stars{font-size:1.7rem;}
-      .rating-text{font-size:1.1rem;}
+      .trustpilot-section .stars{font-size:2.3rem;letter-spacing:4px;}
+      .trustpilot-section .rating{font-size:1.25rem;}
       .badge{padding:8px 16px;font-size:0.9rem;}
       .pricing-tier{padding:28px;}
       .price{font-size:2.3rem;}
-      .cta-button{padding:14px 28px;font-size:1.1rem;}
     }
     @media (max-width:480px){
       h1{font-size:1.9rem;}
-      .badge{font-size:0.85rem;padding:6px 12px;}
-      .pricing-section{gap:18px;}
+      .trustpilot-section{padding:22px 15px;}
+      .trustpilot-section .stars{font-size:2rem;}
     }
   </style>
 </head>
 <body>
   <div class="container">
-
-    <!-- Trustpilot-style rating bar -->
-    <div class="trust-bar">
-      <div class="stars">★★★★★</div>
-      <div class="rating-text">4.7 out of 5 stars</div>
-      <div class="reviews">Based on 297 reviews</div>
-    </div>
 
     <h1>Achieve a Perfect 1600 SAT Score</h1>
     <p class="subtitle">No studying required. Our bypass tool handles everything seamlessly and undetected.</p>
@@ -104,6 +114,13 @@
     </div>
 
     <img src="book.png" alt="Perfect 1600 SAT Score" class="score-image" />
+
+    <!-- Beautiful Trustpilot-style rating card under the image -->
+    <div class="trustpilot-section">
+      <div class="stars">★★★★★</div>
+      <p class="rating">4.7 out of 5</p>
+      <p class="reviews">Based on 297 verified reviews</p>
+    </div>
 
     <p>Our Bluebook SAT bypass tool seamlessly integrates with the exam platform to auto-select correct answers in real-time. Completely undetectable and effortless to use.</p>
 
