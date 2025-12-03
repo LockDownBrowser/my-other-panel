@@ -16,71 +16,93 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(to bottom,#e3f2fd,#bbdefb);color:#212121;line-height:1.6;}
-    .container{max-width:1150px;margin:30px auto;padding:30px;background:#fff;box-shadow:0 15px 40px rgba(0,0,0,0.22);border-radius:24px;overflow:hidden;}
     
-    h1{font-size:2.7rem;text-align:center;color:#0d47a1;margin:0 0 0.6em;text-shadow:1px 1px 3px rgba(0,0,0,0.15);}
-    .subtitle{text-align:center;font-size:1.25rem;color:#424242;margin-bottom:30px;}
+    /* Wider container – uses almost full width on mobile */
+    .container{
+      max-width:1350px;
+      margin:20px auto;
+      padding:32px 20px;
+      background:#fff;
+      box-shadow:0 15px 40px rgba(0,0,0,0.22);
+      border-radius:24px;
+      overflow:hidden;
+    }
 
-    .badge-wrapper{display:flex;justify-content:center;gap:14px;margin-bottom:30px;flex-wrap:wrap;}
-    .badge{background:#e3f2fd;color:#1565c0;padding:10px 20px;border-radius:35px;font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:.25s;}
+    h1{font-size:2.9rem;text-align:center;color:#0d47a1;margin:0 0 0.6em;text-shadow:1px 1px 3px rgba(0,0,0,0.15);}
+    .subtitle{text-align:center;font-size:1.3rem;color:#424242;margin-bottom:32px;}
+
+    .badge-wrapper{display:flex;justify-content:center;gap:16px;margin-bottom:34px;flex-wrap:wrap;}
+    .badge{background:#e3f2fd;color:#1565c0;padding:11px 24px;border-radius:35px;font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:.25s;}
     .badge:hover{transform:scale(1.06);background:#bbdefb;}
 
-    .score-image{display:block;max-width:100%;height:auto;margin:35px auto;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.18);transition:.3s;}
+    .score-image{display:block;max-width:100%;height:auto;margin:38px auto;border-radius:20px;box-shadow:0 14px 35px rgba(0,0,0,0.2);transition:.3s;}
     .score-image:hover{transform:scale(1.02);}
 
     .trustpilot-section{
-      text-align:center;padding:28px 20px 10px;background:#f8fffe;border-radius:18px;margin:0 auto 40px;max-width:460px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      text-align:center;padding:32px 20px 12px;background:#f8fffe;border-radius:20px;margin:0 auto 44px;max-width:500px;
+      box-shadow:0 6px 22px rgba(0,0,0,0.09);
     }
-    .trustpilot-section .stars{font-size:2.8rem;color:#10b981;letter-spacing:6px;margin-bottom:8px;}
-    .trustpilot-section .rating{font-size:1.4rem;font-weight:800;color:#111;margin:0;}
-    .trustpilot-section .reviews{font-size:1rem;color:#555;margin-top:6px;}
+    .trustpilot-section .stars{font-size:3rem;color:#10b981;letter-spacing:7px;margin-bottom:8px;}
+    .trustpilot-section .rating{font-size:1.5rem;font-weight:800;color:#111;margin:0;}
+    .trustpilot-section .reviews{font-size:1.05rem;color:#555;margin-top:6px;}
 
-    p{font-size:1.15rem;text-align:center;margin:1.2em 0;}
+    p{font-size:1.2rem;text-align:center;margin:1.4em 0;}
 
-    .video-preview{text-align:center;margin:40px 0;}
-    .video-preview p{font-size:1.3rem;margin-bottom:18px;color:#333;}
-    .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+    .video-preview{text-align:center;margin:48px 0;}
+    .video-preview p{font-size:1.35rem;margin-bottom:20px;color:#333;}
+    .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.18);}
     .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 
-    .pricing-section{display:flex;justify-content:center;gap:28px;margin:60px 0;flex-wrap:wrap;}
+    .pricing-section{display:flex;justify-content:center;gap:32px;margin:70px 0;flex-wrap:wrap;}
     .pricing-tier{
-      background:#f9fbfd;padding:38px 30px;border-radius:22px;box-shadow:0 10px 28px rgba(0,0,0,0.18);
-      text-align:center;flex:1 1 300px;min-width:280px;transition:transform .3s,box-shadow .3s;
+      background:#f9fbfd;padding:42px 32px;border-radius:24px;box-shadow:0 12px 32px rgba(0,0,0,0.18);
+      text-align:center;flex:1 1 320px;min-width:300px;transition:transform .3s,box-shadow .3s;
     }
-    .pricing-tier:hover{transform:translateY(-18px);box-shadow:0 22px 45px rgba(0,0,0,0.28);}
+    .pricing-tier:hover{transform:translateY(-20px);box-shadow:0 25px 50px rgba(0,0,0,0.3);}
 
-    /* Best Deal Highlight */
     .best-deal{
       border:5px solid #10b981 !important;
       background:linear-gradient(135deg,#f8fff8,#e8fcef) !important;
-      transform:scale(1.06);
+      transform:scale(1.07);
     }
-    .best-deal:hover{transform:scale(1.06) translateY(-18px);}
+    .best-deal:hover{transform:scale(1.07) translateY(-20px);}
 
     .best-tag{
-      background:#10b981;color:#fff;padding:10px 24px;border-radius:50px;font-weight:900;font-size:1rem;display:inline-block;margin-bottom:15px;
+      background:#10b981;color:#fff;padding:12px 28px;border-radius:50px;font-weight:900;font-size:1.05rem;display:inline-block;margin-bottom:18px;
     }
 
-    .pricing-tier h2{font-size:2.1rem;color:#0d47a1;margin-bottom:12px;}
-    .price{font-size:2.9rem;font-weight:900;color:#1e88e5;margin:18px 0;}
-    .pricing-tier ul{list-style:none;padding:0;margin:25px 0;}
-    .pricing-tier ul li{margin:14px 0;font-size:1.08rem;}
-    .pricing-tier ul li::before{content:'✓';color:#1e88e5;margin-right:12px;font-weight:bold;}
+    .pricing-tier h2{font-size:2.3rem;color:#0d47a1;margin-bottom:14px;}
+    .price{font-size:3.2rem;font-weight:900;color:#1e88e5;margin:20px 0;}
+    .pricing-tier ul{list-style:none;padding:0;margin:28px 0;}
+    .pricing-tier ul li{margin:16px 0;font-size:1.15rem;}
+    .pricing-tier ul li::before{content:'Checkmark';color:#1e88e5;margin-right:14px;font-weight:bold;}
 
-    .premium-highlight{background:#fff8e1;padding:16px;border-radius:14px;margin:20px 0;font-weight:800;color:#d84315;font-size:1.05rem;}
+    .premium-highlight{background:#e8f5e9;padding:18px;border-radius:16px;margin:22px 0;font-weight:800;color:#2e7d32;font-size:1.15rem;}
 
-    .cta-button{display:inline-block;background:linear-gradient(to right,#2196f3,#1976d2);color:#fff;padding:18px 36px;font-size:1.25rem;
-      font-weight:700;border-radius:14px;text-decoration:none;transition:.3s;margin-top:10px;}
+    .cta-button{display:inline-block;background:linear-gradient(to right,#2196f3,#1976d2);color:#fff;padding:20px 40px;font-size:1.35rem;
+      font-weight:700;border-radius:16px;text-decoration:none;transition:.3s;margin-top:12px;}
     .cta-button:hover{background:linear-gradient(to right,#1976d2,#0d47a1);transform:scale(1.08);}
 
-    footer{text-align:center;padding:30px 20px;color:#757575;font-size:0.95rem;border-top:1px solid #eee;margin-top:40px;}
+    footer{text-align:center;padding:40px 20px;color:#757575;font-size:1rem;border-top:1px solid #eee;margin-top:50px;}
 
-    @media (max-width:992px){.pricing-section{gap:20px;}}
+    /* Mobile – even wider & more readable */
     @media (max-width:768px){
-      .container{margin:20px;padding:20px;}
-      h1{font-size:2.2rem;}
-      .price{font-size:2.5rem;}
+      .container{margin:12px;padding:28px 18px;border-radius:20px;}
+      h1{font-size:2.4rem;}
+      .subtitle{font-size:1.15rem;}
+      .badge{padding:10px 20px;font-size:0.95rem;}
+      .trustpilot-section .stars{font-size:2.6rem;}
+      .trustpilot-section .rating{font-size:1.35rem;}
+      p{font-size:1.15rem;}
+      .price{font-size:2.8rem;}
+      .pricing-tier{padding:36px 24px;}
+      .best-deal{transform:scale(1.05);}
+      .best-tag{font-size:1rem;padding:10px 24px;}
+      .cta-button{font-size:1.25rem;padding:18px 36px;}
+    }
+    @media (max-width:480px){
+      h1{font-size:2.1rem;}
+      .pricing-section{gap:20px;}
       .best-deal{transform:scale(1.03);}
     }
   </style>
@@ -101,7 +123,7 @@
     <img src="book.png" alt="Perfect 1600 SAT Score" class="score-image" />
 
     <div class="trustpilot-section">
-      <div class="stars">★★★★★</div>
+      <div class="stars">*****</div>
       <p class="rating">4.7 out of 5</p>
       <p class="reviews">Based on 297 verified reviews</p>
     </div>
@@ -115,7 +137,7 @@
       </div>
     </div>
 
-    <!-- 3 Tiers – $480 is the clear BEST DEAL -->
+    <!-- 3 Tiers – $480 is the BEST DEAL with 100% 1600 Guarantee -->
     <div class="pricing-section">
       
       <div class="pricing-tier">
@@ -141,10 +163,10 @@
           <li>Priority updates & support</li>
           <li>Lifetime access</li>
         </ul>
-        <div class="premium-highlight" style="background:#e8f5e9;color:#2e7d32;">
+        <div class="premium-highlight">
           <strong>100% GUARANTEED PERFECT 1600 SCORE</strong>
         </div>
-        <a href="payment.html" class="cta-button">Get Pro → Best Choice</a>
+        <a href="payment.html" class="cta-button">Get Pro – Best Choice</a>
       </div>
 
       <div class="pricing-tier">
