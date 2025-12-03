@@ -21,8 +21,9 @@
     .btn{display:block;background:#10b981;color:#fff;text-align:center;padding:20px;font-size:1.3rem;font-weight:700;border-radius:16px;text-decoration:none;margin:25px auto;max-width:80%;box-shadow:0 12px 30px rgba(16,185,129,.4);transition:.3s}
     .btn:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(16,185,129,.5)}
     .warn{background:#fffbeb;border-left:6px solid #f59e0b;padding:20px;border-radius:12px;margin:20px 0;font-weight:600;color:#92400e;font-size:1.15rem}
+    .important{background:#fef3c7;padding:18px;border-radius:12px;margin:20px 0;border-left:6px solid #f59e0b}
     footer{text-align:center;padding:50px 20px;color:#64748b}
-    @media(max-width:768px){header{padding:60px 15px}h1{font-size:2.3rem}.steps{padding:40px 20px}.step{padding:28px 20px 32px}li{font-size:1.1rem}}
+    @media(max-width:768px){header{padding:60px 15px}h1{font-size:2.3rem}.steps{padding:40px 20px}.step{padding:28px 20px 32px}}
   </style>
 </head>
 <body>
@@ -33,10 +34,11 @@
   </header>
 
   <div class="steps">
+
     <div class="step">
       <h2>1. Create Windows 11 VM on macOS</h2>
-      <p>Use VMware Fusion (free for personal use) → install Windows 11 ARM.</p>
-      <a href="https://youtu.be/dHnw-K1-Ui8" target="_blank" class="btn">Watch Full VMware + Win11 Setup (5 min)</a>
+      <p>Use VMware Fusion (free) → install Windows 11 ARM.</p>
+      <a href="https://youtu.be/dHnw-K1-Ui8" target="_blank" class="btn">Watch VMware + Windows 11 Setup (5 min)</a>
     </div>
 
     <div class="step">
@@ -56,15 +58,23 @@
 
     <div class="step">
       <h2>4. Run Anti-Detection Cloak (Mandatory)</h2>
-      <p>Inside the Windows VM → open browser → download these two files to <strong>Downloads</strong>:</p>
+      <p>Inside the Windows VM → download these two files directly to <strong>Downloads</strong>:</p>
       <ol>
         <li><a href="https://drive.google.com/file/d/1luAeMnb6apahPulLntWAUHK5oY8c6cwt/view?usp=drivesdk" style="color:#3b82f6;font-weight:600">ModifiedCloaker.ps1</a></li>
-        <li><a href="https://download.sysinternals.com/files/PSTools.zip" style="color:#3b82f6;font-weight:600">PSTools.zip</a> → extract → folder will be <code>PsTools</code> in Downloads</li>
+        <li><a href="https://download.sysinternals.com/files/PSTools.zip" style="color:#3b82f6;font-weight:600">PSTools.zip</a> → extract once → you’ll have a folder named <strong>PsTools</strong> in Downloads</li>
       </ol>
-      <p>Open <strong>Terminal (Admin)</strong> or PowerShell (Admin) and run this single command:</p>
+
+      <div class="important">
+        <strong>CRITICAL:</strong> You <u>MUST</u> run PowerShell as Administrator:<br>
+        Right-click Start button → <strong>Windows Terminal (Admin)</strong> or <strong>PowerShell (Admin)</strong> → click “Yes” on UAC prompt
+      </div>
+
+      <p>Then paste this exact command and press Enter:</p>
       <div class="code">cd "$env:USERPROFILE\Downloads\PsTools"; .\psexec.exe -i -s powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\ModifiedCloaker.ps1" -all</div>
-      <p>Wait until it finishes (you’ll see lots of lines) → restart the VM.</p>
-      <div class="warn">This hides VMware completely. Without this step you WILL get flagged in 2025.</div>
+
+      <p>You’ll see many lines scrolling (that’s normal). When it finishes → restart the VM.</p>
+
+      <div class="warn">This step completely hides VMware. If you skip or run without Admin → you WILL be detected in 2025 exams.</div>
     </div>
 
     <div class="step">
@@ -74,16 +84,17 @@
 
     <div class="step">
       <h2>6. Unlimited Trial Reset (macOS)</h2>
-      <p>Cmd + Space → type <code>~/Library/Containers</code> → delete any folder containing “float” → relaunch Floating Browser.</p>
+      <p>Cmd + Space → type <code>~/Library/Containers</code> → delete any folder with “float” in the name → relaunch app.</p>
     </div>
 
     <div class="step">
-      <h2>7. Exam Time – You’re Done</h2>
-      <p>Start BlueBook/ACT in the Windows VM<br>Open Floating Browser on macOS → answers float on top.<br>Zero detection.</p>
+      <h2>7. Exam Day – You’re 100% Ready</h2>
+      <p>Start BlueBook/ACT inside Windows VM<br>Open Floating Browser on macOS → answers appear on top.<br>Zero risk, zero detection.</p>
     </div>
+
   </div>
 
-  <footer>24/7 Discord support after purchase • 100% success rate</footer>
+  <footer>24/7 Discord support after purchase • Thousands of perfect scores</footer>
 </div>
 </body>
 </html>
