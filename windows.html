@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Virtual Machine & Float Browser Setup Guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
     body {
@@ -24,7 +25,7 @@
     header {
         background: linear-gradient(135deg, #3b82f6, #1d4ed8);
         color: white;
-        padding: 80px 30px;
+        padding: 80px 30px 70px;
         text-align: center;
     }
     header h1 {
@@ -75,7 +76,7 @@
         border-radius: 16px;
         text-decoration: none;
         margin: 25px auto;
-        max-width: 80%;
+        max-width: 90%;
         box-shadow: 0 12px 30px rgba(16,185,129,.4);
         transition: .3s;
     }
@@ -89,6 +90,7 @@
         font-size: 1.05rem;
         overflow-x: auto;
         margin: 18px 0;
+        word-break: break-all;
     }
     .warn {
         background: #fffbeb;
@@ -106,11 +108,31 @@
         color: #64748b;
         font-size: 1.1rem;
     }
-    @media (max-width:768px) {
-        header { padding: 60px 20px; }
+
+    /* Mobile Optimizations */
+    @media (max-width: 768px) {
+        header { padding: 60px 20px 50px; }
         header h1 { font-size: 2.3rem; }
+        header p { font-size: 1.2rem; }
         .steps { padding: 40px 20px; }
         .step { padding: 32px 0; }
+        h2 { font-size: 1.75rem; }
+        h3 { font-size: 1.3rem; }
+        p, li { font-size: 1.1rem; }
+        .btn { 
+            font-size: 1.25rem; 
+            padding: 18px; 
+            max-width: 100%;
+        }
+        .command-box { 
+            font-size: 0.95rem; 
+            padding: 16px;
+        }
+        .warn { font-size: 1.05rem; }
+    }
+    @media (max-width: 480px) {
+        header h1 { font-size: 2rem; }
+        .btn { font-size: 1.2rem; }
     }
 </style>
 </head>
@@ -128,7 +150,7 @@
 <div class="step">
 <h2>PART 1 – MAIN COMPUTER (macOS or Windows Host)</h2>
 <h3>Step 1: Install Python 3.12+</h3>
-<p><a href="https://www.python.org/ftp/python/3.12.7/python-3.12.7-amd64.exe" target="_blank">Download Python 3.12.7 (Windows)</a> • macOS users: already have Python or install via Homebrew</p>
+<p><a href="https://www.python.org/ftp/python/3.12.7/python-3.12.7-amd64.exe" target="_blank">Download Python 3.12.7 (Windows)</a><br>macOS: already included or use Homebrew</p>
 <p>During install → check <strong>“Add Python to PATH”</strong></p>
 
 <h3>Step 2: Download the Float + Screenshot Script</h3>
@@ -151,41 +173,40 @@ pip install pywin32 pyautogui keyboard psutil --upgrade
 python "C:\path\to\your\always_on_top_chrome.py"
 </div>
 
-<p>Chrome now floats on top (even fullscreen) • <strong>Ctrl+Shift+S</strong> = instant screenshot to clipboard</p>
-<div class="warn">Keep the Command Prompt window open while using. Stop with Ctrl + C.</div>
+<p>Chrome now floats on top • <strong>Ctrl+Shift+S</strong> = instant screenshot</p>
+<div class="warn">Keep Command Prompt open while using • Stop with Ctrl + C</div>
 </div>
 
 <div class="step">
 <h2>PART 2 – INSIDE YOUR VIRTUAL MACHINE (Windows VM)</h2>
 
-<h3>Step 1: Download the PowerShell Automation Script</h3>
+<h3>Step 1: Download the PowerShell Script</h3>
 <a href="https://drive.google.com/file/d/1xyvU1-d6OWubkNW3RyXnO8zsBsInu8NL/view?usp=drivesdk" target="_blank" class="btn">
     Download the PowerShell Script (.ps1)
 </a>
 
 <h3>Step 2: Open PowerShell as Administrator</h3>
-<p>Right-click Start → <strong>Windows Terminal (Admin)</strong> or <strong>PowerShell (Admin)</strong> → Yes on UAC</p>
+<p>Right-click Start → <strong>Windows Terminal (Admin)</strong> or <strong>PowerShell (Admin)</strong></p>
 
-<h3>Step 3: Allow Script Execution</h3>
+<h3>Step 3: Allow Scripts</h3>
 <div class="command-box">
 Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 </div>
 
-<h3>Step 4: Run the Script</h3>
-<p>Simply drag & drop the downloaded .ps1 file into the PowerShell window → press Enter</p>
+<h3>Step 4: Run It</h3>
+<p>Drag & drop the .ps1 file into PowerShell → press Enter</p>
 </div>
 
 <div class="step">
-<h2>Setup Complete – You’re Ready!</h2>
-<p><strong>Host machine:</strong> Floating browser + instant screenshots<br>
-   <strong>VM:</strong> All automation running perfectly</p>
-<p>Works flawlessly on Windows 10/11 VMs (VMware, VirtualBox, Parallels).</p>
+<h2>Done – Everything Works!</h2>
+<p>Floating browser + instant screenshots on host<br>Full automation inside VM</p>
+<p>Perfect for VMware, Parallels, VirtualBox</p>
 </div>
 
 </div>
 
 <footer>
-    24/7 support available • Thousands of users • 100% success rate
+    24/7 support • 100% success rate
 </footer>
 
 </div>
