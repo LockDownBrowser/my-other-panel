@@ -16,8 +16,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(to bottom,#e3f2fd,#bbdefb);color:#212121;line-height:1.6;}
-    .container{max-width:950px;margin:30px auto;padding:30px;background:#fff;box-shadow:0 15px 40px rgba(0,0,0,0.22);border-radius:24px;overflow:hidden;}
-    
+    .container{max-width:1150px;margin:30px auto;padding:30px;background:#fff;box-shadow:0 15px 40px rgba(0,0,0,0.22);border-radius:24px;overflow:hidden;position:relative;}
+
+    .parent-safe-btn{
+      position:absolute;top:15px;right:15px;background:#ff5252;color:#fff;padding:10px 16px;border-radius:50px;font-size:0.9rem;font-weight:600;
+      cursor:pointer;box-shadow:0 4px 12px rgba(255,82,82,0.4);transition:.3s;z-index:1000;text-align:center;
+    }
+    .parent-safe-btn:hover{background:#f44336;transform:scale(1.05);}
+
     h1{font-size:2.7rem;text-align:center;color:#0d47a1;margin:0 0 0.6em;text-shadow:1px 1px 3px rgba(0,0,0,0.15);}
     .subtitle{text-align:center;font-size:1.25rem;color:#424242;margin-bottom:30px;}
 
@@ -28,33 +34,13 @@
     .score-image{display:block;max-width:100%;height:auto;margin:35px auto;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.18);transition:.3s;}
     .score-image:hover{transform:scale(1.02);}
 
-    /* Trustpilot-style rating section under the image */
     .trustpilot-section{
-      text-align:center;
-      padding:28px 20px 10px;
-      background:#f8fffe;
-      border-radius:18px;
-      margin:0 auto 40px;
-      max-width:460px;
+      text-align:center;padding:28px 20px 10px;background:#f8fffe;border-radius:18px;margin:0 auto 40px;max-width:460px;
       box-shadow:0 6px 20px rgba(0,0,0,0.08);
     }
-    .trustpilot-section .stars{
-      font-size:2.8rem;
-      color:#10b981;
-      letter-spacing:6px;
-      margin-bottom:8px;
-    }
-    .trustpilot-section .rating{
-      font-size:1.4rem;
-      font-weight:800;
-      color:#111;
-      margin:0;
-    }
-    .trustpilot-section .reviews{
-      font-size:1rem;
-      color:#555;
-      margin-top:6px;
-    }
+    .trustpilot-section .stars{font-size:2.8rem;color:#10b981;letter-spacing:6px;margin-bottom:8px;}
+    .trustpilot-section .rating{font-size:1.4rem;font-weight:800;color:#111;margin:0;}
+    .trustpilot-section .reviews{font-size:1rem;color:#555;margin-top:6px;}
 
     p{font-size:1.15rem;text-align:center;margin:1.2em 0;}
 
@@ -63,45 +49,49 @@
     .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,0.15);}
     .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 
-    .pricing-section{display:flex;justify-content:center;gap:25px;margin:50px 0;flex-wrap:wrap;}
-    .pricing-tier{background:#f9fbfd;padding:35px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.18);text-align:center;flex:1 1 320px;
-      transition:transform .3s,box-shadow .3s;}
+    /* 3-tier pricing */
+    .pricing-section{display:flex;justify-content:center;gap:28px;margin:50px 0;flex-wrap:wrap;}
+    .pricing-tier{background:#f9fbfd;padding:35px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.18);text-align:center;flex:1 1 300px;
+      transition:all .3s;position:relative;overflow:hidden;}
     .pricing-tier:hover{transform:translateY(-15px);box-shadow:0 18px 40px rgba(0,0,0,0.25);background:#e8f4fd;}
+    .popular-badge{position:absolute;top:0;right:-45px;background:#ff4081;color:#fff;padding:8px 50px;transform:rotate(45deg);font-size:0.9rem;font-weight:800;}
 
     .pricing-tier h2{font-size:2rem;color:#0d47a1;margin-bottom:12px;}
-    .price{font-size:2.6rem;font-weight:800;color:#1e88e5;margin:15px 0;}
-    .pricing-tier ul{list-style:none;padding:0;margin:20px 0;}
-    .pricing-tier ul li{margin:12px 0;font-size:1.05rem;}
+    .price{font-size:2.8rem;font-weight:900;color:#1e88e5;margin:15px 0;}
+    .pricing-tier ul{list-style:none;padding:0;margin:22px 0;}
+    .pricing-tier ul li{margin:14px 0;font-size:1.05rem;}
     .pricing-tier ul li::before{content:'✓';color:#1e88e5;margin-right:12px;font-weight:bold;}
 
     .premium-highlight{background:#fff8e1;padding:14px;border-radius:12px;margin:18px 0;font-weight:800;color:#ef6c00;}
-    .premium-highlight:hover{background:#ffecb3;}
-
-    .cta-button{display:inline-block;background:linear-gradient(to right,#2196f3,#1976d2);color:#fff;padding:16px 32px;font-size:1.2rem;
+    .cta-button{display:inline-block;background:linear-gradient(to right,#2196f3,#1976d2);color:#fff;padding:16px 34px;font-size:1.2rem;
       font-weight:600;border-radius:12px;text-decoration:none;transition:.3s;}
     .cta-button:hover{background:linear-gradient(to right,#1976d2,#0d47a1);transform:scale(1.08);}
 
     footer{text-align:center;padding:30px 20px;color:#757575;font-size:0.95rem;border-top:1px solid #eee;margin-top:40px;}
 
+    /* Parent-safe mode */
+    .parent-mode .cheat-only, .parent-mode .pricing-section, .parent-mode .video-preview{display:none !important;}
+    .parent-mode h1{color:#2e7d32;}
+    .parent-mode .subtitle{color:#1b5e20;}
+    .parent-mode .badge-wrapper .badge:nth-child(3),
+    .parent-mode .badge-wrapper .badge:nth-child(4){display:none;}
+    .parent-mode .trustpilot-section .reviews::after{content:" – Trusted SAT Prep Platform";color:#2e7d32;font-weight:600;}
+
+    @media (max-width:992px){.pricing-section{gap:20px;}}
     @media (max-width:768px){
-      .container{margin:20px;padding:20px;}
+      .container{max-width:95%;margin:20px auto;padding:20px;}
       h1{font-size:2.2rem;}
-      .subtitle{font-size:1.1rem;}
-      .trustpilot-section .stars{font-size:2.3rem;letter-spacing:4px;}
-      .trustpilot-section .rating{font-size:1.25rem;}
-      .badge{padding:8px 16px;font-size:0.9rem;}
-      .pricing-tier{padding:28px;}
-      .price{font-size:2.3rem;}
-    }
-    @media (max-width:480px){
-      h1{font-size:1.9rem;}
-      .trustpilot-section{padding:22px 15px;}
-      .trustpilot-section .stars{font-size:2rem;}
+      .price{font-size:2.4rem;}
+      .parent-safe-btn{font-size:0.85rem;padding:8px 12px;}
     }
   </style>
 </head>
 <body>
   <div class="container">
+
+    <div class="parent-safe-btn" onclick="document.body.classList.toggle('parent-mode')">
+      Showing this to parents?<br><strong>Click for safe mode</strong>
+    </div>
 
     <h1>Achieve a Perfect 1600 SAT Score</h1>
     <p class="subtitle">No studying required. Our bypass tool handles everything seamlessly and undetected.</p>
@@ -109,54 +99,70 @@
     <div class="badge-wrapper">
       <div class="badge">150+ Users</div>
       <div class="badge">20+ Perfect Scores</div>
-      <div class="badge">Advanced AI Tech</div>
-      <div class="badge">Instant Setup</div>
+      <div class="badge cheat-only">Advanced AI Tech</div>
+      <div class="badge cheat-only">Instant Setup</div>
     </div>
 
     <img src="book.png" alt="Perfect 1600 SAT Score" class="score-image" />
 
-    <!-- Beautiful Trustpilot-style rating card under the image -->
     <div class="trustpilot-section">
       <div class="stars">★★★★★</div>
       <p class="rating">4.7 out of 5</p>
       <p class="reviews">Based on 297 verified reviews</p>
     </div>
 
-    <p>Our Bluebook SAT bypass tool seamlessly integrates with the exam platform to auto-select correct answers in real-time. Completely undetectable and effortless to use.</p>
+    <p class="cheat-only">Our Bluebook SAT bypass tool seamlessly integrates with the exam platform to auto-select correct answers in real-time. Completely undetectable and effortless to use.</p>
 
-    <div class="video-preview">
+    <div class="video-preview cheat-only">
       <p>See the software in action</p>
       <div class="video-embed">
         <iframe src="https://www.youtube.com/embed/fqVa0IeKRSc" title="Software Preview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
 
-    <div class="pricing-section">
+    <!-- NEW 3-TIER PRICING -->
+    <div class="pricing-section cheat-only">
+      
       <div class="pricing-tier">
-        <h2>Standard AI</h2>
-        <div class="price">$390</div>
+        <h2>Bluebook Standard</h2>
+        <div class="price">$190</div>
         <ul>
-          <li>AI-powered auto-answers</li>
-          <li>Real-time assistance</li>
-          <li>Stealth mode enabled</li>
-          <li>Lifetime access & updates</li>
+          <li>Real-time AI answers</li>
+          <li>Fast & accurate</li>
+          <li>Lifetime access</li>
+          <li>Stealth mode</li>
         </ul>
-        <a href="payment.html" class="cta-button">Get Started</a>
+        <a href="payment.html" class="cta-button">Get Standard</a>
       </div>
 
       <div class="pricing-tier">
-        <h2>Premium Server-Side</h2>
+        <div class="popular-badge">MOST POPULAR</div>
+        <h2>Bluebook Pro</h2>
+        <div class="price">$480</div>
+        <ul>
+          <li>Everything in Standard</li>
+          <li>Live leaked answer keys</li>
+          <li>Faster & more accurate</li>
+          <li>Priority updates</li>
+        </ul>
+        <a href="payment.html" class="cta-button">Get Pro</a>
+      </div>
+
+      <div class="pricing-tier">
+        <div class="popular-badge">BEST RESULTS</div>
+        <h2>Bluebook Premium</h2>
         <div class="price">$890</div>
         <ul>
-          <li>Guaranteed perfect 1600</li>
-          <li>Direct access to server answer sheets</li>
-          <li>Advanced stealth technology</li>
-          <li>Priority support & updates</li>
+          <li>No AI – 100% direct from College Board servers</li>
+          <li>Guaranteed 1600 score</li>
+          <li>Instant answer delivery</li>
+          <li>24/7 VIP support</li>
           <li>Lifetime access</li>
         </ul>
-        <div class="premium-highlight">No AI – pulls answers directly from the source!</div>
-        <a href="payment.html" class="cta-button">Go Premium</a>
+        <div class="premium-highlight">Direct server access – impossible to detect</div>
+        <a href="payment.html" class="cta-button">Get Premium</a>
       </div>
+
     </div>
 
     <footer>
@@ -164,5 +170,11 @@
       Use responsibly at your own discretion.
     </footer>
   </div>
+
+  <script>
+    if (window.location.href.includes('safe=1')) {
+      document.body.classList.add('parent-mode');
+    }
+  </script>
 </body>
 </html>
