@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bluebook Exam Enhancer for MacOS</title>
-    <meta name="description" content="Bluebook's advanced LockDown bypass tools for MacOS. Floating browser, screenshots, and GPA support.">
-    <meta name="keywords" content="Bluebook Bypass, Exam Enhancer, MacOS Tools, GPA Boost">
+    <meta name="description" content="Bluebook LockDown bypass for MacOS. Floating browser, screenshots, screen recording avoidance.">
     <meta name="author" content="Bluebook Innovations">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="bluebook-favicon.ico">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,20 +16,21 @@
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(to bottom, #001f3f, #0074d9);
-            color: #ffffff;
+            background: #f8f9fa;
+            color: #333333;
             margin: 0;
             padding: 0;
         }
         header {
             text-align: center;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.4);
+            padding: 50px 20px;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .logo {
             font-size: 3em;
             font-weight: bold;
-            color: #ffd700;
+            color: #007bff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -44,20 +41,22 @@
         }
         .intro {
             max-width: 900px;
-            margin: 20px auto;
+            margin: 30px auto;
             padding: 0 20px;
             text-align: center;
             font-size: 1.3em;
+            color: #555;
         }
         .trustpilot-box {
             max-width: 400px;
-            margin: 30px auto;
+            margin: 40px auto;
             background: #ffffff;
             color: #000000;
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
         }
         .trustpilot-box .stars {
             color: #00b67a;
@@ -76,68 +75,59 @@
             color: #00b67a;
             margin-top: 10px;
         }
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 40px 20px;
-        }
         .product-card {
-            background: rgba(255, 255, 255, 0.15);
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
             border-radius: 20px;
-            padding: 30px;
-            width: 320px;
+            padding: 40px;
             text-align: center;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s;
-        }
-        .product-card:hover {
-            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         .product-card h2 {
-            color: #ffd700;
-            font-size: 1.8em;
+            color: #007bff;
+            font-size: 2.2em;
+            margin-bottom: 20px;
         }
         .product-card ul {
             list-style: none;
             padding: 0;
             text-align: left;
+            max-width: 400px;
+            margin: 0 auto 30px;
         }
         .product-card li {
             margin: 15px 0;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.1em;
+            gap: 12px;
+            font-size: 1.2em;
         }
         .product-card li i {
-            color: #00ff00;
+            color: #28a745;
+            font-size: 1.3em;
         }
-        .highlight {
-            background: #ffd700;
-            color: #001f3f;
-            padding: 15px;
-            border-radius: 10px;
+        .price {
+            font-size: 2.5em;
             font-weight: bold;
-            font-size: 1.2em;
+            color: #007bff;
             margin: 20px 0;
         }
         .contact {
             text-align: center;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.3);
+            padding: 50px 20px;
+            background: #ffffff;
         }
         .btn {
             display: inline-block;
-            padding: 16px 32px;
+            padding: 18px 36px;
             margin: 15px;
             background: #5865f2;
             color: #fff;
             text-decoration: none;
             border-radius: 12px;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.3em;
             transition: all 0.3s;
         }
         .btn:hover {
@@ -145,38 +135,39 @@
             transform: scale(1.05);
         }
         .email {
-            color: #ffd700;
-            font-size: 1.3em;
-            margin: 20px 0;
+            color: #007bff;
+            font-size: 1.4em;
+            margin: 30px 0;
         }
         .video-section {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
         .video-section h2 {
             text-align: center;
-            color: #ffd700;
+            color: #007bff;
+            margin-bottom: 20px;
         }
         iframe {
             width: 100%;
             height: 500px;
             border-radius: 20px;
             border: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         @media (max-width: 768px) {
-            .products {
-                flex-direction: column;
-                align-items: center;
+            .logo {
+                font-size: 2.2em;
             }
             .product-card {
-                width: 90%;
+                padding: 30px 20px;
             }
             iframe {
                 height: 300px;
             }
-            .logo {
-                font-size: 2.2em;
+            .price {
+                font-size: 2em;
             }
         }
     </style>
@@ -187,7 +178,7 @@
     </header>
 
     <div class="intro">
-        <p>Advanced tools to bypass LockDown Browser on MacOS. Achieve better results effortlessly.</p>
+        <p>Simple and reliable LockDown Browser bypass for MacOS.</p>
     </div>
 
     <div class="trustpilot-box">
@@ -203,24 +194,15 @@
         <div class="label">Trustpilot</div>
     </div>
 
-    <section class="products">
-        <div class="product-card">
-            <h2>Essential Pack<br>$90 USD</h2>
-            <ul>
-                <li><i class="fas fa-window-restore"></i> Floating Browser</li>
-                <li><i class="fas fa-camera"></i> Built-in Screenshots</li>
-                <li><i class="fas fa-shield-alt"></i> Avoids Screen Recording</li>
-            </ul>
-        </div>
-
-        <div class="product-card">
-            <h2>Elite Pack<br>$150 USD</h2>
-            <ul>
-                <li><i class="fas fa-check-double"></i> All Essential Features</li>
-                <li class="highlight"><i class="fas fa-graduation-cap"></i> College/Uni Promo: Lifetime Support + GPA Boost</li>
-            </ul>
-        </div>
-    </section>
+    <div class="product-card">
+        <h2>Bluebook Enhancer</h2>
+        <div class="price">$90 USD</div>
+        <ul>
+            <li><i class="fas fa-window-restore"></i> Floating Browser</li>
+            <li><i class="fas fa-camera"></i> Built-in Screenshots</li>
+            <li><i class="fas fa-shield-alt"></i> Avoids Screen Recording Detection</li>
+        </ul>
+    </div>
 
     <div class="contact">
         <p>Contact to purchase:</p>
