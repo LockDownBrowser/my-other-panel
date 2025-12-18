@@ -4,41 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bluebook Exam Enhancer for MacOS</title>
-    <meta name="description" content="Unlock your potential with Bluebook's LockDown Bypass. Floating browser, screenshots, and GPA-boosting tools.">
-    <meta name="keywords" content="Bluebook Bypass, Exam Tools, MacOS Cheat, GPA Boost, College Pack">
+    <meta name="description" content="Bluebook's advanced LockDown bypass tools for MacOS. Floating browser, screenshots, and GPA support.">
+    <meta name="keywords" content="Bluebook Bypass, Exam Enhancer, MacOS Tools, GPA Boost">
     <meta name="author" content="Bluebook Innovations">
-    <meta name="robots" content="index, follow">
 
-    <!-- Favicon: Blue book icon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="bluebook-favicon.ico">
-    <meta property="og:image" content="bluebook-logo.png">
-    <meta property="og:title" content="Bluebook Exam Enhancer">
-    <meta property="og:description" content="Advanced bypass tools for secure exams. Boost your performance today.">
-    <meta property="og:url" content="https://bluebook.ink/">
-    <meta property="og:type" content="website">
 
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Bluebook Exam Enhancer",
-        "image": "bluebook-logo.png",
-        "description": "Bypass tools with lifetime support for better grades.",
-        "brand": {
-            "@type": "Brand",
-            "name": "Bluebook Innovations"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "320"
-        }
-    }
-    </script>
-
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -47,22 +24,20 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
         }
         header {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
             text-align: center;
-            position: relative;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.4);
         }
         .logo {
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: bold;
             color: #ffd700;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
         .logo i {
             font-size: 1.2em;
@@ -72,31 +47,57 @@
             margin: 20px auto;
             padding: 0 20px;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.3em;
+        }
+        .trustpilot-box {
+            max-width: 400px;
+            margin: 30px auto;
+            background: #ffffff;
+            color: #000000;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .trustpilot-box .stars {
+            color: #00b67a;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .trustpilot-box .rating {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .trustpilot-box .reviews {
+            color: #666666;
+        }
+        .trustpilot-box .label {
+            font-weight: bold;
+            color: #00b67a;
+            margin-top: 10px;
         }
         .products {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .product-card {
             background: rgba(255, 255, 255, 0.15);
             border-radius: 20px;
-            padding: 25px;
-            width: 300px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 30px;
+            width: 320px;
             text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s;
         }
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
         }
         .product-card h2 {
             color: #ffd700;
-            margin-bottom: 15px;
+            font-size: 1.8em;
         }
         .product-card ul {
             list-style: none;
@@ -104,10 +105,11 @@
             text-align: left;
         }
         .product-card li {
-            margin: 10px 0;
+            margin: 15px 0;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            font-size: 1.1em;
         }
         .product-card li i {
             color: #00ff00;
@@ -115,25 +117,28 @@
         .highlight {
             background: #ffd700;
             color: #001f3f;
-            padding: 10px;
+            padding: 15px;
             border-radius: 10px;
             font-weight: bold;
-            margin: 15px 0;
+            font-size: 1.2em;
+            margin: 20px 0;
         }
         .contact {
             text-align: center;
-            margin: 30px 0;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
         }
         .btn {
             display: inline-block;
-            padding: 15px 30px;
-            margin: 10px;
+            padding: 16px 32px;
+            margin: 15px;
             background: #5865f2;
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: bold;
-            transition: background 0.3s, transform 0.3s;
+            font-size: 1.2em;
+            transition: all 0.3s;
         }
         .btn:hover {
             background: #4752c4;
@@ -141,43 +146,23 @@
         }
         .email {
             color: #ffd700;
-            font-size: 1.1em;
+            font-size: 1.3em;
+            margin: 20px 0;
         }
         .video-section {
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
+        .video-section h2 {
+            text-align: center;
+            color: #ffd700;
+        }
         iframe {
             width: 100%;
-            height: 450px;
+            height: 500px;
             border-radius: 20px;
             border: none;
-        }
-        .trustpilot-widget {
-            position: fixed;
-            top: -100px;
-            right: 20px;
-            background: #00b67a;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: slideDown 1s ease forwards 1s;
-            z-index: 1000;
-        }
-        .trustpilot-widget i {
-            color: #ffd700;
-            font-size: 1.2em;
-        }
-        @keyframes slideDown {
-            to {
-                top: 20px;
-            }
         }
         @media (max-width: 768px) {
             .products {
@@ -187,13 +172,11 @@
             .product-card {
                 width: 90%;
             }
-            .trustpilot-widget {
-                right: 10px;
-                padding: 10px 15px;
-                font-size: 0.9em;
-            }
             iframe {
                 height: 300px;
+            }
+            .logo {
+                font-size: 2.2em;
             }
         }
     </style>
@@ -204,46 +187,51 @@
     </header>
 
     <div class="intro">
-        <p>Elevate your exam experience with Bluebook's innovative tools. Bypass restrictions seamlessly and achieve academic excellence on MacOS.</p>
+        <p>Advanced tools to bypass LockDown Browser on MacOS. Achieve better results effortlessly.</p>
+    </div>
+
+    <div class="trustpilot-box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="rating">4.8 out of 5</div>
+        <div class="reviews">Based on 320 reviews</div>
+        <div class="label">Trustpilot</div>
     </div>
 
     <section class="products">
         <div class="product-card">
-            <h2>Essential Pack - $90 USD</h2>
+            <h2>Essential Pack<br>$90 USD</h2>
             <ul>
                 <li><i class="fas fa-window-restore"></i> Floating Browser</li>
                 <li><i class="fas fa-camera"></i> Built-in Screenshots</li>
-                <li><i class="fas fa-shield-alt"></i> Avoids Screen Recording Detection</li>
+                <li><i class="fas fa-shield-alt"></i> Avoids Screen Recording</li>
             </ul>
         </div>
 
         <div class="product-card">
-            <h2>Elite Pack - $150 USD</h2>
+            <h2>Elite Pack<br>$150 USD</h2>
             <ul>
                 <li><i class="fas fa-check-double"></i> All Essential Features</li>
-                <li class="highlight"><i class="fas fa-graduation-cap"></i> College/Uni Promo: Lifetime Support + GPA Enhancement for Exams</li>
+                <li class="highlight"><i class="fas fa-graduation-cap"></i> College/Uni Promo: Lifetime Support + GPA Boost</li>
             </ul>
         </div>
     </section>
 
     <div class="contact">
-        <p>Contact us to purchase:</p>
-        <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="btn"><i class="fab fa-discord"></i> Add on Discord: minjunio</a>
+        <p>Contact to purchase:</p>
+        <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="btn"><i class="fab fa-discord"></i> Add minjunio on Discord</a>
         <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="btn"><i class="fab fa-discord"></i> Join Discord Server</a>
-        <p class="email"><i class="fas fa-envelope"></i> Or email: Minjunnios@gmail.com</p>
+        <p class="email"><i class="fas fa-envelope"></i> Email: Minjunnios@gmail.com</p>
     </div>
 
     <section class="video-section">
-        <h2>Watch the Demo</h2>
-        <iframe src="https://www.youtube.com/embed/4b8-eXEmGMI" frameborder="0" allowfullscreen></iframe>
+        <h2>Demo Video</h2>
+        <iframe src="https://www.youtube.com/embed/4b8-eXEmGMI" allowfullscreen></iframe>
     </section>
-
-    <div class="trustpilot-widget">
-        <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-        5.0 / 5 (320 Reviews) - Trustpilot Style
-    </div>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </body>
 </html>
