@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bluebook LockDown Browser Bypass for MacOS</title>
-    <meta name="description" content="Bluebook-themed LockDown Browser bypass. Float browser, built-in screenshots, avoid screen recording. Enhance your exams.">
-    <meta name="keywords" content="LockDown Bypass, Bluebook Cheat, MacOS Exam Hack, Auto-Answer, GPA Boost">
-    <meta name="author" content="Bluebook Team">
+    <title>Bluebook Exam Enhancer for MacOS</title>
+    <meta name="description" content="Unlock your potential with Bluebook's LockDown Bypass. Floating browser, screenshots, and GPA-boosting tools.">
+    <meta name="keywords" content="Bluebook Bypass, Exam Tools, MacOS Cheat, GPA Boost, College Pack">
+    <meta name="author" content="Bluebook Innovations">
     <meta name="robots" content="index, follow">
 
-    <!-- Favicon (assuming a blue book icon) -->
+    <!-- Favicon: Blue book icon -->
     <link rel="icon" type="image/x-icon" href="bluebook-favicon.ico">
     <meta property="og:image" content="bluebook-logo.png">
-    <meta property="og:title" content="Bluebook LockDown Bypass">
-    <meta property="og:description" content="Bypass LockDown with floating browser, screenshots, and more. Boost your GPA.">
+    <meta property="og:title" content="Bluebook Exam Enhancer">
+    <meta property="og:description" content="Advanced bypass tools for secure exams. Boost your performance today.">
     <meta property="og:url" content="https://bluebook.ink/">
     <meta property="og:type" content="website">
 
@@ -22,227 +22,228 @@
     {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": "Bluebook LockDown Bypass",
+        "name": "Bluebook Exam Enhancer",
         "image": "bluebook-logo.png",
-        "description": "Bypass LockDown with advanced features for exams.",
+        "description": "Bypass tools with lifetime support for better grades.",
         "brand": {
             "@type": "Brand",
-            "name": "Bluebook Team"
+            "name": "Bluebook Innovations"
         },
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "270"
+            "reviewCount": "320"
         }
     }
     </script>
 
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(to bottom, #001f3f, #0074d9);
             color: #ffffff;
-            text-align: center;
-            padding: 20px;
             margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
         header {
-            margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+            position: relative;
         }
-        h1 {
+        .logo {
             font-size: 2.5em;
-            text-transform: uppercase;
+            font-weight: bold;
+            color: #ffd700;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
         }
-        h1::before {
-            content: '📘';
+        .logo i {
             font-size: 1.2em;
         }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            max-width: 400px;
-            text-align: left;
-            flex: 1 1 300px;
-            transition: transform 0.3s;
-        }
-        .box:hover {
-            transform: scale(1.05);
-        }
-        .standard {
-            border: 2px solid #00bfff;
-        }
-        .premium {
-            border: 3px solid #ffd700;
-            background: rgba(255, 215, 0, 0.1);
-        }
-        .box h2 {
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
             text-align: center;
-            color: #00bfff;
-            margin-top: 0;
+            font-size: 1.2em;
         }
-        ul {
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+        .product-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 25px;
+            width: 300px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+        }
+        .product-card h2 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        .product-card ul {
             list-style: none;
             padding: 0;
+            text-align: left;
         }
-        ul li {
-            font-size: 1.1em;
-            margin: 12px 0;
+        .product-card li {
+            margin: 10px 0;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        ul li::before {
-            content: '✅';
+        .product-card li i {
+            color: #00ff00;
         }
-        .premium-highlight {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #000;
-            background: linear-gradient(90deg, #ffd700, #ffcc00);
-            padding: 15px;
+        .highlight {
+            background: #ffd700;
+            color: #001f3f;
+            padding: 10px;
             border-radius: 10px;
-            text-align: center;
+            font-weight: bold;
             margin: 15px 0;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
         }
-        .btn-container {
+        .contact {
+            text-align: center;
             margin: 30px 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
         }
-        .button {
+        .btn {
             display: inline-block;
             padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-            background-color: #00bfff;
-            border-radius: 8px;
-            transition: background 0.3s, transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .button:hover {
-            background-color: #009acd;
-            transform: scale(1.1);
-        }
-        .discord-btn {
+            margin: 10px;
             background: #5865f2;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
         }
-        .discord-btn:hover {
+        .btn:hover {
             background: #4752c4;
+            transform: scale(1.05);
         }
-        .video-box {
-            margin: 30px auto;
-            max-width: 700px;
+        .email {
+            color: #ffd700;
+            font-size: 1.1em;
+        }
+        .video-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
         iframe {
             width: 100%;
-            height: 400px;
-            border-radius: 15px;
+            height: 450px;
+            border-radius: 20px;
             border: none;
         }
-        .rating-box {
+        .trustpilot-widget {
             position: fixed;
-            bottom: 20px;
+            top: -100px;
             right: 20px;
-            background: linear-gradient(135deg, #00bfff, #009acd);
-            padding: 12px 18px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            text-align: center;
+            background: #00b67a;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
             font-weight: bold;
-            font-size: 1em;
-            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideDown 1s ease forwards 1s;
+            z-index: 1000;
         }
-        .stars {
+        .trustpilot-widget i {
             color: #ffd700;
-            font-size: 1.3em;
+            font-size: 1.2em;
+        }
+        @keyframes slideDown {
+            to {
+                top: 20px;
+            }
         }
         @media (max-width: 768px) {
-            .container {
+            .products {
                 flex-direction: column;
                 align-items: center;
             }
-            .box, .video-box {
-                width: 95%;
+            .product-card {
+                width: 90%;
             }
-            .btn-container {
-                flex-direction: column;
-            }
-            .button {
-                width: 100%;
-                max-width: 300px;
-            }
-            .rating-box {
-                bottom: 10px;
+            .trustpilot-widget {
                 right: 10px;
+                padding: 10px 15px;
                 font-size: 0.9em;
+            }
+            iframe {
+                height: 300px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bluebook LockDown Bypass for MacOS</h1>
-        <p>Bypass LockDown restrictions with a bluebook-inspired tool. Effortless exam enhancement.</p>
+        <div class="logo"><i class="fas fa-book-open"></i> Bluebook Exam Enhancer</div>
     </header>
 
-    <div class="container">
-        <!-- Base Product -->
-        <div class="box standard">
-            <h2>Base - $90 USD</h2>
+    <div class="intro">
+        <p>Elevate your exam experience with Bluebook's innovative tools. Bypass restrictions seamlessly and achieve academic excellence on MacOS.</p>
+    </div>
+
+    <section class="products">
+        <div class="product-card">
+            <h2>Essential Pack - $90 USD</h2>
             <ul>
-                <li>Float browser</li>
-                <li>Screenshot built-in</li>
-                <li>Avoids screen recording</li>
+                <li><i class="fas fa-window-restore"></i> Floating Browser</li>
+                <li><i class="fas fa-camera"></i> Built-in Screenshots</li>
+                <li><i class="fas fa-shield-alt"></i> Avoids Screen Recording Detection</li>
             </ul>
         </div>
 
-        <!-- Promo Pack -->
-        <div class="box premium">
-            <h2>Promo Pack - $150 USD</h2>
+        <div class="product-card">
+            <h2>Elite Pack - $150 USD</h2>
             <ul>
-                <li>Includes all Base features</li>
-                <li class="premium-highlight">College/Uni Pack: Lifetime support + GPA boost for exams</li>
+                <li><i class="fas fa-check-double"></i> All Essential Features</li>
+                <li class="highlight"><i class="fas fa-graduation-cap"></i> College/Uni Promo: Lifetime Support + GPA Enhancement for Exams</li>
             </ul>
         </div>
+    </section>
+
+    <div class="contact">
+        <p>Contact us to purchase:</p>
+        <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="btn"><i class="fab fa-discord"></i> Add on Discord: minjunio</a>
+        <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="btn"><i class="fab fa-discord"></i> Join Discord Server</a>
+        <p class="email"><i class="fas fa-envelope"></i> Or email: Minjunnios@gmail.com</p>
     </div>
 
-    <div class="btn-container">
-        <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="button discord-btn">Add on Discord: minjunio</a>
-        <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="button discord-btn">Join Discord Server</a>
-    </div>
-
-    <div class="video-box">
-        <h2>Demo Video</h2>
+    <section class="video-section">
+        <h2>Watch the Demo</h2>
         <iframe src="https://www.youtube.com/embed/4b8-eXEmGMI" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <div class="trustpilot-widget">
+        <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+        5.0 / 5 (320 Reviews) - Trustpilot Style
     </div>
 
-    <div class="rating-box">
-        <span class="stars">★★★★★</span> <br>
-        Rated 5.0 (270 Reviews)
-    </div>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </body>
 </html>
