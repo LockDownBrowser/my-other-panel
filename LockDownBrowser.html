@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bluebook Exam Enhancer for MacOS</title>
+    <title>Floating Browser for MacOS</title>
     <meta name="description" content="Bluebook LockDown bypass for MacOS. Floating browser, screenshots, screen recording avoidance.">
     <meta name="author" content="Bluebook Innovations">
 
@@ -14,23 +14,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --primary: #007bff;
+            --accent: #e3f2fd;
+            --success: #28a745;
+            --text: #212529;
+            --light: #f8fbff;
+        }
         body {
             font-family: 'Roboto', Arial, sans-serif;
-            background: #f8f9fa;
-            color: #333333;
+            background: var(--light);
+            color: var(--text);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .logo {
-            font-size: 3em;
+            font-size: 2.8em;
             font-weight: bold;
-            color: #007bff;
+            color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -40,141 +47,162 @@
             font-size: 1.2em;
         }
         .intro {
-            max-width: 900px;
+            max-width: 800px;
             margin: 30px auto;
             padding: 0 20px;
             text-align: center;
-            font-size: 1.3em;
+            font-size: 1.4em;
             color: #555;
         }
         .trustpilot-box {
-            max-width: 400px;
+            max-width: 380px;
             margin: 40px auto;
+            padding: 30px;
             background: #ffffff;
-            color: #000000;
-            padding: 25px;
-            border-radius: 12px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 20px rgba(0,123,255,0.1);
+            border: 1px solid var(--accent);
         }
         .trustpilot-box .stars {
             color: #00b67a;
-            font-size: 2em;
+            font-size: 2.2em;
             margin-bottom: 10px;
         }
         .trustpilot-box .rating {
-            font-size: 1.8em;
+            font-size: 2em;
             font-weight: bold;
         }
         .trustpilot-box .reviews {
-            color: #666666;
+            color: #666;
+            margin: 8px 0;
         }
         .trustpilot-box .label {
             font-weight: bold;
             color: #00b67a;
-            margin-top: 10px;
         }
         .product-card {
             max-width: 600px;
-            margin: 40px auto;
+            margin: 50px auto;
+            padding: 40px 30px;
             background: #ffffff;
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 24px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 30px rgba(0,123,255,0.15);
         }
         .product-card h2 {
-            color: #007bff;
-            font-size: 2.2em;
-            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 2.4em;
+            margin-bottom: 15px;
+        }
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 25px 0;
         }
         .product-card ul {
             list-style: none;
             padding: 0;
-            text-align: left;
-            max-width: 400px;
+            max-width: 420px;
             margin: 0 auto 30px;
         }
         .product-card li {
-            margin: 15px 0;
+            margin: 18px 0;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.2em;
-        }
-        .product-card li i {
-            color: #28a745;
+            justify-content: center;
+            gap: 15px;
             font-size: 1.3em;
         }
-        .price {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #007bff;
-            margin: 20px 0;
+        .product-card li i {
+            color: var(--success);
+            font-size: 1.4em;
         }
         .contact {
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             background: #ffffff;
         }
         .btn {
             display: inline-block;
-            padding: 18px 36px;
-            margin: 15px;
-            background: #5865f2;
+            padding: 16px 32px;
+            margin: 12px;
+            background: var(--primary);
             color: #fff;
             text-decoration: none;
             border-radius: 12px;
             font-weight: bold;
-            font-size: 1.3em;
+            font-size: 1.2em;
             transition: all 0.3s;
         }
         .btn:hover {
-            background: #4752c4;
-            transform: scale(1.05);
+            background: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,123,255,0.3);
         }
         .email {
-            color: #007bff;
+            color: var(--primary);
             font-size: 1.4em;
             margin: 30px 0;
         }
         .video-section {
             max-width: 900px;
-            margin: 50px auto;
+            margin: 60px auto;
             padding: 0 20px;
         }
         .video-section h2 {
             text-align: center;
-            color: #007bff;
-            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 2em;
+            margin-bottom: 30px;
         }
         iframe {
             width: 100%;
-            height: 500px;
+            aspect-ratio: 16/9;
             border-radius: 20px;
             border: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 30px rgba(0,123,255,0.15);
         }
         @media (max-width: 768px) {
             .logo {
                 font-size: 2.2em;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .intro {
+                font-size: 1.2em;
             }
             .product-card {
                 padding: 30px 20px;
-            }
-            iframe {
-                height: 300px;
+                margin: 30px auto;
             }
             .price {
-                font-size: 2em;
+                font-size: 2.4em;
+            }
+            .product-card li {
+                font-size: 1.1em;
+            }
+            .btn {
+                display: block;
+                width: 80%;
+                margin: 15px auto;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 15px;
+            }
+            .trustpilot-box, .product-card {
+                margin: 30px 15px;
+                max-width: none;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo"><i class="fas fa-book-open"></i> Bluebook Exam Enhancer</div>
+        <div class="logo"><i class="fas fa-window-restore"></i> Floating Browser</div>
     </header>
 
     <div class="intro">
@@ -183,11 +211,7 @@
 
     <div class="trustpilot-box">
         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
         </div>
         <div class="rating">4.8 out of 5</div>
         <div class="reviews">Based on 320 reviews</div>
@@ -195,7 +219,7 @@
     </div>
 
     <div class="product-card">
-        <h2>Bluebook Enhancer</h2>
+        <h2>Floating Browser</h2>
         <div class="price">$90 USD</div>
         <ul>
             <li><i class="fas fa-window-restore"></i> Floating Browser</li>
