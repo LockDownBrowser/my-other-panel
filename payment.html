@@ -240,6 +240,10 @@
     .ejs-paypal-btn:hover::before {
       transform: translateX(120%);
     }
+    .ejs-paypal-btn.is-loading {
+      pointer-events: none;
+      opacity: 0.82;
+    }
     .ejs-icon-box {
       display: flex;
       height: 32px;
@@ -252,6 +256,19 @@
     }
     .ejs-text, .ejs-arrow {
       z-index: 2;
+    }
+    
+    /* EJS exact spinner */
+    .payment-spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      border-top-color: #ffffff;
+      border-radius: 9999px;
+      animation: payment-spin 650ms linear infinite;
+    }
+    @keyframes payment-spin {
+      to { transform: rotate(360deg); }
     }
     
     .paypal-footer {
@@ -501,6 +518,7 @@
         <li><strong>Select your Tier:</strong> Choose between Standard, Pro, or Premium from the dropdown above.</li>
         <li><strong>Confirm the Amount:</strong> The payment amount will update automatically based on your selection.</li>
         <li><strong>Process Payment:</strong> Click the "Pay with Credit / Debit Card" button. You will be redirected to our secure PayPal checkout.</li>
+        <li><strong>Important:</strong> You must manually enter the exact amount selected on the PayPal payment page.</li>
         <li><strong>Save your Receipt:</strong> Once the transaction is complete, copy your PayPal Transaction ID.</li>
         <li><strong>Submit your Details:</strong> Send an email or open a Discord ticket with the following:
           <ul style="margin-top: 8px; list-style-type: disc; padding-left: 20px;">
@@ -524,6 +542,9 @@
       const tierSelect = document.getElementById('tier-select');
       const amountInput = document.getElementById('payment-amount');
       const checkoutBtn = document.getElementById('paypalCardLink');
+      
+      // Default payment ID identical to index.ejs
+      const DEFAULT_PAYPAL_BUTTON_ID = '9JMDPQQNKG9PA';
 
       // Update input when dropdown changes
       tierSelect.addEventListener('change', (e) => {
@@ -544,17 +565,25 @@
           return;
         }
 
-        // Change button state to loading (visual feedback matching EJS logic)
+        // Prompt the user to manually enter the amount
+        const userConfirmed = confirm(`ACTION REQUIRED:\n\nYou are about to be redirected to PayPal.\n\nPlease manually enter exactly $${amount} on the PayPal checkout page to ensure your selected tier is properly credited.\n\nClick OK to continue.`);
+        
+        if (!userConfirmed) return;
+
+        // Change button state to loading (identical to EJS visual feedback)
+        checkoutBtn.classList.add('is-loading');
+        
         const btnText = checkoutBtn.querySelector('.ejs-text');
         const btnIcon = checkoutBtn.querySelector('.ejs-icon-box');
+        const btnArrow = checkoutBtn.querySelector('.ejs-arrow');
         
         btnText.textContent = 'Opening secure checkout...';
-        btnIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        btnIcon.innerHTML = '<span class="payment-spinner"></span>';
+        if (btnArrow) btnArrow.style.display = 'none';
 
-        // Redirect to PayPal (Using PayPal.me structure for dynamic user amounts)
-        // REPLACE 'YOUR_PAYPAL_USERNAME' with the actual account username
+        // Redirect to exact EJS PayPal NCP link
         setTimeout(() => {
-          window.location.href = `https://www.paypal.com/paypalme/YOUR_PAYPAL_USERNAME/${amount}USD`;
+          window.location.href = `https://www.paypal.com/ncp/payment/${DEFAULT_PAYPAL_BUTTON_ID}`;
         }, 600);
       });
     });
