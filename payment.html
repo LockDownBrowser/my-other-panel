@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crypto Payment – Bluebook Bypass</title>
   <meta name="description" content="Pay with crypto for the SAT or PSAT bypass tool. Includes easy step-by-step instructions.">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
@@ -33,28 +33,33 @@
     }
     h1 {
       text-align: center;
-      color: #1f2c48;
+      color: #0f172a;
       font-size: 2em;
+      font-weight: 900;
       margin-bottom: 10px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+      letter-spacing: -0.02em;
     }
     .subtext {
       text-align: center;
-      color: #555;
+      color: #64748b;
       font-size: 0.95rem;
       margin-bottom: 25px;
+      font-weight: 500;
     }
     .badge {
-      background: linear-gradient(135deg, #ffe066, #ffd700);
-      color: #1f2c48;
-      font-weight: 600;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
       padding: 6px 16px;
       border-radius: 24px;
       text-align: center;
       display: block;
       margin: 0 auto 25px;
       max-width: fit-content;
-      box-shadow: 0 2px 4px rgba(255, 224, 102, 0.3);
+      border: 1px solid #bfdbfe;
     }
     .payment-options {
       display: flex;
@@ -64,188 +69,309 @@
       margin-bottom: 30px;
     }
     .payment-option {
-      background: #f8f9fc;
-      border-radius: 12px;
-      padding: 15px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px;
       text-align: center;
       width: 100%;
       max-width: 320px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .payment-option:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
+      border-color: #93c5fd;
     }
     .payment-option h3 {
-      color: #1f2c48;
-      font-size: 1.2em;
+      color: #0f172a;
+      font-size: 1.1em;
+      font-weight: 700;
       margin-bottom: 10px;
     }
     .payment-option p {
-      color: #666;
-      font-size: 0.9em;
-      margin-bottom: 15px;
+      color: #64748b;
+      font-size: 0.85em;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
     .payment-btn {
-      background: linear-gradient(135deg, #1f2c48, #32476c);
+      background: linear-gradient(to right, #5865F2, #4752C4);
       color: #fff;
       border: none;
-      padding: 10px 20px;
-      font-size: 0.95em;
-      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 0.85em;
+      font-weight: 700;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
       text-decoration: none;
       display: inline-block;
-      width: auto;
+      box-shadow: 0 10px 15px -3px rgba(88, 101, 242, 0.25);
     }
     .payment-btn:hover {
-      background: linear-gradient(135deg, #32476c, #1f2c48);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(88, 101, 242, 0.4);
     }
-    .wallet-section {
+
+    /* EJS Styled Checkout Section */
+    .checkout-section {
+      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f0fdfa 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 16px;
+      padding: 25px;
       margin-bottom: 30px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-    .wallet-label {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #1f2c48;
-      text-align: center;
+    .checkout-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
     }
-    .wallet-box {
-      background: #f8f9fc;
-      border: 2px solid #d3d7e3;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      transition: border-color 0.3s ease;
-    }
-    .wallet-box:hover {
-      border-color: #1f2c48;
-    }
-    .qr-frame {
-      display: inline-block;
-      padding: 10px;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-    .qr-frame img {
-      width: 100%;
-      max-width: 140px;
-      height: auto;
-      object-fit: contain;
-    }
-    .wallet-box code {
-      background: #e9edf5;
-      color: #333;
-      padding: 10px 14px;
-      font-size: 0.9rem;
-      border-radius: 8px;
-      word-break: break-all;
-      margin: 10px 0;
-      display: block;
-      font-family: 'Courier New', monospace;
-    }
-    .copy-btn {
-      background: linear-gradient(135deg, #1f2c48, #32476c);
+    .checkout-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #2563eb;
       color: #fff;
-      border: none;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+    }
+    .checkout-titles p {
+      margin: 0;
+    }
+    .checkout-titles .main-title {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #0f172a;
+    }
+    .checkout-titles .sub-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Form Controls */
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+    .form-control {
       width: 100%;
-      max-width: 200px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      padding: 14px 16px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s;
+      box-sizing: border-box;
+      font-family: inherit;
     }
-    .copy-btn:hover {
-      background: linear-gradient(135deg, #32476c, #1f2c48);
+    .form-control:focus {
+      border-color: #3b82f6;
+      background: #fff;
+      box-shadow: 0 0 0 4px #dbeafe;
     }
+    .input-wrapper {
+      position: relative;
+    }
+    .input-prefix {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      font-weight: 900;
+    }
+    .input-wrapper input {
+      padding-left: 32px;
+    }
+
+    /* EJS Styled PayPal Button */
+    .ejs-paypal-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      background: linear-gradient(to right, #1d4ed8, #2563eb, #0ea5e9);
+      color: #fff;
+      padding: 16px 20px;
+      font-size: 0.875rem;
+      font-weight: 900;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.25), 0 8px 10px -6px rgba(59, 130, 246, 0.25);
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .ejs-paypal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.35), 0 8px 10px -6px rgba(59, 130, 246, 0.35);
+    }
+    .ejs-paypal-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.19) 45%, transparent 65%);
+      transform: translateX(-120%);
+      transition: transform 500ms ease;
+    }
+    .ejs-paypal-btn:hover::before {
+      transform: translateX(120%);
+    }
+    .ejs-icon-box {
+      display: flex;
+      height: 32px;
+      width: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      z-index: 2;
+    }
+    .ejs-text, .ejs-arrow {
+      z-index: 2;
+    }
+    
+    .paypal-footer {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .paypal-footer span.powered {
+      font-size: 11px;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+    .paypal-footer span.brand-pay {
+      font-size: 14px;
+      font-weight: 900;
+      font-style: italic;
+      color: #003087;
+      letter-spacing: -0.02em;
+    }
+    .paypal-footer span.brand-pal {
+      font-size: 14px;
+      font-weight: 900;
+      font-style: italic;
+      color: #009cde;
+      letter-spacing: -0.02em;
+      margin-left: -2px;
+    }
+    .secure-badges {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+    }
+    .secure-badges span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
     .scroll-btn {
       text-align: center;
       margin: 30px 0;
     }
     .scroll-btn button {
-      background: linear-gradient(135deg, #1f2c48, #32476c);
-      border: none;
+      background: #fff;
+      border: 1px solid #e2e8f0;
       padding: 10px 20px;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 8px;
-      font-size: 0.95rem;
+      color: #475569;
+      font-weight: 700;
+      border-radius: 12px;
+      font-size: 0.85rem;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
     .scroll-btn button:hover {
-      background: linear-gradient(135deg, #32476c, #1f2c48);
+      border-color: #cbd5e1;
+      color: #0f172a;
+      transform: translateY(-2px);
     }
     .instruction-box {
-      background: #f9fafc;
-      border-left: 6px solid #1f2c48;
+      background: #f8fafc;
+      border-left: 4px solid #3b82f6;
       padding: 20px 24px;
       margin-top: 40px;
-      border-radius: 12px;
+      border-radius: 0 12px 12px 0;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
     .instruction-box h3 {
       margin-top: 0;
-      color: #1f2c48;
-      font-size: 1.3rem;
+      color: #0f172a;
+      font-size: 1.2rem;
+      font-weight: 900;
       display: flex;
       align-items: center;
     }
     .instruction-box h3 i {
       margin-right: 10px;
-      color: #1f2c48;
+      color: #3b82f6;
     }
     .instruction-box ul {
       padding-left: 20px;
       margin: 10px 0;
     }
     .instruction-box li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-weight: 500;
-      color: #333;
-      list-style-type: disc;
-    }
-    .instruction-box li ul {
-      padding-left: 15px;
-      margin-top: 5px;
-    }
-    .instruction-box li ul li {
-      list-style-type: circle;
-    }
-    .warning {
-      color: red;
-      font-weight: bold;
-      margin-top: 8px;
-      display: block;
+      color: #475569;
       font-size: 0.9rem;
+      list-style-type: decimal;
     }
     .contact {
-      margin-top: 30px;
+      margin-top: 40px;
       text-align: center;
-      font-size: 0.95rem;
-      color: #444;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #64748b;
     }
     .contact a {
-      color: #1f2c48;
+      color: #2563eb;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
     .contact a:hover {
       text-decoration: underline;
     }
     .contact i {
       margin-right: 8px;
-      color: #1f2c48;
+      color: #2563eb;
     }
+
     @media (max-width: 600px) {
       body {
         padding: 15px 5px;
@@ -255,14 +381,10 @@
         border-radius: 12px;
       }
       h1 {
-        font-size: 1.8em;
+        font-size: 1.6em;
       }
       .subtext {
-        font-size: 0.9rem;
-      }
-      .badge {
-        padding: 5px 14px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
       .payment-options {
         gap: 10px;
@@ -271,83 +393,99 @@
         padding: 15px;
         max-width: none;
       }
-      .payment-option h3 {
-        font-size: 1.1em;
-      }
-      .payment-option p {
-        font-size: 0.85em;
-      }
-      .payment-btn {
-        padding: 8px 16px;
-        font-size: 0.9em;
-      }
-      .wallet-section {
-        margin-bottom: 25px;
-      }
-      .wallet-label {
-        font-size: 0.95rem;
-      }
-      .wallet-box {
-        padding: 15px;
-      }
-      .qr-frame {
-        padding: 8px;
-        margin-bottom: 12px;
-      }
-      .qr-frame img {
-        max-width: 120px;
-      }
-      .wallet-box code {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-      }
-      .copy-btn {
-        padding: 8px 14px;
-        font-size: 0.85rem;
-        max-width: none;
-      }
-      .scroll-btn button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
+      .checkout-section {
+        padding: 20px 15px;
       }
       .instruction-box {
         padding: 15px 20px;
-      }
-      .instruction-box h3 {
-        font-size: 1.2rem;
-      }
-      .instruction-box li {
-        font-size: 0.9rem;
-      }
-      .contact {
-        font-size: 0.9rem;
-      }
-    }
-    @media (max-width: 400px) {
-      .qr-frame img {
-        max-width: 100px;
-      }
-      .wallet-box code {
-        font-size: 0.8rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1><i class="fas fa-coins" style="margin-right: 10px; color: #ffe066;"></i>Crypto Payment</h1>
-    <p class="subtext">Securely send the amount matching your selected bypass (SAT or PSAT). Choose your preferred method below.</p>
-    <div class="badge">Fast & Secure Payments</div>
+    <h1><i class="fas fa-shield-alt" style="margin-right: 10px; color: #3b82f6;"></i>Secure Checkout</h1>
+    <p class="subtext">Select your preferred bypass tier and complete your payment securely via PayPal or Credit Card.</p>
+    <div class="badge">Encrypted & Secure Payment</div>
 
+    <!-- MAIN CHECKOUT SECTION -->
+    <div class="checkout-section">
+      <div class="checkout-header">
+        <div class="checkout-icon">
+          <svg viewBox="0 0 24 24" fill="none" width="24" height="24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M3 9h18M7 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="checkout-titles">
+          <p class="main-title">Credit or debit card</p>
+          <p class="sub-title">Continue to secure card checkout</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tier-select">Select Bypass Tier</label>
+        <select id="tier-select" class="form-control">
+          <option value="" disabled selected>-- Select a Tier --</option>
+          <option value="190">Standard Bypass - $190</option>
+          <option value="450">Pro Bypass - $450</option>
+          <option value="890">Premium Bypass - $890</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="payment-amount">Payment Amount</label>
+        <div class="input-wrapper">
+          <span class="input-prefix">$</span>
+          <input type="number" id="payment-amount" class="form-control" placeholder="0.00" min="1">
+        </div>
+      </div>
+
+      <button type="button" id="paypalCardLink" class="ejs-paypal-btn">
+        <span class="ejs-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M3 9h18M7 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="ejs-text">Pay with Credit / Debit Card</span>
+        <svg class="ejs-arrow" viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true">
+          <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="paypal-footer">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="#253B80" d="M8.2 3.2h5.1c3 0 5.1 1.7 4.6 4.6-.6 3.6-3 5.3-6.6 5.3H9.9l-.7 4.1H5.6L8.2 3.2Z" />
+          <path fill="#179BD7" d="M10.1 6.4h4c2.7 0 4.3 1.4 3.8 4-.6 3.5-2.9 5-6.3 5h-1.3l-.8 5.4H6.1l2.2-13.1c.1-.8.8-1.3 1.8-1.3Z" opacity="0.9" />
+        </svg>
+        <span class="powered">Powered by</span>
+        <span class="brand-pay">Pay</span><span class="brand-pal">Pal</span>
+      </div>
+
+      <div class="secure-badges">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" width="14" height="14" aria-hidden="true">
+            <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.8"/>
+            <rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+          Encrypted
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" width="14" height="14" aria-hidden="true">
+            <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Secure Checkout
+        </span>
+        <span>One-Time Charge</span>
+      </div>
+    </div>
+
+    <!-- ALTERNATIVE OPTIONS -->
     <div class="payment-options">
       <div class="payment-option">
-        <h3><i class="fas fa-wallet" style="margin-right: 8px;"></i>Direct Crypto Transfer</h3>
-        <p>Use your wallet to send USDT, BTC, or SOL directly to our addresses.</p>
-        <a href="#crypto-wallets" class="payment-btn" onclick="document.getElementById('crypto-wallets').scrollIntoView({ behavior: 'smooth' });">Proceed to Wallets</a>
-      </div>
-      <div class="payment-option">
-        <h3><i class="fab fa-discord" style="margin-right: 8px;"></i>Alternative Payment via Discord</h3>
-        <p>Join our Discord server and create a ticket in the #payments channel for custom payment options or assistance.</p>
+        <h3><i class="fab fa-discord" style="margin-right: 8px; color: #5865F2;"></i>Alternative Payment via Discord</h3>
+        <p>Need assistance or prefer a custom payment method? Join our Discord server and create a ticket in the #payments channel.</p>
         <a href="https://discord.gg/bg6wKj45w3" target="_blank" class="payment-btn">Join Discord & Create Ticket</a>
       </div>
     </div>
@@ -356,64 +494,25 @@
       <button onclick="document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });"><i class="fas fa-arrow-down" style="margin-right: 8px;"></i>View Step-by-Step Guide</button>
     </div>
 
-    <div id="crypto-wallets">
-      <div class="wallet-section">
-        <div class="wallet-label"><i class="fas fa-dollar-sign" style="margin-right: 8px;"></i>USDT (ERC20)</div>
-        <div class="wallet-box">
-          <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0xD873A40dcA37dC2084E174E007E30C71aC4463CD9&size=150x150" alt="USDT QR"></div>
-          <code id="usdt">0xD873A40dcA37dC2084E174E007E30C71aC4463CD9</code>
-          <button class="copy-btn" data-target="usdt">Copy Address</button>
-        </div>
-      </div>
-
-      <div class="wallet-section">
-        <div class="wallet-label"><i class="fab fa-bitcoin" style="margin-right: 8px;"></i>Bitcoin (BTC)</div>
-        <div class="wallet-box">
-          <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=18MvG5FJ2a1CZLETt9bUpKPa33aLK9Qn5v&size=150x150" alt="BTC QR"></div>
-          <code id="btc">18MvG5FJ2a1CZLETt9bUpKPa33aLK9Qn5v</code>
-          <button class="copy-btn" data-target="btc">Copy Address</button>
-        </div>
-      </div>
-
-      <div class="wallet-section">
-        <div class="wallet-label"><i class="fas fa-sun" style="margin-right: 8px;"></i>Solana (SOL)</div>
-        <div class="wallet-box">
-          <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?data=7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ&size=150x150" alt="SOL QR"></div>
-          <code id="sol">7M27KDHbF1BtxEhghY6vWaXmbXyrsehSsWwxHtPYfSoJ</code>
-          <button class="copy-btn" data-target="sol">Copy Address</button>
-        </div>
-      </div>
-    </div>
-
+    <!-- INSTRUCTIONS -->
     <div class="instruction-box" id="instructions">
-      <h3><i class="fas fa-list-ol"></i>How to Pay – Easy Instructions</h3>
+      <h3><i class="fas fa-list-ol"></i>How to Complete Your Purchase</h3>
       <ul>
-        <li><strong>1. Visit a crypto platform:</strong>  
-          Go to <a href="https://www.bitpay.com/buy" target="_blank">Bitpay</a>, <a href="https://www.moonpay.com/buy" target="_blank">Moonpay</a>, or <a href="https://www.paybis.com/" target="_blank">Paybis</a>.
-        </li>
-        <li><strong>2. Choose the crypto you want:</strong> USDT, BTC, or SOL.</li>
-        <li><strong>3. Select the correct network:</strong>
-          <ul>
-            <li>For <strong>USDT</strong> choose <strong>ERC20 (Ethereum network)</strong></li>
-            <li>For <strong>BTC</strong> choose <strong>Bitcoin</strong></li>
-            <li>For <strong>SOL</strong> choose <strong>Solana Network</strong></li>
+        <li><strong>Select your Tier:</strong> Choose between Standard, Pro, or Premium from the dropdown above.</li>
+        <li><strong>Confirm the Amount:</strong> The payment amount will update automatically based on your selection.</li>
+        <li><strong>Process Payment:</strong> Click the "Pay with Credit / Debit Card" button. You will be redirected to our secure PayPal checkout.</li>
+        <li><strong>Save your Receipt:</strong> Once the transaction is complete, copy your PayPal Transaction ID.</li>
+        <li><strong>Submit your Details:</strong> Send an email or open a Discord ticket with the following:
+          <ul style="margin-top: 8px; list-style-type: disc; padding-left: 20px;">
+            <li>Your PayPal Transaction ID</li>
+            <li>Your macOS serial number</li>
+            <li>The tier you purchased (Standard / Pro / Premium)</li>
           </ul>
-          <span class="warning"><i class="fas fa-exclamation-triangle" style="margin-right: 6px;"></i>IMPORTANT: Using the wrong network may result in loss of funds.</span>
-        </li>
-        <li><strong>4. Enter the address exactly</strong> (copy it using the button above).</li>
-        <li><strong>5. Enter the amount</strong> that matches the bypass you want (e.g. $250 for SAT, or other listed price).</li>
-        <li><strong>6. Complete the transaction and save your TX ID.</strong></li>
-        <li><strong>7. Send your:</strong>
-          <ul>
-            <li><i class="fas fa-receipt"></i> Transaction ID</li>
-            <li><i class="fas fa-laptop"></i> Your macOS serial number</li>
-            <li><i class="fas fa-book"></i> Whether you want SAT or PSAT bypass</li>
-          </ul>
-          to: <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a> or DM <strong>minjunio</strong> on Discord.
         </li>
       </ul>
     </div>
 
+    <!-- FOOTER / CONTACT -->
     <div class="contact">
       <p><i class="fas fa-envelope"></i>Email: <a href="mailto:minjunnios@gmail.com">minjunnios@gmail.com</a></p>
       <p><i class="fab fa-discord"></i>Discord: <strong>minjunio</strong> or <a href="https://discord.gg/bg6wKj45w3" target="_blank">Join Server</a></p>
@@ -421,13 +520,42 @@
   </div>
 
   <script>
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const code = document.getElementById(btn.getAttribute('data-target'));
-        navigator.clipboard.writeText(code.textContent).then(() => {
-          btn.textContent = 'Copied!';
-          setTimeout(() => btn.textContent = 'Copy Address', 2000);
-        });
+    document.addEventListener('DOMContentLoaded', () => {
+      const tierSelect = document.getElementById('tier-select');
+      const amountInput = document.getElementById('payment-amount');
+      const checkoutBtn = document.getElementById('paypalCardLink');
+
+      // Update input when dropdown changes
+      tierSelect.addEventListener('change', (e) => {
+        if (e.target.value) {
+          amountInput.value = e.target.value;
+        }
+      });
+
+      // Handle checkout click
+      checkoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const amount = parseFloat(amountInput.value);
+        
+        if (!amount || isNaN(amount) || amount <= 0) {
+          alert('Please select a tier or enter a valid payment amount to proceed.');
+          amountInput.focus();
+          return;
+        }
+
+        // Change button state to loading (visual feedback matching EJS logic)
+        const btnText = checkoutBtn.querySelector('.ejs-text');
+        const btnIcon = checkoutBtn.querySelector('.ejs-icon-box');
+        
+        btnText.textContent = 'Opening secure checkout...';
+        btnIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+        // Redirect to PayPal (Using PayPal.me structure for dynamic user amounts)
+        // REPLACE 'YOUR_PAYPAL_USERNAME' with the actual account username
+        setTimeout(() => {
+          window.location.href = `https://www.paypal.com/paypalme/YOUR_PAYPAL_USERNAME/${amount}USD`;
+        }, 600);
       });
     });
   </script>
