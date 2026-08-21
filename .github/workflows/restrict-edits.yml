@@ -1,0 +1,38 @@
+name: Restrict Edits to anwser.txt
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify only anwser.txt was edited
+        run: |
+          echo "🔍 Checking modified files..."
+
+          # Determine the changed files depending on event type
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch origin ${{ github.base_ref }} --depth=1
+            CHANGED=$(git diff --name-only origin/${{ github.base_ref }} HEAD)
+          else
+            CHANGED=$(git diff --name-only HEAD^ HEAD)
+          fi
+
+          echo "Changed files:"
+          echo "$CHANGED"
+
+          # Block any file that isn't anwser.txt
+          FORBIDDEN=$(echo "$CHANGED" | grep -v '^anwser\.txt$' || true)
+
+          if [ -n "$FORBIDDEN" ]; then
+            echo "❌ The following files are not allowed to be modified:"
+            echo "$FORBIDDEN"
+            exit 1
+          fi
+
+          echo "✅ Only anwser.txt was modified — allowed."
